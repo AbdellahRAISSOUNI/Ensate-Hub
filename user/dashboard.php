@@ -14,7 +14,7 @@ if (strlen($_SESSION['ocasuid']==0)) {
 
 <head>
    
-    <title>OCAS User : Dashboard</title>
+    <title>Acceuil Etudiant</title>
   
     <!-- Styles -->
     <link href="../assets/css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
@@ -54,7 +54,7 @@ if($query->rowCount() > 0)
 {
 foreach($results as $row)
 {               ?>
-                                <h1>Hello, <?php  echo $row->FullName;?> <span>  Welcome Here</span></h1><?php $cnt=$cnt+1;}} ?>
+                                <h1>Salut, <?php  echo $row->FullName;?> <span>  Bienvenu</span></h1><?php $cnt=$cnt+1;}} ?>
                             </div>
                         </div>
                     </div>
@@ -63,8 +63,8 @@ foreach($results as $row)
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Home</li>
+                                    <li><a href="dashboard.php">Acceuil</a></li>
+                                    <li class="active">Menu</li>
                                 </ol>
                             </div>
                         </div>
@@ -79,14 +79,14 @@ foreach($results as $row)
                         <div class="col-lg-8">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Notice Board </h4>
+                                    <h4>Tableau de cours </h4>
                                     <div class="card-header-right-icon">
                                         <ul>
                                             <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
                                             <li class="card-option drop-menu"><i class="ti-settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="link"></i>
                                                 <ul class="card-option-dropdown dropdown-menu">
-                                                    <li><a href="#"><i class="ti-loop"></i> Update data</a></li>
-                                                    <li><a href="#"><i class="ti-menu-alt"></i> Detail log</a></li>
+                                                    <li><a href="#"><i class="ti-loop"></i> Modifier donné</a></li>
+                                                    <li><a href="#"><i class="ti-menu-alt"></i> Detail</a></li>
                                                     <li><a href="#"><i class="ti-pulse"></i> Statistics</a></li>
                                                     <li><a href="#"><i class="ti-power-off"></i> Clear ist</a></li>
                                                 </ul>

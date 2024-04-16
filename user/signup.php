@@ -32,19 +32,19 @@ $lastInsertId = $dbh->lastInsertId();
 if($lastInsertId)
 {
 
-echo "<script>alert('You have successfully registered with us');</script>";
+echo "<script>alert('Votre compte a été crée avec succés');</script>";
 echo "<script>window.location.href ='login.php'</script>";
 }
 else
 {
 
-echo "<script>alert('Something went wrong.Please try again');</script>";
+echo "<script>alert('Erreur');</script>";
 }
 }
  else
 {
 
-echo "<script>alert('Email-id or RollNumber or Mobile Number is already exist. Please try again');</script>";
+echo "<script>alert('Adresse mail o numéro existe déja. Essayer quelque chose');</script>";
 }
 }
 ?>
@@ -71,31 +71,31 @@ echo "<script>alert('Email-id or RollNumber or Mobile Number is already exist. P
                 <div class="col-lg-6 col-lg-offset-3">
                     <div class="login-content">
                         <div class="login-logo">
-                            <a href="#"><span>User Signup</span></a>
+                            <a href="#"><span>Creation d'un compte étudiant</span></a>
                         </div>
                         <div class="login-form">
-                            <h4>Register to OCAS</h4>
+                            <h4>Inscription</h4>
                             <form method="post">
                                 <div class="form-group">
-                                    <label>Name</label>
+                                    <label>Nom</label>
                                     <input type="text" value="" name="fname" required="true" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label>Mobile Number</label>
+                                    <label>Numéro de Téléphone</label>
                                     <input type="text" name="mobno" class="form-control" required="true" maxlength="10" pattern="[0-9]+">
                                 </div>
                                 <div class="form-group">
-                                    <label>Email address</label>
+                                    <label>Adresse mail</label>
                                     <input type="email" class="form-control" value="" name="email" required="true">
                                 </div>
                                 <div class="form-group">
-                                    <label>Roll Number</label>
+                                    <label>Apogé</label>
                                     <input type="text" value="" name="rollnum" required="true" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label>Course</label>
+                                    <label>choisir un cours</label>
                                     <select type="text" value="" name="cid" required="true" class="form-control">
-                                        <option value="">Select Course</option>
+                                        <option value="">choisir un cour</option>
                                         <?php
                                           
 $sql="SELECT * from tblcourse";
@@ -115,14 +115,14 @@ foreach($results as $row)
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label>Password</label>
+                                    <label>Mot de passe</label>
                                     <input type="password" value="" class="form-control" name="password" required="true">
                                 </div>
                                
                                 <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30" name="submit">Register</button>
                                
                                 <div class="register-link m-t-15 text-center">
-                                    <p>Already have account ? <a href="login.php"> Sign in</a></p>
+                                    <p>Vous avez déja un compte ? <a href="login.php"> Connectez Vous !</a></p>
                                 </div>
                             </form>
                         </div>

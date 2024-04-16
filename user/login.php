@@ -25,7 +25,7 @@ $_SESSION['login']=$_POST['rollmobilenum'];
 
 echo "<script type='text/javascript'> document.location ='dashboard.php'; </script>";
 } else{
-echo "<script>alert('Invalid Details');</script>";
+echo "<script>alert('Détailles invalides');</script>";
 }
 }
 
@@ -35,7 +35,7 @@ echo "<script>alert('Invalid Details');</script>";
 
 <head>
     
-    <title>OCAS User : Login</title>
+    <title>Etu connection</title>
     
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">
@@ -52,33 +52,33 @@ echo "<script>alert('Invalid Details');</script>";
                 <div class="col-lg-6 col-lg-offset-3">
                     <div class="login-content">
                         <div class="login-logo">
-                            <a href="../index.php"><span>OCAS User</span></a>
+                            <a href="../index.php"><span>Ulearn - Projet Web Ensa</span></a>
                         </div>
                         <div class="login-form">
-                            <h4>User Login</h4>
+                            <h4>Connection : Etudiant</h4>
                             <form method="post">
                                 <div class="form-group">
-                                    <label>Roll Number or Mobile Number</label>
-                                    <input type="text" class="form-control" placeholder="Roll Number or Mobile Number" required="true" name="rollmobilenum">
+                                    <label>Votre numéro de telephone ou votre numéro Apogée</label>
+                                    <input type="text" class="form-control" placeholder="Cliquer ici pour entrer le numéro ici" required="true" name="rollmobilenum">
                                 </div>
                                 <div class="form-group">
-                                    <label>Password</label>
-                                    <input type="password" class="form-control" placeholder="Password" name="password" required="true">
+                                    <label>Mot de pass</label>
+                                    <input type="password" class="form-control" placeholder="Cliquer ici pour entrer le mot de pass" name="password" required="true">
                                 </div>
                                 <div class="checkbox">
                                     
                                     <label class="pull-right">
-										<a href="forgot-password.php">Forgotten Password?</a>
+										<a href="forgot-password.php">Vous avez oubliez votre mot de pass?</a>
 									</label>
 
                                 </div>
-                                <button type="submit" name="login" class="btn btn-primary btn-flat m-b-30 m-t-30">Sign in</button>
+                                <button type="submit" name="login" class="btn btn-primary btn-flat m-b-30 m-t-30">connecter vous</button>
 
                                 <div class="register-link m-t-15 text-center">
-                                    <p>Create an account ? <a href="signup.php"> Sign up</a></p>
+                                    <p>Vouns n'avez pas de compte ? <a href="signup.php"> Créer un compte</a></p>
                                 </div>
                                 <label>
-                                        <a href="../index.php">Back Home!!</a>
+                                        <a href="../index.php">Retour à l'accueil</a>
                                     </label>
                             </form>
                         </div>

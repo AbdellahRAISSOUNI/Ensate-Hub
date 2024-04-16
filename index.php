@@ -22,6 +22,7 @@ include('admin/includes/dbconnection.php');
 </head>
 
 <body>
+	
 	<!-- banner -->
 	<div class="banner" id="home">
 		<div class="container">

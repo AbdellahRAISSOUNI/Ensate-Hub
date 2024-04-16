@@ -120,7 +120,7 @@ foreach($results as $row)
                                             </div>
                                            
                                             <?php $cnt=$cnt+1;}} ?>
-                                            <button type="submit" class="btn btn-default" name="submit">Submit</button>
+                                            <button type="submit" class="btn btn-default" name="submit">Sauvegarder</button>
                                         </form>
                                     </div>
                                 </div>

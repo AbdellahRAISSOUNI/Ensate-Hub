@@ -14,7 +14,7 @@ if (strlen($_SESSION['ocasuid']==0)) {
 
 <head>
    
-    <title>OCAS Manage Assignment</title>
+    <title>Devoirs</title>
 
     <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">

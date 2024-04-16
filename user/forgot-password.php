@@ -22,10 +22,10 @@ $chngpwd1-> bindParam(':email', $email, PDO::PARAM_STR);
 $chngpwd1-> bindParam(':mobile', $mobile, PDO::PARAM_STR);
 $chngpwd1-> bindParam(':newpassword', $newpassword, PDO::PARAM_STR);
 $chngpwd1->execute();
-echo "<script>alert('Your Password succesfully changed');</script>";
+echo "<script>alert('Votre mot de passe été changé avec succés');</script>";
 }
 else {
-echo "<script>alert('Email id or Mobile no is invalid');</script>"; 
+echo "<script>alert('Email o Numéro invalides');</script>"; 
 }
 }
 
@@ -35,7 +35,7 @@ echo "<script>alert('Email id or Mobile no is invalid');</script>";
 
 <head>
     
-    <title>OCAS User : Forgot Password</title>
+    <title>Mot de passe oublié</title>
     
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">
@@ -64,35 +64,35 @@ return true;
                 <div class="col-lg-6 col-lg-offset-3">
                     <div class="login-content">
                         <div class="login-logo">
-                            <a href="dashboard.php"><span>OCAS User</span></a>
+                            <a href="dashboard.php"><span>Etudiant</span></a>
                         </div>
                         <div class="login-form">
-                            <h4>Forgot Password</h4>
+                            <h4>J'ai Oublié Mon Mot de Passe</h4>
                             <form method="post" name="chngpwd" onSubmit="return valid();">
                                 <div class="form-group">
-                                    <label>Email Address</label>
-                                    <input type="email" class="form-control" placeholder="Email Address" required="true" name="email">
+                                    <label>Adresse Mail:</label>
+                                    <input type="email" class="form-control" placeholder="Qliquer ici pour entrer votre adresse mail" required="true" name="email">
                                 </div>
                                 <div class="form-group">
-                                    <label>Mobile Number</label>
-                                    <input type="text" class="form-control" placeholder="Mobile Number" required="true" name="mobile" maxlength="10" pattern="[0-9]+">
+                                    <label>Numéro de téléphone</label>
+                                    <input type="text" class="form-control" placeholder="Qliquer ici pour entrer votre numéro de téléphone" required="true" name="mobile" maxlength="10" pattern="[0-9]+">
                                 </div>
                                 <div class="form-group">
-                                    <label>New Password</label>
-                                    <input type="password" name="newpassword" class="form-control" placeholder="New Password" required="true">
+                                    <label>Nouveau mot de passe</label>
+                                    <input type="password" name="newpassword" class="form-control" placeholder="Qliquer pour entrer le nouveau mot de passe" required="true">
                                 </div>
                                 <div class="form-group">
-                                    <label>Confirm Password</label>
-                                    <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password" required="true">
+                                    <label>Confirmer le nouveau mot de passe</label>
+                                    <input type="password" name="confirmpassword" class="form-control" placeholder="Confirmer le nouveau mot de passe" required="true">
                                 </div>
                                 <div class="checkbox">
                                     
                                     <label class="pull-right">
-										<a href="login.php">signin</a>
+										<a href="login.php">Connectez vous</a>
 									</label>
 
                                 </div>
-                                <button type="submit" name="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Reset</button>
+                                <button type="submit" name="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Restorer votre mot de passe</button>
                             </form>
                         </div>
                     </div>
