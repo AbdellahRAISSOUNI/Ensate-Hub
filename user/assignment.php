@@ -38,7 +38,7 @@ if (strlen($_SESSION['ocasuid']==0)) {
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Dashboard</h1>
+                                <h1>Tabmeau de board</h1>
                             </div>
                         </div>
                     </div>
@@ -47,8 +47,8 @@ if (strlen($_SESSION['ocasuid']==0)) {
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Manage Assignment</li>
+                                    <li><a href="dashboard.php">Tableau de board</a></li>
+                                    <li class="active">Gérer les affectations</li>
                                 </ol>
                             </div>
                         </div>
@@ -61,7 +61,7 @@ if (strlen($_SESSION['ocasuid']==0)) {
                         <div class="col-lg-12">
                             <div class="card alert">
                                 <div class="card-header">
-                                    <h4>Manage Assignment</h4>
+                                    <h4>Gérer les affectations</h4>
                                     <div class="card-header-right-icon">
                                         <ul>
                                             <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
@@ -74,14 +74,14 @@ if (strlen($_SESSION['ocasuid']==0)) {
                                         <table  class="table table-striped table-bordered">
                                             <thead>
                                                 <tr>
-                                                    <th>S.No</th>
-                                                    <th>Assignment Number</th>
-                                                    <th>Course Name</th>
-                                                    <th>Subject</th>
-                                                    <th>Assignment By</th>
-                                                    <th>Date of Submission</th>
-                                                   <th>Posting Date</th>
-                                                   <th>Status</th>
+                                                <th>N°</th>
+                                                    <th>Numéro du Devoir</th>
+                                                    <th>Nom du Cours</th>
+                                                    <th>Matière</th>
+                                                    <th>Devoir par</th>
+                                                    <th>Date de Soumission</th>
+                                                    <th>Date de Publication</th>
+                                                    <th>Statut</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -108,13 +108,13 @@ foreach($results as $row)
                                                    <td><?php  echo htmlentities($row->CreationDate);?></td>
                                                    <?php if($row->Marks==""){ ?>
 
-                     <td><?php echo "Unchecked Assignment"; ?></td>
+                     <td><?php echo " Affectation n'est chécké"; ?></td>
 <?php } else { ?>
                                         <td>
-                                            <span class="badge badge-primary"><?php  echo "Checked Assignment";?></span>
+                                            <span class="badge badge-primary"><?php  echo " Affectation chécké";?></span>
                                         </td>
 <?php } ?> 
-                                                    <td><a href="submit-assignment.php?sid=<?php echo htmlentities ($row->aid);?>">Submit</a></td>
+                                                    <td><a href="submit-assignment.php?sid=" style="color: blue;"<?php echo htmlentities ($row->aid);?>">Soumettre</a></td>
                                                 </tr>
                                               <?php $cnt=$cnt+1;}} ?> 
                                             </tbody>
@@ -133,7 +133,7 @@ foreach($results as $row)
                                     <li class="hidden-xs"><a href="#">8</a></li>
                                     <li class="hidden-xs"><a href="#">9</a></li>
                                     <li class="disabled hidden-xs"><span>...</span></li><li>
-                                    <li><a rel="next" href="#">Next</a></li>
+                                    <li><a rel="next" href="#">Suivant</a></li>
                                 </ul>
                             </div>
                         </div>

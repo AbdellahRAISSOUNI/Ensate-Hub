@@ -14,7 +14,7 @@ if (strlen($_SESSION['ocasuid']==0)) {
 
 <head>
    
-    <title>OCAS New Assignment</title>
+    <title>Enaté-hub Nouvelle Affectation    </title>
 
     <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@ if (strlen($_SESSION['ocasuid']==0)) {
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Dashboard</h1>
+                                <h1>Tableau de bord</h1>
                             </div>
                         </div>
                     </div>
@@ -47,8 +47,8 @@ if (strlen($_SESSION['ocasuid']==0)) {
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">New Assignment</li>
+                                    <li><a href="dashboard.php">Tableau de bord</a></li>
+                                    <li class="active">Nouvelle Affectation</li>
                                 </ol>
                             </div>
                         </div>
@@ -61,7 +61,7 @@ if (strlen($_SESSION['ocasuid']==0)) {
                         <div class="col-lg-12">
                             <div class="card alert">
                                 <div class="card-header">
-                                    <h4>New Assignment</h4>
+                                    <h4>Nouvelle Affectation</h4>
                                     <div class="card-header-right-icon">
                                         <ul>
                                             <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
@@ -74,14 +74,13 @@ if (strlen($_SESSION['ocasuid']==0)) {
                                         <table  class="table table-striped table-bordered">
                                             <thead>
                                                 <tr>
-                                                    <th>S.No</th>
-                                                    <th>Assignment Number</th>
-                                                    <th>Course Name</th>
-                                                    <th>Subject</th>
-                                                    <th>Assignment By</th>
-                                                    <th>Date of Submission</th>
-                                                   <th>Posting Date</th>
-                                                 
+                                                <th>N°</th>
+                                                    <th>Numéro d'Affectation</th>
+                                                    <th>Nom du Cours</th>
+                                                    <th>Matière</th>
+                                                    <th>Affectation par</th>
+                                                    <th>Date de Soumission</th>
+                                                    <th>Date de Publication</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -93,7 +92,6 @@ if (strlen($_SESSION['ocasuid']==0)) {
   } else {
     $page_no = 1;
         }
-        // Formula for pagination
         $no_of_records_per_page = 10;
         $offset = ($page_no-1) * $no_of_records_per_page;
         $previous_page = $page_no - 1;
@@ -105,7 +103,7 @@ $query1->execute();
 $results1=$query1->fetchAll(PDO::FETCH_OBJ);
 $total_rows=$query1->rowCount();
 $total_no_of_pages = ceil($total_rows / $no_of_records_per_page);
-  $second_last = $total_no_of_pages - 1; // total page minus 1
+  $second_last = $total_no_of_pages - 1; 
                                                 
 $sql="SELECT tblcourse.ID,tblcourse.BranchName,tblcourse.CourseName,tblsubject.SubjectFullname,tblsubject.SubjectCode,tblassigment.AssignmentNumber,tblassigment.AssignmenttTitle,tblassigment.SubmissionDate,tblassigment.CreationDate,tblteacher.ID,tblteacher.FirstName,tblteacher.LastName,tblassigment.ID as aid from tblassigment join tblcourse on tblcourse.ID=tblassigment.Cid join tblsubject on tblsubject.ID=tblassigment.Sid join tblteacher on tblteacher.ID=tblassigment.Tid where tblassigment.Cid=$cid order by tblassigment.CreationDate desc LIMIT $offset, $no_of_records_per_page";
 $query = $dbh -> prepare($sql);
@@ -132,9 +130,9 @@ $llsd = date("Y-m-d", strtotime($lsd));
 if(($cdate > $aadate) and ($cdate < $llsd ))
 {
 ?>
-                                            <td><a href="submit-assignment.php?sid=<?php echo htmlentities ($row->aid);?>">Submit</a></td>
+                                            <td><a href="submit-assignment.php?sid=<?php echo htmlentities ($row->aid);?>">Soumettre</a></td>
                                             <?php } else {?>
-                                             <td style="color: red"> <?php echo "Submission Date Over";?></td> <?php } ?>  
+                                             <td style="color: red"> <?php echo "Date de soumise dépassé";?></td> <?php } ?>  
                                                 </tr>
                                               <?php $cnt=$cnt+1;}} ?> 
                                             </tbody>
@@ -145,7 +143,7 @@ if(($cdate > $aadate) and ($cdate < $llsd ))
     <ul class="pagination">
 
 <li <?php if($page_no <= 1){ echo "class='disabled'"; } ?>>
-<a <?php if($page_no > 1){ echo "href='?page_no=$previous_page'"; } ?>>Previous</a>
+<a <?php if($page_no > 1){ echo "href='?page_no=$previous_page'"; } ?>>Précédent</a>
 </li>
 
 <?php

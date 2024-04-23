@@ -71,7 +71,7 @@ echo "<script>alert('Adresse mail o numéro existe déja. Essayer quelque chose'
                 <div class="col-lg-6 col-lg-offset-3">
                     <div class="login-content">
                         <div class="login-logo">
-                            <a href="#"><span>Creation d'un compte étudiant</span></a>
+                            <a href="#"><span>Création d'un compte étudiant</span></a>
                         </div>
                         <div class="login-form">
                             <h4>Inscription</h4>
