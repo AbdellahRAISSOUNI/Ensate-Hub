@@ -25,7 +25,7 @@ $extension = substr($file,strlen($file)-4,strlen($file));
 $allowed_extensions = array("docs",".doc",".pdf");
 if(!in_array($extension,$allowed_extensions))
 {
-echo "<script>alert('File has Invalid format. Only docs / doc/ pdf format allowed');</script>";
+echo "<script>alert('Le fichier a un format invalide. Seuls les formats docs / doc / pdf sont autorisés.');</script>";
 }
 else
 {
@@ -48,12 +48,12 @@ $query->bindParam(':file',$file,PDO::PARAM_STR);
 
    $LastInsertId=$dbh->lastInsertId();
    if ($LastInsertId>0) {
-    echo '<script>alert("New assignment has been added.")</script>';
+    echo '<script>alert("Une nouvelle mission a été ajoutée.")</script>';
 echo "<script>window.location.href ='add-assignment.php'</script>";
   }
   else
     {
-         echo '<script>alert("Something Went Wrong. Please try again")</script>';
+         echo '<script>alert("Quelque chose s est mal passé. Veuillez réessayer.")</script>';
     }
 
 }
@@ -64,7 +64,7 @@ echo "<script>window.location.href ='add-assignment.php'</script>";
 
 <head>
   
-    <title>OCAS : Add Assignment </title>
+    <title>Ensaté-HUB Proffesseur : Ajouter Affectations </title>
 
     <link href="../assets/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -88,7 +88,7 @@ echo "<script>window.location.href ='add-assignment.php'</script>";
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Add Assignment</h1>
+                                <h1>Ajouter Affectation</h1>
                             </div>
                         </div>
                     </div>
@@ -97,8 +97,8 @@ echo "<script>window.location.href ='add-assignment.php'</script>";
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Assignment Information</li>
+                                    <li><a href="dashboard.php">Tableau de board</a></li>
+                                    <li class="active">Informations d'Affectation</li>
                                 </ol>
                             </div>
                         </div>
@@ -111,16 +111,16 @@ echo "<script>window.location.href ='add-assignment.php'</script>";
                         <div class="card-body">
                             <form name="" method="post" action="" enctype="multipart/form-data">
                             <div class="card-header m-b-20">
-                                <h4>Assignment Information</h4>
+                                <h4>Information d'Affectation</h4>
                                 <div class="card-header-right-icon">
                                     <ul>
                                         <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
                                         <li class="card-option drop-menu"><i class="ti-settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="link"></i>
                                             <ul class="card-option-dropdown dropdown-menu">
-                                                <li><a href="#"><i class="ti-loop"></i> Update data</a></li>
-                                                <li><a href="#"><i class="ti-menu-alt"></i> Detail log</a></li>
-                                                <li><a href="#"><i class="ti-pulse"></i> Statistics</a></li>
-                                                <li><a href="#"><i class="ti-power-off"></i> Clear ist</a></li>
+                                                <li><a href="#"><i class="ti-loop"></i> Mise à jour des données</a></li>
+                                                <li><a href="#"><i class="ti-menu-alt"></i> Détails </a></li>
+                                                <li><a href="#"><i class="ti-pulse"></i> Statistiques</a></li>
+                                                <li><a href="#"><i class="ti-power-off"></i> Effacer </a></li>
                                             </ul>
                                         </li>
                                         <li class="doc-link"><a href="#"><i class="ti-link"></i></a></li>
@@ -132,7 +132,7 @@ echo "<script>window.location.href ='add-assignment.php'</script>";
                                 <div class="col-md-6">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Course</label>
+                                            <label>Cours</label>
                                             <?php
                                             $tid=$_SESSION['ocastid'];
 $sql="SELECT tblcourse.ID as cid,tblcourse.BranchName,tblcourse.CourseName,tblteacher.* from tblteacher join tblcourse on tblcourse.ID=tblteacher.CourseID where tblteacher.ID=$tid";
@@ -159,9 +159,9 @@ $crid=$row->cid;
                                <div class="col-md-6">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Subject</label>
+                                            <label>Module</label>
                                             <select class="form-control border-none input-flat bg-ash" name="sid" required="true">
-            <option value="">Select Subject</option>
+            <option value="">Selection Module</option>
             <?php
 $sql="SELECT tblsubject.CourseID,tblsubject.SubjectFullname,tblsubject.SubjectShortname,tblsubject.SubjectCode,tblsubject.ID as sid from tblsubject  where tblsubject.CourseID=$crid ";
 $query = $dbh -> prepare($sql);
@@ -184,7 +184,7 @@ foreach($results as $row)
                                 <div class="col-md-6">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Assignment Title</label>
+                                            <label>Titre d'Affectation</label>
                                             <input type="text" class="form-control border-none input-flat bg-ash" name="asstitle" required="true">
                                         </div>
                                     </div>
@@ -192,7 +192,7 @@ foreach($results as $row)
                                  <div class="col-md-6">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Assignment Description</label>
+                                            <label>Description d'Affectation</label>
                                             <textarea type="text" class="form-control border-none input-flat bg-ash" name="assdesc" required="true"></textarea>
                                         </div>
                                     </div>
@@ -204,7 +204,7 @@ foreach($results as $row)
                                 <div class="col-md-6">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Last Date of Submission</label>
+                                            <label>Dernière date de soumission</label>
                                             <input type="date" class="form-control border-none input-flat bg-ash" name="lsdate" required="true">
                                         </div>
                                     </div>
@@ -212,7 +212,7 @@ foreach($results as $row)
                                 <div class="col-md-6">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Assignment Marks</label>
+                                            <label>Notes</label>
                                             <input type="text" class="form-control border-none input-flat bg-ash" name="assmarks" required="true">
                                         </div>
                                     </div>
@@ -224,14 +224,14 @@ foreach($results as $row)
                                 <div class="col-md-12">
                                     <div class="basic-form">
                                         <div class="form-group image-type">
-                                            <label>Assignment File  <span>(if any)</span></label>
+                                            <label>Document  <span>(Si existe)</span></label>
                                             <input type="file" name="assfile" accept="image/*">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Save</button>
-                            <button class="btn btn-default btn-lg m-b-10 m-l-5 sbmt-btn" type="reset">Reset</button>
+                            <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Sauvgarder</button>
+                            <button class="btn btn-default btn-lg m-b-10 m-l-5 sbmt-btn" type="reset">Réinitialiser</button>
                         </form>
                         </div>
                     </div>

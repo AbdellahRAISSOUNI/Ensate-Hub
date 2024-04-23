@@ -13,7 +13,7 @@ $extension = substr($file,strlen($file)-4,strlen($file));
 $allowed_extensions = array("docs",".doc",".pdf");
 if(!in_array($extension,$allowed_extensions))
 {
-echo "<script>alert('File has Invalid format. Only docs / doc/ pdf format allowed');</script>";
+echo "<script>alert('Le fichier a un format invalide. Seuls les formats docs / doc / pdf sont autorisés.');</script>";
 }
 else
 {
@@ -25,7 +25,7 @@ $query=$dbh->prepare($sql);
 $query->bindParam(':file',$file,PDO::PARAM_STR);
 $query->bindParam(':eid',$eid,PDO::PARAM_STR);
  $query->execute();
-    echo '<script>alert("Assignment detail has been updated.")</script>';
+    echo '<script>alert("Les détails de l`assignation ont été mis à jour.")</script>';
 }}
 ?>
 <!DOCTYPE html>
@@ -33,7 +33,7 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
 
 <head>
   
-    <title>OCAS : Update Assignment </title>
+    <title>Ensaté-HUB Professeur : Mise à jour Affectation </title>
 
     <link href="../assets/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -57,7 +57,7 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Update Assignment</h1>
+                                <h1>Mise à jour d'Affectation</h1>
                             </div>
                         </div>
                     </div>
@@ -66,8 +66,8 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Update Assignment Information</li>
+                                    <li><a href="dashboard.php">Tableau de board</a></li>
+                                    <li class="active">Mise à jour Information d'Affectation</li>
                                 </ol>
                             </div>
                         </div>
@@ -98,10 +98,10 @@ foreach($results as $row1)
                                         <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
                                         <li class="card-option drop-menu"><i class="ti-settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="link"></i>
                                             <ul class="card-option-dropdown dropdown-menu">
-                                                <li><a href="#"><i class="ti-loop"></i> Update data</a></li>
-                                                <li><a href="#"><i class="ti-menu-alt"></i> Detail log</a></li>
-                                                <li><a href="#"><i class="ti-pulse"></i> Statistics</a></li>
-                                                <li><a href="#"><i class="ti-power-off"></i> Clear ist</a></li>
+                                                <li><a href="#"><i class="ti-loop"></i> Mise à jour donnée </a></li>
+                                                <li><a href="#"><i class="ti-menu-alt"></i> Détails</a></li>
+                                                <li><a href="#"><i class="ti-pulse"></i> Statistiques</a></li>
+                                                <li><a href="#"><i class="ti-power-off"></i> Effacer</a></li>
                                             </ul>
                                         </li>
                                         <li class="doc-link"><a href="#"><i class="ti-link"></i></a></li>
@@ -114,7 +114,7 @@ foreach($results as $row1)
                                 <div class="col-md-6">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Assignment Title</label>
+                                            <label>Titre d'Affectation</label>
                                             <input type="text" class="form-control border-none input-flat bg-ash" name="asstitle" required="true" value="<?php  echo htmlentities($row1->AssignmenttTitle);?>">
                                         </div>
                                     </div>
@@ -124,21 +124,21 @@ foreach($results as $row1)
                                 <div class="col-md-12">
                                     <div class="basic-form">
                                         <div class="form-group image-type">
-                                            <label>Assignment File if any</label>
+                                            <label>Fichier d'Affectation si existe</label>
                                             <a href="assignmentfile/<?php echo $row1->AssignmentFile;?>" width="100" height="100" target="_blank"> <strong style="color: red">View</strong></a>
 
                                         </div>
                                     </div>
                                    <div class="basic-form">
                                         <div class="form-group image-type">
-                                            <label>Assignment File if any <span>(150 X 150)</span></label>
+                                            <label>Fichier d'Affectation si existe <span>(150 X 150)</span></label>
                                             <input type="file" name="assfile" accept="image/*">
                                         </div>
                                     </div>
                                 </div>
                             </div><?php $cnt=$cnt+1;}} ?>
-                            <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Update</button>
-                            <button class="btn btn-default btn-lg m-b-10 m-l-5 sbmt-btn" type="reset">Reset</button>
+                            <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Mise à jour </button>
+                            <button class="btn btn-default btn-lg m-b-10 m-l-5 sbmt-btn" type="reset">Réinitialiser</button>
                         </form>
                         </div>
                     </div>
