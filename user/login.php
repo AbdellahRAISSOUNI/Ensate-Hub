@@ -72,7 +72,7 @@ echo "<script>alert('Détailles invalides');</script>";
 									</label>
 
                                 </div>
-                                <button type="submit" name="login" class="btn btn-primary btn-flat m-b-30 m-t-30">Connecter vous</button>
+                                <button type="submit" name="login" class="btn btn-primary btn-flat m-b-30 m-t-30">onnecter vous</button>
 
                                 <div class="register-link m-t-15 text-center">
                                     <p>Vouns n'avez pas de compte ? <a href="signup.php"> Créer un compte</a></p>
