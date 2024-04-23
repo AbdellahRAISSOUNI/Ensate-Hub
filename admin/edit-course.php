@@ -53,7 +53,7 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Course</h1>
+                                <h1>Cours</h1>
                             </div>
                         </div>
                     </div>
@@ -62,8 +62,8 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Course</li>
+                                    <li><a href="dashboard.php">Tableau de bord</a></li>
+                                    <li class="active">Cours</li>
                                 </ol>
                             </div>
                         </div>
@@ -76,7 +76,7 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
                         <div class="col-md-12">
                             <div class="card alert">
                                 <div class="card-header pr">
-                                    <h4>Update Course</h4>
+                                    <h4>Mettre à Jour le Cours</h4>
                                     <form method="post" name="hjhgh">
                                         <?php
                    $eid=$_GET['editid'];
@@ -92,20 +92,20 @@ foreach($results as $row)
 {               ?>
                                         <div class="basic-form m-t-20">
                                             <div class="form-group">
-                                                <label>Course Name</label>
+                                                <label>Nom du Cours</label>
         <input type="text" class="form-control border-none input-flat bg-ash" value="<?php  echo htmlentities($row->CourseName);?>" name="coursename" required="true">
                                             </div>
                                         </div>
                                         <div class="basic-form m-t-20">
                                             <div class="form-group">
-                                                <label>Branch Name</label>
+                                                <label>Nom de la Filière</label>
                                                 <input type="text" class="form-control border-none input-flat bg-ash" name="branchname" required="true" value="<?php  echo htmlentities($row->BranchName);?>">
                                             </div>
                                         </div>
                                    
                                 </div><?php $cnt=$cnt+1;}} ?> 
-                                <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Update</button>
-                                <button class="btn btn-default btn-lg m-b-10 m-l-5 sbmt-btn" type="reset">Reset</button> 
+                                <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Mettre à Jour</button>
+                                <button class="btn btn-default btn-lg m-b-10 m-l-5 sbmt-btn" type="reset">Réinitialiser</button> 
                             </form>
                             </div>
                         </div>

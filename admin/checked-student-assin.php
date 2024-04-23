@@ -14,7 +14,7 @@ if (strlen($_SESSION['ocasaid']==0)) {
 
 <head>
    
-    <title>OCAS Checked Assignment</title>
+    <title>Devoirs Vérifiés par Ensaté-Hub</title>
 
     <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@ if (strlen($_SESSION['ocasaid']==0)) {
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Dashboard</h1>
+                                <h1>Tableau de bord</h1>
                             </div>
                         </div>
                     </div>
@@ -47,8 +47,8 @@ if (strlen($_SESSION['ocasaid']==0)) {
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Checked Assignment</li>
+                                    <li><a href="dashboard.php">Tableau de bord</a></li>
+                                    <li class="active">Devoirs Vérifiés</li>
                                 </ol>
                             </div>
                         </div>
@@ -61,7 +61,7 @@ if (strlen($_SESSION['ocasaid']==0)) {
                         <div class="col-lg-12">
                             <div class="card alert">
                                 <div class="card-header">
-                                    <h4>Checked Assignment</h4>
+                                    <h4>Devoirs Vérifiés</h4>
                                     <div class="card-header-right-icon">
                                         <ul>
                                             <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
@@ -76,14 +76,14 @@ if (strlen($_SESSION['ocasaid']==0)) {
                                         <table  class="table table-striped table-bordered">
                                             <thead>
                                                 <tr>
-                                                    <th>S.No</th>
-                                                    <th>Assignment Number</th>
-                                                    <th>Course Name</th>
-                                                    <th>Teacher Name</th>
-                                                    <th>Subject</th>
-                                                    <th>Submitted By</th>
-                                                    <th>Submitted Date</th>
-                                                    <th>Action</th>
+                                                <th>N° de série</th>
+                                                <th>Numéro de Devoir</th>
+                                                <th>Nom du Cours</th>
+                                                <th>Nom de l'Enseignant</th>
+                                                <th>Matière</th>
+                                                <th>Envoyé par</th>
+                                                <th>Date d'Envoi</th>
+                                                <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -129,7 +129,7 @@ foreach($results as $row)
                                                     <td><?php  echo htmlentities($row->FullName);?>(<?php  echo htmlentities($row->RollNumber);?>)</td>
                                                     <td><?php  echo htmlentities($row->SubmitDate);?></td>
                                                   
-                                                    <td><a href="submit-assignment.php?assinid=<?php echo htmlentities ($row->assinid);?> && uid=<?php echo htmlentities ($row->uid);?> ">View</a></td>
+                                                    <td><a href="submit-assignment.php?assinid=<?php echo htmlentities ($row->assinid);?> && uid=<?php echo htmlentities ($row->uid);?> ">Voir</a></td>
                                                 </tr>
                                               <?php $cnt=$cnt+1;}} ?> 
                                             </tbody>
@@ -140,7 +140,7 @@ foreach($results as $row)
     <ul class="pagination">
 
 <li <?php if($page_no <= 1){ echo "class='disabled'"; } ?>>
-<a <?php if($page_no > 1){ echo "href='?page_no=$previous_page'"; } ?>>Previous</a>
+<a <?php if($page_no > 1){ echo "href='?page_no=$previous_page'"; } ?>>Précédent</a>
 </li>
 
 <?php
@@ -201,7 +201,7 @@ echo "<li><a href='?page_no=$counter'>$counter</a></li>";
 ?>
 
 <li <?php if($page_no >= $total_no_of_pages){ echo "class='disabled'"; } ?>>
-<a <?php if($page_no < $total_no_of_pages) { echo "href='?page_no=$next_page'"; } ?>>Next</a>
+<a <?php if($page_no < $total_no_of_pages) { echo "href='?page_no=$next_page'"; } ?>>Suivant</a>
 </li>
 <?php if($page_no < $total_no_of_pages){
 echo "<li><a href='?page_no=$total_no_of_pages'>Last &rsaquo;&rsaquo;</a></li>";
@@ -235,7 +235,7 @@ echo "<li><a href='?page_no=$total_no_of_pages'>Last &rsaquo;&rsaquo;</a></li>";
         <button type="button" class="close">×</button>
         <form>
             <input type="search" value="" placeholder="type keyword(s) here" />
-            <button type="submit" class="btn btn-primary">Search</button>
+            <button type="submit" class="btn btn-primary">Rechercher</button>
         </form>
     </div>
     <!-- jquery vendor -->

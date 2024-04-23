@@ -54,7 +54,7 @@ $query->execute();
 
 <head>
    
-    <title>OCAS : Subject Create</title>
+    <title>Ensaté-Hub : Créer une Matière</title>
 
        <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -76,7 +76,7 @@ $query->execute();
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Subject</h1>
+                                <h1>Matière</h1>
                             </div>
                         </div>
                     </div>
@@ -85,8 +85,8 @@ $query->execute();
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Subject</li>
+                                    <li><a href="dashboard.php">Tableau de bord</a></li>
+                                    <li class="active">Matière</li>
                                 </ol>
                             </div>
                         </div>
@@ -99,13 +99,13 @@ $query->execute();
                         <div class="col-md-4">
                             <div class="card alert">
                                 <div class="card-header pr">
-                                    <h4>Create A New Subject</h4>
+                                    <h4>Créer une Nouvelle Matière</h4>
                                     <form method="post" name="hjhgh">
                                         <div class="basic-form m-t-20">
                                             <div class="form-group">
-                                                <label>Course Name</label>
+                                                <label>Nom du Cours</label>
         <select class="form-control border-none input-flat bg-ash" name="cid" required="true">
-            <option value="">Select Course</option>
+            <option value="">Sélectionner un Cours</option>
             <?php
 $sql="SELECT * from tblcourse";
 $query = $dbh -> prepare($sql);
@@ -123,42 +123,42 @@ foreach($results as $row)
                                         </div>
                                         <div class="basic-form m-t-20">
                                             <div class="form-group">
-                                                <label>Subject Full Name</label>
+                                                <label>Nom Complet de la Matière</label>
                                                 <input type="text" class="form-control border-none input-flat bg-ash" placeholder="Subject Full Name" name="sfname" required="true">
                                             </div>
                                         </div>
                                     <div class="basic-form m-t-20">
                                             <div class="form-group">
-                                                <label>Subject Short Name</label>
+                                                <label>Nom Court de la Matière</label>
                                                 <input type="text" class="form-control border-none input-flat bg-ash" placeholder="Subject Short Name" name="ssname" required="true">
                                             </div>
                                         </div>
                                         <div class="basic-form m-t-20">
                                             <div class="form-group">
-                                                <label>Subject Code</label>
+                                                <label>Code de la Matière</label>
                                                 <input type="text" class="form-control border-none input-flat bg-ash" placeholder="Subject Code" name="subcode" required="true">
                                             </div>
                                         </div>
                                 </div>
-                                <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Save</button>
-                                <button class="btn btn-default btn-lg m-b-10 m-l-5 sbmt-btn" type="reset">Reset</button> 
+                                <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Enregistrer</button>
+                                <button class="btn btn-default btn-lg m-b-10 m-l-5 sbmt-btn" type="reset">Réinitialiser</button> 
                             </form>
                             </div>
                         </div>
                         <div class="col-md-8">
                             <div class="card alert">
                                 <div class="card-header pr">
-                                    <h4>ALL Subject</h4>
+                                    <h4>Toutes les Matières</h4>
                                     
                                     <div class="card-header-right-icon">
                                         <ul>
                                             <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
                                             <li class="card-option drop-menu"><i class="ti-settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="link"></i>
                                                 <ul class="card-option-dropdown dropdown-menu">
-                                                    <li><a href="#"><i class="ti-loop"></i> Update data</a></li>
-                                                    <li><a href="#"><i class="ti-menu-alt"></i> Detail log</a></li>
-                                                    <li><a href="#"><i class="ti-pulse"></i> Statistics</a></li>
-                                                    <li><a href="#"><i class="ti-power-off"></i> Clear ist</a></li>
+                                                <li><a href="#"><i class="ti-loop"></i> Mettre à jour les données</a></li>
+                                            <li><a href="#"><i class="ti-menu-alt"></i> Journal des détails</a></li>
+                                            <li><a href="#"><i class="ti-pulse"></i> Statistiques</a></li>
+                                            <li><a href="#"><i class="ti-power-off"></i> Effacer la liste</a></li>
                                                 </ul>
                                             </li>
                                             <li class="doc-link"><a href="#"><i class="ti-link"></i></a></li>
@@ -170,12 +170,12 @@ foreach($results as $row)
                                         <table class="table student-data-table m-t-20">
                                             <thead>
                                                 <tr>
-                                                    <th>S.No</th>
-                                                    <th>Course Name</th>
-                                                    <th>Subject Full Name</th>
-                                                    <th>Subject Short Name</th>
-                                                    <th>Subject Code</th>
-                                                    <th>Action</th>
+                                                <th>N° de série</th>
+                                                <th>Nom du Cours</th>
+                                                <th>Nom Complet de la Matière</th>
+                                                <th>Nom Court de la Matière</th>
+                                                <th>Code de la Matière</th>
+                                                <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

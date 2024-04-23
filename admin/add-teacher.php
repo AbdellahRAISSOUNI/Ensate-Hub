@@ -84,7 +84,7 @@ echo "<script>alert('Email-id,Employee Id or Mobile Number already exist. Please
 
 <head>
   
-    <title>OCAS : Add Teacher Information </title>
+    <title>Ensaté-Hub : Ajouter les informations de l'enseignant </title>
 
     <link href="../assets/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -108,7 +108,7 @@ echo "<script>alert('Email-id,Employee Id or Mobile Number already exist. Please
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Add Teacher</h1>
+                                <h1>Ajouter Enseignant</h1>
                             </div>
                         </div>
                     </div>
@@ -117,8 +117,8 @@ echo "<script>alert('Email-id,Employee Id or Mobile Number already exist. Please
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Teacher Information</li>
+                                    <li><a href="dashboard.php">Tableau de Bord</a></li>
+                                    <li class="active">Informations sur l'Enseignant</li>
                                 </ol>
                             </div>
                         </div>
@@ -131,16 +131,16 @@ echo "<script>alert('Email-id,Employee Id or Mobile Number already exist. Please
                         <div class="card-body">
                             <form name="" method="post" action="" enctype="multipart/form-data">
                             <div class="card-header m-b-20">
-                                <h4>Teacher Information</h4>
+                                <h4>Informations sur l'Enseignant</h4>
                                 <div class="card-header-right-icon">
                                     <ul>
                                         <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
                                         <li class="card-option drop-menu"><i class="ti-settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="link"></i>
                                             <ul class="card-option-dropdown dropdown-menu">
-                                                <li><a href="#"><i class="ti-loop"></i> Update data</a></li>
-                                                <li><a href="#"><i class="ti-menu-alt"></i> Detail log</a></li>
-                                                <li><a href="#"><i class="ti-pulse"></i> Statistics</a></li>
-                                                <li><a href="#"><i class="ti-power-off"></i> Clear ist</a></li>
+                                                <li><a href="#"><i class="ti-loop"></i> Mettre à jour les données</a></li>
+                                                <li><a href="#"><i class="ti-menu-alt"></i> Journal des détails</a></li>
+                                                <li><a href="#"><i class="ti-pulse"></i> Statistiques</a></li>
+                                                <li><a href="#"><i class="ti-power-off"></i> Effacer la liste</a></li>
                                             </ul>
                                         </li>
                                         <li class="doc-link"><a href="#"><i class="ti-link"></i></a></li>
@@ -152,7 +152,7 @@ echo "<script>alert('Email-id,Employee Id or Mobile Number already exist. Please
                                 <div class="col-md-3">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>First Name</label>
+                                            <label>Prénom</label>
                                             <input type="text" class="form-control border-none input-flat bg-ash" name="fname" required="true">
                                         </div>
                                     </div>
@@ -160,7 +160,7 @@ echo "<script>alert('Email-id,Employee Id or Mobile Number already exist. Please
                                 <div class="col-md-3">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Last Name</label>
+                                            <label>Nom</label>
                                             <input type="text" class="form-control border-none input-flat bg-ash" name="lname" required="true">
                                         </div>
                                     </div>
@@ -168,7 +168,7 @@ echo "<script>alert('Email-id,Employee Id or Mobile Number already exist. Please
                                 <div class="col-md-3">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Mobile Number</label>
+                                            <label>Numéro de téléphone portable</label>
                                             <input type="text" class="form-control border-none input-flat bg-ash" name="mobnum" maxlength="10" pattern="[0-9]+" required="true">
                                         </div>
                                     </div>
@@ -186,11 +186,11 @@ echo "<script>alert('Email-id,Employee Id or Mobile Number already exist. Please
                                 <div class="col-md-3">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Gender*</label>
+                                            <label>Genre</label>
                                             <select class="form-control bg-ash border-none" name="gender" required="true">
-												<option>Please Slect Gender</option>
-												<option value="Male">Male</option>
-												<option value="Female">Female</option>
+												<option>Veuillez sélectionner le genre</option>
+												<option value="Male">Homme</option>
+												<option value="Female">Femme</option>
 											</select>
                                         </div>
                                     </div>
@@ -198,7 +198,7 @@ echo "<script>alert('Email-id,Employee Id or Mobile Number already exist. Please
                                 <div class="col-md-3">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Date of Birth</label>
+                                            <label>Date de Naissance</label>
                                             <input type="date" class="form-control calendar bg-ash"  name="dob" required="true">
                                             <span class="ti-calendar form-control-feedback booking-system-feedback m-t-30"></span>
                                         </div>
@@ -207,7 +207,7 @@ echo "<script>alert('Email-id,Employee Id or Mobile Number already exist. Please
                                 <div class="col-md-3">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Emp ID</label>
+                                            <label>ID de l'Employé</label>
                                             <input type="text" class="form-control border-none input-flat bg-ash" name="empid" required="true">
                                         </div>
                                     </div>
@@ -217,7 +217,7 @@ echo "<script>alert('Email-id,Employee Id or Mobile Number already exist. Please
                                         <div class="form-group">
                                             <label>Course</label>
                                             <select class="form-control border-none input-flat bg-ash" name="cid" required="true">
-            <option value="">Select Course</option>
+            <option value="">Sélectionner le Cours</option>
             <?php
 $sql="SELECT * from tblcourse";
 $query = $dbh -> prepare($sql);
@@ -247,7 +247,7 @@ foreach($results as $row)
                                 <div class="col-md-3">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Address</label>
+                                            <label>Adresse</label>
                                             <input type="text"  class="form-control border-none input-flat bg-ash" rows="4" cols="4" required="true" name="address">
                                         </div>
                                     </div>
@@ -255,7 +255,7 @@ foreach($results as $row)
                                 <div class="col-md-3">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Password</label>
+                                            <label>Mot de passe</label>
                                             <input type="password" class="form-control border-none input-flat bg-ash" name="password" required="true">
                                         </div>
                                     </div>
@@ -266,14 +266,14 @@ foreach($results as $row)
                                 <div class="col-md-12">
                                     <div class="basic-form">
                                         <div class="form-group image-type">
-                                            <label>Upload Teacher Photo <span>(150 X 150)</span></label>
+                                            <label>Télécharger la photo de l'enseignant <span>(150 X 150)</span></label>
                                             <input type="file" name="propic" accept="image/*">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Save</button>
-                            <button class="btn btn-default btn-lg m-b-10 m-l-5 sbmt-btn" type="reset">Reset</button>
+                            <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Enregistrer</button>
+                            <button class="btn btn-default btn-lg m-b-10 m-l-5 sbmt-btn" type="reset">Réinitialiser</button>
                         </form>
                         </div>
                     </div>

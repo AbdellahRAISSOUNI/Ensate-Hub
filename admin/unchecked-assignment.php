@@ -12,7 +12,7 @@ if (strlen($_SESSION['ocasaid']==0)) {
 
 <head>
   
-    <title>OCAS : Subject </title>
+    <title>Ensaté-Hub : Matière </title>
 
     <link href="../assets/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -36,7 +36,7 @@ if (strlen($_SESSION['ocasaid']==0)) {
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Subject</h1>
+                                <h1>Matière</h1>
                             </div>
                         </div>
                     </div>
@@ -45,8 +45,8 @@ if (strlen($_SESSION['ocasaid']==0)) {
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Subject Information</li>
+                                    <li><a href="dashboard.php">Tableau de bord</a></li>
+                                    <li class="active">Informations sur la matière</li>
                                 </ol>
                             </div>
                         </div>
@@ -59,16 +59,16 @@ if (strlen($_SESSION['ocasaid']==0)) {
                         <div class="card-body">
                             <form name="" method="post" action="unchecked-student-assin.php" enctype="multipart/form-data">
                             <div class="card-header m-b-20">
-                                <h4>Subject</h4>
+                                <h4>Matière</h4>
                                 <div class="card-header-right-icon">
                                     <ul>
                                         <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
                                         <li class="card-option drop-menu"><i class="ti-settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="link"></i>
                                             <ul class="card-option-dropdown dropdown-menu">
-                                                <li><a href="#"><i class="ti-loop"></i> Update data</a></li>
-                                                <li><a href="#"><i class="ti-menu-alt"></i> Detail log</a></li>
-                                                <li><a href="#"><i class="ti-pulse"></i> Statistics</a></li>
-                                                <li><a href="#"><i class="ti-power-off"></i> Clear ist</a></li>
+                                            <li><a href="#"><i class="ti-loop"></i> Mettre à jour les données</a></li>
+                                            <li><a href="#"><i class="ti-menu-alt"></i> Journal des détails</a></li>
+                                            <li><a href="#"><i class="ti-pulse"></i> Statistiques</a></li>
+                                            <li><a href="#"><i class="ti-power-off"></i> Effacer la liste</a></li>
                                             </ul>
                                         </li>
                                         <li class="doc-link"><a href="#"><i class="ti-link"></i></a></li>
@@ -81,9 +81,9 @@ if (strlen($_SESSION['ocasaid']==0)) {
                                 <div class="col-md-3">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Subject</label>
+                                            <label>Matière</label>
                                             <select class="form-control border-none input-flat bg-ash" name="sid" required="true">
-            <option value="">Select Subject</option>
+            <option value="">Sélectionner le sujet</option>
             <?php
     
 $sql="SELECT tblsubject.SubjectFullname,tblsubject.ID as subid,tblsubject.SubjectCode from tblsubject 
@@ -105,7 +105,7 @@ foreach($results as $row)
                                 </div>
                             </div>
                             
-                            <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Submit</button>
+                            <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Soumettre</button>
                           
                         </form>
                         </div>

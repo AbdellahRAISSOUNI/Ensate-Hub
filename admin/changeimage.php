@@ -37,7 +37,7 @@ echo '<script>alert("Profile pic has been updated")</script>';
 
 <head>
   
-    <title>OCAS : Update Teacher Profile Pic </title>
+    <title>Ensaté-Hub : Mettre à Jour la Photo de Profil de l'Enseignant </title>
 
     <link href="../assets/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -61,7 +61,7 @@ echo '<script>alert("Profile pic has been updated")</script>';
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Update Teacher</h1>
+                                <h1>Mettre à Jour Enseignant</h1>
                             </div>
                         </div>
                     </div>
@@ -70,8 +70,8 @@ echo '<script>alert("Profile pic has been updated")</script>';
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Teacher Information</li>
+                                    <li><a href="dashboard.php">Tableau de Bord</a></li>
+                                    <li class="active">Informations sur l'Enseignant</li>
                                 </ol>
                             </div>
                         </div>
@@ -96,16 +96,16 @@ if($query->rowCount() > 0)
 foreach($results as $row)
 {               ?>  
                             <div class="card-header m-b-20">
-                                <h4>Profile Pic</h4>
+                                <h4>Photo de Profil</h4>
                                 <div class="card-header-right-icon">
                                     <ul>
                                         <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
                                         <li class="card-option drop-menu"><i class="ti-settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="link"></i>
                                             <ul class="card-option-dropdown dropdown-menu">
-                                                <li><a href="#"><i class="ti-loop"></i> Update data</a></li>
-                                                <li><a href="#"><i class="ti-menu-alt"></i> Detail log</a></li>
-                                                <li><a href="#"><i class="ti-pulse"></i> Statistics</a></li>
-                                                <li><a href="#"><i class="ti-power-off"></i> Clear ist</a></li>
+                                                <li><a href="#"><i class="ti-loop"></i> Mettre à jour les données</a></li>
+                                                <li><a href="#"><i class="ti-menu-alt"></i> Journal des détails</a></li>
+                                                <li><a href="#"><i class="ti-pulse"></i> Statistiques</a></li>
+                                                <li><a href="#"><i class="ti-power-off"></i> Effacer la liste</a></li>
                                             </ul>
                                         </li>
                                         <li class="doc-link"><a href="#"><i class="ti-link"></i></a></li>
@@ -123,7 +123,7 @@ foreach($results as $row)
                                 <div class="col-md-6">
                                     <div class="basic-form">
                                         <div class="form-group image-type">
-                                            <label>Old Teacher Photo</label>
+                                            <label>Ancienne Photo de l'Enseignant</label>
                                             <img src="images/<?php echo $row->ProfilePic;?>" width="100" height="100" value="<?php  echo $row->ProfilePic;?>">
                                         </div>
                                     </div>
@@ -131,14 +131,14 @@ foreach($results as $row)
                                  <div class="col-md-6">
                                     <div class="basic-form">
                                         <div class="form-group image-type">
-                                            <label>New Teacher Photo</label>
+                                            <label>Nouvelle Photo de l'Enseignant</label>
                                             <input type="file" name="propic" accept="image/*">
                                         </div>
                                     </div>
                                 </div>
                             </div><?php $cnt=$cnt+1;}} ?>
-                            <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Update</button>
-                            <button class="btn btn-default btn-lg m-b-10 m-l-5 sbmt-btn" type="reset">Reset</button>
+                            <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Mettre à Jour</button>
+                            <button class="btn btn-default btn-lg m-b-10 m-l-5 sbmt-btn" type="reset">Réinitialiser</button>
                         </form>
                         </div>
                     </div>

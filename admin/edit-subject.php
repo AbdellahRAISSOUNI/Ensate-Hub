@@ -34,7 +34,7 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
 
 <head>
    
-    <title>OCAS : Course Update</title>
+    <title>Ensaté-Hub : Mettre à Jour le Cours</title>
 
        <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -56,7 +56,7 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Subject</h1>
+                                <h1>Matière</h1>
                             </div>
                         </div>
                     </div>
@@ -65,8 +65,8 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Subject</li>
+                                    <li><a href="dashboard.php">Tableau de bord</a></li>
+                                    <li class="active">Matière</li>
                                 </ol>
                             </div>
                         </div>
@@ -79,7 +79,7 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
                         <div class="col-md-12">
                             <div class="card alert">
                                 <div class="card-header pr">
-                                    <h4>Update Subject</h4>
+                                    <h4>Mettre à Jour la Matière</h4>
                                     <form method="post" name="hjhgh">
                                         <?php
                    $eid=$_GET['editid'];
@@ -96,7 +96,7 @@ foreach($results as $row)
 {               ?>
                                         <div class="basic-form m-t-20">
                                             <div class="form-group">
-                                                <label>Course Name</label>
+                                                <label>Nom du Cours</label>
         <select class="form-control border-none input-flat bg-ash" name="cid" >
             <option value="<?php  echo htmlentities($row->cid);?>"><?php  echo htmlentities($row->CourseName);?>(<?php  echo htmlentities($row->BranchName);?>)</option>
             <?php
@@ -116,25 +116,25 @@ foreach($results as $row1)
                                         </div>
                                          <div class="basic-form m-t-20">
                                             <div class="form-group">
-                                                <label>Subject Full Name</label>
+                                                <label>Nom Complet de la Matière</label>
                                                 <input type="text" class="form-control border-none input-flat bg-ash" name="sfname" required="true" value="<?php  echo htmlentities($row->SubjectFullname);?>">
                                             </div>
                                         </div>
                                         <div class="basic-form m-t-20">
                                             <div class="form-group">
-                                                <label>Subject Short Name</label>
+                                                <label>Nom Abrégé de la Matière</label>
                                                 <input type="text" class="form-control border-none input-flat bg-ash" name="ssname" required="true" value="<?php  echo htmlentities($row->SubjectShortname);?>">
                                             </div>
                                         </div>
                                    <div class="basic-form m-t-20">
                                             <div class="form-group">
-                                                <label>Subject Code</label>
+                                                <label>Code de la Matière</label>
                                                 <input type="text" class="form-control border-none input-flat bg-ash" name="subcode" required="true" value="<?php  echo htmlentities($row->SubjectCode);?>">
                                             </div>
                                         </div>
                                 </div><?php $cnt=$cnt+1;}} ?> 
-                                <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Update</button>
-                                <button class="btn btn-default btn-lg m-b-10 m-l-5 sbmt-btn" type="reset">Reset</button> 
+                                <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Mettre à Jour</button>
+                                <button class="btn btn-default btn-lg m-b-10 m-l-5 sbmt-btn" type="reset">Réinitialiser</button> 
                             </form>
                             </div>
                         </div>

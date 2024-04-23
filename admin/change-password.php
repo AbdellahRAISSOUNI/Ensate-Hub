@@ -39,7 +39,7 @@ echo '<script>alert("Your current password is wrong")</script>';
 
 <head>
   
-    <title>OCAS Admin : Change Password </title>
+    <title>Ensaté-Hub Admin : Changer le Mot de Passe </title>
     <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">
@@ -74,7 +74,7 @@ return true;
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Change Password</h1>
+                                <h1>Changer le Mot de Passe</h1>
                             </div>
                         </div>
                     </div>
@@ -83,8 +83,8 @@ return true;
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Change Password</li>
+                                    <li><a href="dashboard.php">Tableau de Bord</a></li>
+                                    <li class="active">Changer le Mot de Passe</li>
                                 </ol>
                             </div>
                         </div>
@@ -98,7 +98,7 @@ return true;
                         <div class="col-lg-12">
                             <div class="card alert">
                                 <div class="card-header">
-                                    <h4>Change Password</h4>
+                                    <h4>Changer le Mot de Passe</h4>
                                     <div class="card-header-right-icon">
                                         <ul>
                                             <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
@@ -109,12 +109,12 @@ return true;
                                 <div class="card-body">
                                     <div class="basic-form">
                     <form method="post"  name="changepassword" onsubmit="return checkpass();" name="changepassword">
-                                     <div class="form-group"> <label for="exampleInputEmail1">Current Password</label> <input type="password" class="form-control" name="currentpassword" id="currentpassword"required='true'> </div> 
-                                     <div class="form-group"> <label for="exampleInputEmail1">New Password</label> <input type="password" class="form-control" name="newpassword"  class="form-control" required="true"> </div>
-                                     <div class="form-group"> <label for="exampleInputEmail1">Confirm Password</label> <input type="password" class="form-control"  name="confirmpassword" id="confirmpassword"  required='true'> </div>
+                                     <div class="form-group"> <label for="exampleInputEmail1">Mot de passe actuel</label> <input type="password" class="form-control" name="currentpassword" id="currentpassword"required='true'> </div> 
+                                     <div class="form-group"> <label for="exampleInputEmail1">Nouveau Mot de Passe</label> <input type="password" class="form-control" name="newpassword"  class="form-control" required="true"> </div>
+                                     <div class="form-group"> <label for="exampleInputEmail1">Confirmer le Mot de Passe</label> <input type="password" class="form-control"  name="confirmpassword" id="confirmpassword"  required='true'> </div>
                                      
                                        
-                         <button type="submit" class="btn btn-default" name="submit">Change</button> </form>
+                         <button type="submit" class="btn btn-default" name="submit">Modifier</button> </form>
                                     </div>
                                 </div>
                             </div>
