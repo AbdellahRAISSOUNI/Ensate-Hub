@@ -35,7 +35,7 @@ echo "<script>alert('Email id or Mobile no is invalid');</script>";
 
 <head>
     
-    <title>OCAS Teacher : Forgot Password</title>
+    <title>Ensaté-HUB Proffesseur : Mot de passe oublié</title>
     
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">
@@ -64,35 +64,35 @@ return true;
                 <div class="col-lg-6 col-lg-offset-3">
                     <div class="login-content">
                         <div class="login-logo">
-                            <a href="dashboard.php"><span>OCAS Teacher</span></a>
+                            <a href="dashboard.php"><span>Ensaté-HUB Proffesseur</span></a>
                         </div>
                         <div class="login-form">
-                            <h4>Forgot Password</h4>
+                            <h4>Mot de passe oublié</h4>
                             <form method="post" name="chngpwd" onSubmit="return valid();">
                                 <div class="form-group">
-                                    <label>Email Address</label>
-                                    <input type="email" class="form-control" placeholder="Email Address" required="true" name="email">
+                                    <label>Addresse Email </label>
+                                    <input type="email" class="form-control" placeholder="Addresse Email" required="true" name="email">
                                 </div>
                                 <div class="form-group">
-                                    <label>Mobile Number</label>
-                                    <input type="text" class="form-control" placeholder="Mobile Number" required="true" name="mobile" maxlength="10" pattern="[0-9]+">
+                                    <label>Nombre de Télèphone</label>
+                                    <input type="text" class="form-control" placeholder="Nombre de Télèphone" required="true" name="mobile" maxlength="10" pattern="[0-9]+">
                                 </div>
                                 <div class="form-group">
-                                    <label>New Password</label>
-                                    <input type="password" name="newpassword" class="form-control" placeholder="New Password" required="true">
+                                    <label>Nouveau Mot de passe</label>
+                                    <input type="password" name="newpassword" class="form-control" placeholder="Nouveau Mot de passe" required="true">
                                 </div>
                                 <div class="form-group">
-                                    <label>Confirm Password</label>
-                                    <input type="password" name="confirmpassword" class="form-control" placeholder="Confirm Password" required="true">
+                                    <label>Confirmer Mot de passe</label>
+                                    <input type="password" name="confirmpassword" class="form-control" placeholder="Confirmer Mot de passe required="true">
                                 </div>
                                 <div class="checkbox">
                                     
                                     <label class="pull-right">
-										<a href="login.php">signin</a>
+										<a href="login.php">se conneter</a>
 									</label>
 
                                 </div>
-                                <button type="submit" name="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Reset</button>
+                                <button type="submit" name="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Réinitialiser</button>
                             </form>
                         </div>
                     </div>

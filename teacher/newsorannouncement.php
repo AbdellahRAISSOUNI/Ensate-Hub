@@ -52,7 +52,7 @@ $query->execute();
 
 <head>
    
-    <title>OCAS : News or Announcement</title>
+    <title>Ensaté-HUB : Actualités ou Annonces</title>
 
        <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -74,7 +74,7 @@ $query->execute();
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Latest Updates</h1>
+                                <h1>Dernières mises à jour</h1>
                             </div>
                         </div>
                     </div>
@@ -83,8 +83,8 @@ $query->execute();
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Latest Updates</li>
+                                    <li><a href="dashboard.php">Tableau de board</a></li>
+                                    <li class="active">Dernières mises à jour</li>
                                 </ol>
                             </div>
                         </div>
@@ -97,13 +97,13 @@ $query->execute();
                         <div class="col-md-4">
                             <div class="card alert">
                                 <div class="card-header pr">
-                                    <h4>Latest Updates</h4>
+                                    <h4>Dernières mises à jour</h4>
                                     <form method="post" name="hjhgh">
                                         
                                         <div class="basic-form m-t-20">
                                             <div class="form-group">
                                                 <label>Title</label>
-                                                <input type="text" class="form-control border-none input-flat bg-ash" placeholder="Title" name="title" required="true">
+                                                <input type="text" class="form-control border-none input-flat bg-ash" placeholder="Titre" name="title" required="true">
                                             </div>
                                         </div>
                                     <div class="basic-form m-t-20">
@@ -122,17 +122,17 @@ $query->execute();
                         <div class="col-md-8">
                             <div class="card alert">
                                 <div class="card-header pr">
-                                    <h4>Latest Updates</h4>
+                                    <h4>Dernières mises à jour</h4>
                                     
                                     <div class="card-header-right-icon">
                                         <ul>
                                             <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
                                             <li class="card-option drop-menu"><i class="ti-settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="link"></i>
                                                 <ul class="card-option-dropdown dropdown-menu">
-                                                    <li><a href="#"><i class="ti-loop"></i> Update data</a></li>
-                                                    <li><a href="#"><i class="ti-menu-alt"></i> Detail log</a></li>
-                                                    <li><a href="#"><i class="ti-pulse"></i> Statistics</a></li>
-                                                    <li><a href="#"><i class="ti-power-off"></i> Clear ist</a></li>
+                                                    <li><a href="#"><i class="ti-loop"></i> Mise à jour des données</a></li>
+                                                    <li><a href="#"><i class="ti-menu-alt"></i> Détails</a></li>
+                                                    <li><a href="#"><i class="ti-pulse"></i> Statistiques</a></li>
+                                                    <li><a href="#"><i class="ti-power-off"></i> Effacer</a></li>
                                                 </ul>
                                             </li>
                                             <li class="doc-link"><a href="#"><i class="ti-link"></i></a></li>
@@ -145,9 +145,9 @@ $query->execute();
                                             <thead>
                                                 <tr>
                                                     <th>S.No</th>
-                                                    <th>Title</th>
+                                                    <th>Titre</th>
                                                     <th>Description</th>
-                                                    <th>Announcement Date</th>
+                                                    <th>Date d'Announcement </th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
