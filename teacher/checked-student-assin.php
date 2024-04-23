@@ -14,7 +14,7 @@ if (strlen($_SESSION['ocastid']==0)) {
 
 <head>
    
-    <title>OCAS Checked Assignment</title>
+    <title>    <title>Ensaté-HUB Affectation Checké</title>
 
     <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@ if (strlen($_SESSION['ocastid']==0)) {
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Dashboard</h1>
+                                <h1>Tableau de board</h1>
                             </div>
                         </div>
                     </div>
@@ -47,8 +47,8 @@ if (strlen($_SESSION['ocastid']==0)) {
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Checked Assignment</li>
+                                    <li><a href="dashboard.php">Tableau de board</a></li>
+                                    <li class="active">Affectation Checké</li>
                                 </ol>
                             </div>
                         </div>
@@ -61,7 +61,7 @@ if (strlen($_SESSION['ocastid']==0)) {
                         <div class="col-lg-12">
                             <div class="card alert">
                                 <div class="card-header">
-                                    <h4>Checked Assignment</h4>
+                                    <h4>Affectation Checké</h4>
                                     <div class="card-header-right-icon">
                                         <ul>
                                             <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
@@ -77,11 +77,11 @@ if (strlen($_SESSION['ocastid']==0)) {
                                             <thead>
                                                 <tr>
                                                     <th>S.No</th>
-                                                    <th>Assignment Number</th>
-                                                    <th>Course Name</th>
-                                                    <th>Subject</th>
-                                                    <th>Submitted By</th>
-                                                    <th>Submitted Date</th>
+                                                    <th>Numéro d'Affectation</th>
+                                                    <th>Nom de Cours</th>
+                                                    <th>Module</th>
+                                                    <th>Soumis par</th>
+                                                    <th>Date de Soumission</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>

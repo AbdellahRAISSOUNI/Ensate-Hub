@@ -14,7 +14,7 @@ if (strlen($_SESSION['ocastid']==0)) {
 
 <head>
    
-    <title>OCAS Manage Assignment</title>
+    <title>Ensaté-HUB Gérer Affectation</title>
 
     <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@ if (strlen($_SESSION['ocastid']==0)) {
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Dashboard</h1>
+                                <h1>Table de board</h1>
                             </div>
                         </div>
                     </div>
@@ -47,8 +47,8 @@ if (strlen($_SESSION['ocastid']==0)) {
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Manage Assignment</li>
+                                    <li><a href="dashboard.php">Table de board</a></li>
+                                    <li class="active">Gérer Affectation</li>
                                 </ol>
                             </div>
                         </div>
@@ -61,7 +61,7 @@ if (strlen($_SESSION['ocastid']==0)) {
                         <div class="col-lg-12">
                             <div class="card alert">
                                 <div class="card-header">
-                                    <h4>Manage Assignment</h4>
+                                    <h4>Gérer Affectation</h4>
                                     <div class="card-header-right-icon">
                                         <ul>
                                             <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
@@ -75,11 +75,11 @@ if (strlen($_SESSION['ocastid']==0)) {
                                             <thead>
                                                 <tr>
                                                     <th>S.No</th>
-                                                    <th>Assignment Number</th>
-                                                    <th>Course Name</th>
-                                                    <th>Subject</th>
-                                                    <th>Assignment Title</th>
-                                                    <th>Date of Submission</th>
+                                                    <th>Numero d'Affectation</th>
+                                                    <th>Nom Cours</th>
+                                                    <th>Module</th>
+                                                    <th>Titre d'Affectation</th>
+                                                    <th>Date de Soumission</th>
                                                    
                                                     <th>Action</th>
                                                 </tr>
@@ -123,7 +123,7 @@ foreach($results as $row)
                                                     <td><?php  echo htmlentities($row->AssignmenttTitle);?></td>
                                                     <td><?php  echo htmlentities($row->SubmissionDate);?></td>
                                                    
-                                                    <td><a href="edit-assignment.php?editid=<?php echo htmlentities ($row->aid);?>">Edit Details</a></td>
+                                                    <td><a href="edit-assignment.php?editid=<?php echo htmlentities ($row->aid);?>">Changer Details</a></td>
                                                 </tr>
                                               <?php $cnt=$cnt+1;}} ?> 
                                             </tbody>
@@ -134,7 +134,7 @@ foreach($results as $row)
     <ul class="pagination">
 
 <li <?php if($page_no <= 1){ echo "class='disabled'"; } ?>>
-<a <?php if($page_no > 1){ echo "href='?page_no=$previous_page'"; } ?>>Previous</a>
+<a <?php if($page_no > 1){ echo "href='?page_no=$previous_page'"; } ?>>Précedent</a>
 </li>
 
 <?php
@@ -195,7 +195,7 @@ echo "<li><a href='?page_no=$counter'>$counter</a></li>";
 ?>
 
 <li <?php if($page_no >= $total_no_of_pages){ echo "class='disabled'"; } ?>>
-<a <?php if($page_no < $total_no_of_pages) { echo "href='?page_no=$next_page'"; } ?>>Next</a>
+<a <?php if($page_no < $total_no_of_pages) { echo "href='?page_no=$next_page'"; } ?>>Suivant</a>
 </li>
 <?php if($page_no < $total_no_of_pages){
 echo "<li><a href='?page_no=$total_no_of_pages'>Last &rsaquo;&rsaquo;</a></li>";

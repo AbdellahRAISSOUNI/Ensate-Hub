@@ -33,7 +33,7 @@ echo "<script>alert('Invalid Details');</script>";
 
 <head>
     
-    <title>OCAS Teacher : Login</title>
+    <title>Ensaté-HUB Professeur : Connexion</title>
     
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">
@@ -50,29 +50,29 @@ echo "<script>alert('Invalid Details');</script>";
                 <div class="col-lg-6 col-lg-offset-3">
                     <div class="login-content">
                         <div class="login-logo">
-                            <a href="../index.php"><span>OCAS Teacher</span></a>
+                            <a href="../index.php"><span>Ensaté-HUB Professeur</span></a>
                         </div>
                         <div class="login-form">
-                            <h4>Teacher Login</h4>
+                            <h4>Professeur Connexion</h4>
                             <form method="post">
                                 <div class="form-group">
-                                    <label>Employee ID</label>
-                                    <input type="text" class="form-control" placeholder="Employee ID" required="true" name="empid">
+                                    <label>Identifiant de l'employé</label>
+                                    <input type="text" class="form-control" placeholder="Identifiant de l'employé" required="true" name="empid">
                                 </div>
                                 <div class="form-group">
-                                    <label>Password</label>
-                                    <input type="password" class="form-control" placeholder="Password" name="password" required="true">
+                                    <label>Mot de passe</label>
+                                    <input type="password" class="form-control" placeholder="Mot de passe" name="password" required="true">
                                 </div>
                                 <div class="checkbox">
                                     
                                     <label class="pull-right">
-										<a href="forgot-password.php">Forgotten Password?</a>
+										<a href="forgot-password.php">Mot de passe oublié ?</a>
 									</label>
 
                                 </div>
-                                <button type="submit" name="login" class="btn btn-primary btn-flat m-b-30 m-t-30">Sign in</button>
+                                <button type="submit" name="login" class="btn btn-primary btn-flat m-b-30 m-t-30">Se connecter</button>
                                 <label>
-                                        <a href="../index.php">Back Home!!</a>
+                                        <a href="../index.php">Retour à l'accueil !</a>
                                     </label>
                             </form>
                         </div>

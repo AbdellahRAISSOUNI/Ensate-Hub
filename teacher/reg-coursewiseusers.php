@@ -14,7 +14,7 @@ if (strlen($_SESSION['ocastid']==0)) {
 
 <head>
    
-    <title>OCAS View Students</title>
+    <title>Ensaté-HUB Voir les étudiants</title>
 
     <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@ if (strlen($_SESSION['ocastid']==0)) {
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Dashboard</h1>
+                                <h1>Tableau de board</h1>
                             </div>
                         </div>
                     </div>
@@ -47,8 +47,8 @@ if (strlen($_SESSION['ocastid']==0)) {
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">View Students</li>
+                                    <li><a href="dashboard.php">Tableau de board</a></li>
+                                    <li class="active">Voir les étudiants</li>
                                 </ol>
                             </div>
                         </div>
@@ -61,7 +61,7 @@ if (strlen($_SESSION['ocastid']==0)) {
                         <div class="col-lg-12">
                             <div class="card alert">
                                 <div class="card-header">
-                                    <h4>Registered Users</h4>
+                                    <h4>Utilisateurs inscrits</h4>
                                     <div class="card-header-right-icon">
                                         <ul>
                                             <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
@@ -75,12 +75,12 @@ if (strlen($_SESSION['ocastid']==0)) {
                                             <thead>
                                                 <tr>
                                                     <th>S.No</th>
-                                                    <th>Full Name</th>
-                                                    <th>Course Name</th>
-                                                    <th>Mobile Number</th>
+                                                    <th>Nom Complet</th>
+                                                    <th>Nom de Cours</th>
+                                                    <th>Numero de Téléphone</th>
                                                     <th>Email</th>
-                                                    <th>Roll Number</th>
-                                                    <th>Registration Date</th>
+                                                    <th>Numero Apogée</th>
+                                                    <th>Date d'inscription</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -132,7 +132,7 @@ foreach($results as $row)
     <ul class="pagination">
 
 <li <?php if($page_no <= 1){ echo "class='disabled'"; } ?>>
-<a <?php if($page_no > 1){ echo "href='?page_no=$previous_page'"; } ?>>Previous</a>
+<a <?php if($page_no > 1){ echo "href='?page_no=$previous_page'"; } ?>>Précedent</a>
 </li>
 
 <?php
@@ -193,7 +193,7 @@ echo "<li><a href='?page_no=$counter'>$counter</a></li>";
 ?>
 
 <li <?php if($page_no >= $total_no_of_pages){ echo "class='disabled'"; } ?>>
-<a <?php if($page_no < $total_no_of_pages) { echo "href='?page_no=$next_page'"; } ?>>Next</a>
+<a <?php if($page_no < $total_no_of_pages) { echo "href='?page_no=$next_page'"; } ?>>Suivant</a>
 </li>
 <?php if($page_no < $total_no_of_pages){
 echo "<li><a href='?page_no=$total_no_of_pages'>Last &rsaquo;&rsaquo;</a></li>";
