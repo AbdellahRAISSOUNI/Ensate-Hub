@@ -1,5 +1,4 @@
-<div class="header" style="background-color: #15429b; color: #fff;">
-    <div class="pull-left">
+<div class="header" style="background-color: #15429b; color: #fff; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);">    <div class="pull-left">
         <div class="logo">
             <a href="dashboard.php" style="color: #fff; text-decoration: none;">
                 <!-- <img src="assets/images/logo.png" alt="" /> -->
