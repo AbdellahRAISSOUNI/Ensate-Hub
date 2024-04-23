@@ -14,7 +14,7 @@ if (strlen($_SESSION['ocastid']==0)) {
 
 <head>
    
-    <title>OCAS Teacher : Dashboard</title>
+    <title>Ensaté-HUB Professeur : Tableau de board</title>
     <link href="../assets/css/lib/chartist/chartist.min.css" rel="stylesheet">
 	<!-- Styles -->
     <link href="../assets/css/lib/owl.carousel.min.css" rel="stylesheet" />
@@ -35,7 +35,7 @@ if (strlen($_SESSION['ocastid']==0)) {
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Dashboard</h1>
+                                <h1>Tableau de board</h1>
                             </div>
                         </div>
                     </div><!-- /# column -->
@@ -43,8 +43,8 @@ if (strlen($_SESSION['ocastid']==0)) {
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="#">Dashboard</a></li>
-                                    <li class="active">Home</li>
+                                    <li><a href="#">Tableau de board</a></li>
+                                    <li class="active">Acceuil</li>
                                 </ol>
                             </div>
                         </div>
@@ -68,9 +68,9 @@ $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 $totuser=$query->rowCount();
 ?>
-                                        <h4 style="color: blue">Total Students</h4>
+                                        <h4 style="color: blue">Tous les Etudiants</h4>
                                         <h4 style="color: blue"><?php echo htmlentities($totuser);?></h4>
-                                        <a href="reg-coursewiseusers.php"><h5>View Detail</h5></a>
+                                        <a href="reg-coursewiseusers.php"><h5>Voir les Détails</h5></a>
                                     </div>
                                 </div>
                             </div>
@@ -91,9 +91,9 @@ $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 $totassign=$query->rowCount();
 ?>
-                                        <h4 style="color: blue">Total Assignment</h4>
+                                        <h4 style="color: blue">Tous les Affectations</h4>
                                          <h4 style="color: blue"><?php echo htmlentities($totassign);?></h4>
-                                         <a href="manage-assignment.php"><h5>View Detail</h5></a>
+                                         <a href="manage-assignment.php"><h5>Voir les Détails</h5></a>
                                     </div>
                                 </div>
                             </div>
@@ -114,9 +114,9 @@ $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 $totnews=$query->rowCount();
 ?>
-                                       <h4 style="color: blue">Total Announcement</h4>
+                                       <h4 style="color: blue">Tous les Announcements</h4>
                                          <h4 style="color: blue"><?php echo htmlentities($totnews);?></h4>
-                                         <a href="newsorannouncement.php"><h5>View Detail</h5></a>
+                                         <a href="newsorannouncement.php"><h5>Voir les Détails</h5></a>
                                     </div>
                                 </div>
                             </div>
