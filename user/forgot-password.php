@@ -67,7 +67,7 @@ return true;
                             <a href="dashboard.php"><span>Etudiant</span></a>
                         </div>
                         <div class="login-form">
-                            <h4>J'ai Oublié Mon Mot de Passe</h4>
+                            <h4>J'ai Oublié mon Mot de Passe</h4>
                             <form method="post" name="chngpwd" onSubmit="return valid();">
                                 <div class="form-group">
                                     <label>Adresse Mail:</label>
@@ -88,7 +88,7 @@ return true;
                                 <div class="checkbox">
                                     
                                     <label class="pull-right">
-										<a href="login.php">Connectez vous</a>
+										<a href="login.php">Connectez vous?</a>
 									</label>
 
                                 </div>

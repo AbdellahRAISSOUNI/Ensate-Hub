@@ -19,7 +19,7 @@ if (strlen($_SESSION['ocasuid']==0)) {
      $query->bindParam(':uid',$uid,PDO::PARAM_STR);
 $query->execute();
 
-        echo '<script>alert("Profile has been updated")</script>';
+        echo '<script>alert("Profile est mit à jour")</script>';
      
 
   }
