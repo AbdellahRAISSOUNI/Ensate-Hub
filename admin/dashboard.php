@@ -14,7 +14,7 @@ if (strlen($_SESSION['ocasaid']==0)) {
 
 <head>
    
-    <title>OCAS Admin : Dashboard</title>
+    <title>Ensaté-Hub Admin : Tableau de Bord</title>
     <link href="../assets/css/lib/chartist/chartist.min.css" rel="stylesheet">
     <!-- Styles -->
     <link href="../assets/css/lib/owl.carousel.min.css" rel="stylesheet" />
@@ -35,7 +35,7 @@ if (strlen($_SESSION['ocasaid']==0)) {
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Dashboard</h1>
+                                <h1>Tableau de bord</h1>
                             </div>
                         </div>
                     </div><!-- /# column -->
@@ -43,8 +43,8 @@ if (strlen($_SESSION['ocasaid']==0)) {
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="#">Dashboard</a></li>
-                                    <li class="active">Home</li>
+                                    <li><a href="#">Tableau de bord</a></li>
+                                    <li class="active">Accueil</li>
                                 </ol>
                             </div>
                         </div>
@@ -67,9 +67,9 @@ $query1->execute();
 $results1=$query1->fetchAll(PDO::FETCH_OBJ);
 $totcourse=$query1->rowCount();
 ?>
-                                        <h4 style="color: blue">Total Course</h4>
+                                        <h4 style="color: blue">Total des Cours</h4>
                                         <h4 style="color: blue"><?php echo htmlentities($totcourse);?></h4>
-                                        <a href="course.php"><h5>View Detail</h5></a>
+                                        <a href="course.php"><h5>Voir les Détails</h5></a>
                                     </div>
                                 </div>
                             </div>
@@ -89,9 +89,9 @@ $query2->execute();
 $results2=$query2->fetchAll(PDO::FETCH_OBJ);
 $totsub=$query2->rowCount();
 ?>
-                                        <h4 style="color: blue">Total Subject</h4>
+                                        <h4 style="color: blue">Total des Matières</h4>
                                          <h4 style="color: blue"><?php echo htmlentities($totsub);?></h4>
-                                         <a href="subject.php"><h5>View Detail</h5></a>
+                                         <a href="subject.php"><h5>Voir les Détails</h5></a>
                                     </div>
                                 </div>
                             </div>
@@ -111,9 +111,9 @@ $query3->execute();
 $results3=$query3->fetchAll(PDO::FETCH_OBJ);
 $totteacher=$query3->rowCount();
 ?>
-                                       <h4 style="color: blue">Total Teacher</h4>
+                                       <h4 style="color: blue">Total des Enseignants</h4>
                                          <h4 style="color: blue"><?php echo htmlentities($totteacher);?></h4>
-                                         <a href="manage-teacher.php"><h5>View Detail</h5></a>
+                                         <a href="manage-teacher.php"><h5>Voir les Détails</h5></a>
                                     </div>
                                 </div>
                             </div>

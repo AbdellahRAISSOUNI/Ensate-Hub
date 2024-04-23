@@ -14,7 +14,7 @@ if (strlen($_SESSION['ocasaid']==0)) {
 
 <head>
    
-    <title>OCAS Search</title>
+    <title>Recherche Ensaté-Hub</title>
 
     <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@ if (strlen($_SESSION['ocasaid']==0)) {
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Dashboard</h1>
+                                <h1>Tableau de bord</h1>
                             </div>
                         </div>
                     </div>
@@ -47,8 +47,8 @@ if (strlen($_SESSION['ocasaid']==0)) {
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Search</li>
+                                    <li><a href="dashboard.php">Tableau de bord</a></li>
+                                    <li class="active">Recherche</li>
                                 </ol>
                             </div>
                         </div>
@@ -63,16 +63,16 @@ if (strlen($_SESSION['ocasaid']==0)) {
                                 <div class="card-body">
                             <form name="" method="post" enctype="multipart/form-data">
                             <div class="card-header m-b-20">
-                                <h4>Search uploaded Assignment</h4>
+                                <h4>Recherche de Devoirs Téléchargés</h4>
                                 <div class="card-header-right-icon">
                                     <ul>
                                         <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
                                         <li class="card-option drop-menu"><i class="ti-settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="link"></i>
                                             <ul class="card-option-dropdown dropdown-menu">
-                                                <li><a href="#"><i class="ti-loop"></i> Update data</a></li>
-                                                <li><a href="#"><i class="ti-menu-alt"></i> Detail log</a></li>
-                                                <li><a href="#"><i class="ti-pulse"></i> Statistics</a></li>
-                                                <li><a href="#"><i class="ti-power-off"></i> Clear ist</a></li>
+                                            <li><a href="#"><i class="ti-loop"></i> Mettre à jour les données</a></li>
+                                            <li><a href="#"><i class="ti-menu-alt"></i> Journal des détails</a></li>
+                                            <li><a href="#"><i class="ti-pulse"></i> Statistiques</a></li>
+                                            <li><a href="#"><i class="ti-power-off"></i> Effacer la liste</a></li>
                                             </ul>
                                         </li>
                                         <li class="doc-link"><a href="#"><i class="ti-link"></i></a></li>
@@ -84,13 +84,13 @@ if (strlen($_SESSION['ocasaid']==0)) {
                                 <div class="col-md-4">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Search by Teacher Name or Assignment Number or Subject</label>
+                                            <label>Recherche par Nom de l'Enseignant, Numéro de Devoir ou Matière</label>
                                             <input class="form-control border-none input-flat bg-ash" name="searchdata" type="text" required="true">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="search">Submit</button>
+                            <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="search">Soumettre</button>
                           
                         </form>
                         </div>
@@ -111,20 +111,20 @@ if(isset($_POST['search']))
 
 $sdata=$_POST['searchdata'];
   ?>
-  <h4 align="center">Result against "<?php echo $sdata;?>" keyword </h4>
+  <h4 align="center">Résultat contre "<?php echo $sdata;?>" mot-clé </h4>
 
                                         <table  class="table table-striped table-bordered">
                                             <thead>
                                                 <tr>
-                                                    <th>S.No</th>
-                                                    <th>Assignment Number</th>
-                                                    <th>Teacher Name</th>
-                                                    <th>Course Name</th>
-                                                    <th>Subject</th>
-                                                    <th>Submitted By</th>
-                                                    <th>Submitted Date</th>
-                                                    <th>Status</th>
-                                                    <th>Action</th>
+                                                <th>N° de série</th>
+                                                <th>Numéro de Devoir</th>
+                                                <th>Nom de l'Enseignant</th>
+                                                <th>Nom du Cours</th>
+                                                <th>Matière</th>
+                                                <th>Envoyé Par</th>
+                                                <th>Date d'Envoi</th>
+                                                <th>Statut</th>
+                                                <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -176,18 +176,17 @@ foreach($results as $row)
                                             <span class="badge badge-primary"><?php  echo "Checked Assignment";?></span>
                                         </td>
 <?php } ?> 
-                                                    <td><a href="submit-assignment.php?assinid=<?php echo htmlentities ($row->assinid);?> && uid=<?php echo htmlentities ($row->uid);?> ">View</a></td>
+                                                    <td><a href="submit-assignment.php?assinid=<?php echo htmlentities ($row->assinid);?> && uid=<?php echo htmlentities ($row->uid);?> ">Voir</a></td>
                                                 </tr>
                                              <?php 
 $cnt=$cnt+1;
 } } else { ?>
   <tr>
-    <td colspan="9"> No record found against this date</td>
+    <td colspan="9"> Aucun enregistrement trouvé pour cette date</td>
 
   </tr>
                                             </tbody>
                                             
- 
                                         </table>
                                         
 										<div class="row">
@@ -196,7 +195,7 @@ $cnt=$cnt+1;
     <ul class="pagination">
 
 <li <?php if($page_no <= 1){ echo "class='disabled'"; } ?>>
-<a <?php if($page_no > 1){ echo "href='?page_no=$previous_page'"; } ?>>Previous</a>
+<a <?php if($page_no > 1){ echo "href='?page_no=$previous_page'"; } ?>>Précédent</a>
 </li>
 
 <?php
@@ -257,7 +256,7 @@ echo "<li><a href='?page_no=$counter'>$counter</a></li>";
 ?>
 
 <li <?php if($page_no >= $total_no_of_pages){ echo "class='disabled'"; } ?>>
-<a <?php if($page_no < $total_no_of_pages) { echo "href='?page_no=$next_page'"; } ?>>Next</a>
+<a <?php if($page_no < $total_no_of_pages) { echo "href='?page_no=$next_page'"; } ?>>Suivant</a>
 </li>
 <?php if($page_no < $total_no_of_pages){
 echo "<li><a href='?page_no=$total_no_of_pages'>Last &rsaquo;&rsaquo;</a></li>";

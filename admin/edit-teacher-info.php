@@ -47,7 +47,7 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
 
 <head>
   
-    <title>OCAS : Update Teacher Information </title>
+    <title>Ensaté-Hub : Mettre à Jour les Informations de l'Enseignant </title>
 
     <link href="../assets/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -71,7 +71,7 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Update Teacher</h1>
+                                <h1>Mettre à Jour Enseignant</h1>
                             </div>
                         </div>
                     </div>
@@ -80,8 +80,8 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Teacher Information</li>
+                                    <li><a href="dashboard.php">Tableau de Bord</a></li>
+                                    <li class="active">Informations sur l'Enseignant</li>
                                 </ol>
                             </div>
                         </div>
@@ -106,16 +106,16 @@ if($query->rowCount() > 0)
 foreach($results as $row)
 {               ?>  
                             <div class="card-header m-b-20">
-                                <h4>Teacher Information</h4>
+                                <h4>Informations sur l'Enseignant</h4>
                                 <div class="card-header-right-icon">
                                     <ul>
                                         <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
                                         <li class="card-option drop-menu"><i class="ti-settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="link"></i>
                                             <ul class="card-option-dropdown dropdown-menu">
-                                                <li><a href="#"><i class="ti-loop"></i> Update data</a></li>
-                                                <li><a href="#"><i class="ti-menu-alt"></i> Detail log</a></li>
-                                                <li><a href="#"><i class="ti-pulse"></i> Statistics</a></li>
-                                                <li><a href="#"><i class="ti-power-off"></i> Clear ist</a></li>
+                                            <li><a href="#"><i class="ti-loop"></i> Mettre à jour les données</a></li>
+                                            <li><a href="#"><i class="ti-menu-alt"></i> Journal des détails</a></li>
+                                            <li><a href="#"><i class="ti-pulse"></i> Statistiques</a></li>
+                                            <li><a href="#"><i class="ti-power-off"></i> Effacer la liste</a></li>
                                             </ul>
                                         </li>
                                         <li class="doc-link"><a href="#"><i class="ti-link"></i></a></li>
@@ -127,7 +127,7 @@ foreach($results as $row)
                                 <div class="col-md-3">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>First Name</label>
+                                            <label>Prénom</label>
                                             <input type="text" class="form-control border-none input-flat bg-ash" name="fname" required="true" value="<?php  echo htmlentities($row->FirstName);?>">
                                         </div>
                                     </div>
@@ -135,7 +135,7 @@ foreach($results as $row)
                                 <div class="col-md-3">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Last Name</label>
+                                            <label>Nom</label>
                                             <input type="text" class="form-control border-none input-flat bg-ash" name="lname" required="true" value="<?php  echo htmlentities($row->LastName);?>">
                                         </div>
                                     </div>
@@ -143,7 +143,7 @@ foreach($results as $row)
                                 <div class="col-md-3">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Mobile Number</label>
+                                            <label>Numéro de téléphone portable</label>
                                             <input type="text" class="form-control border-none input-flat bg-ash" name="mobnum" maxlength="10" pattern="[0-9]+" readonly="true" value="<?php  echo htmlentities($row->MobileNumber);?>">
                                         </div>
                                     </div>
@@ -161,11 +161,11 @@ foreach($results as $row)
                                 <div class="col-md-3">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Gender*</label>
+                                            <label>Genre</label>
                                             <select class="form-control bg-ash border-none" name="gender" required="true">
 												<option value="<?php  echo htmlentities($row->Gender);?>"><?php  echo htmlentities($row->Gender);?></option>
-												<option value="Male">Male</option>
-												<option value="Female">Female</option>
+												<option value="Male">Homme</option>
+												<option value="Female">Femme</option>
 											</select>
                                         </div>
                                     </div>
@@ -173,7 +173,7 @@ foreach($results as $row)
                                 <div class="col-md-3">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Date of Birth</label>
+                                            <label>Date de Naissance</label>
                                             <input type="date" class="form-control calendar bg-ash"  name="dob" required="true" value="<?php  echo htmlentities($row->Dob);?>">
                                             <span class="ti-calendar form-control-feedback booking-system-feedback m-t-30"></span>
                                         </div>
@@ -182,7 +182,7 @@ foreach($results as $row)
                                 <div class="col-md-3">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Emp ID</label>
+                                            <label>ID de l'Employé</label>
                                             <input type="text" class="form-control border-none input-flat bg-ash" name="empid" readonly="true" value="<?php  echo htmlentities($row->EmpID);?>">
                                         </div>
                                     </div>
@@ -190,7 +190,7 @@ foreach($results as $row)
                                 <div class="col-md-3">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Course</label>
+                                            <label>Cours</label>
                                             <select class="form-control border-none input-flat bg-ash" name="cid" required="true">
             <option value="<?php  echo htmlentities($row->cid);?>"><?php  echo htmlentities($row->CourseName);?>(<?php  echo htmlentities($row->BranchName);?>)</option>
             <?php
@@ -222,7 +222,7 @@ foreach($results as $row1)
                                 <div class="col-md-3">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Address</label>
+                                            <label>Addresse</label>
                                             <input type="text"  class="form-control border-none input-flat bg-ash" rows="4" cols="4" required="true" name="address" value="<?php  echo htmlentities($row->Address);?>">
                                         </div>
                                     </div>
@@ -233,9 +233,9 @@ foreach($results as $row1)
                                 <div class="col-md-12">
                                     <div class="basic-form">
                                         <div class="form-group image-type">
-                                            <label> Teacher Photo <span>(150 X 150)</span></label>
+                                            <label> Photo de l'Enseignant <span>(150 X 150)</span></label>
                                             <img src="images/<?php echo $row->ProfilePic;?>" width="100" height="100" value="<?php  echo $row->ProfilePic;?>">
-<a href="changeimage.php?editid=<?php echo $row->ID;?>"> &nbsp; Edit Image</a>
+<a href="changeimage.php?editid=<?php echo $row->ID;?>"> &nbsp; Modifier l'Image</a>
                                         </div>
                                     </div>
                                 </div>

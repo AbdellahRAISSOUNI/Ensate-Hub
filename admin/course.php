@@ -52,7 +52,7 @@ $query->execute();
 
 <head>
    
-    <title>OCAS : Course Create</title>
+    <title>Ensaté-Hub : Créer un Cours</title>
 
        <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -74,7 +74,7 @@ $query->execute();
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Course</h1>
+                                <h1>Cours</h1>
                             </div>
                         </div>
                     </div>
@@ -83,8 +83,8 @@ $query->execute();
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Course</li>
+                                    <li><a href="dashboard.php">Tableau de bord</a></li>
+                                    <li class="active">Cours</li>
                                 </ol>
                             </div>
                         </div>
@@ -97,41 +97,41 @@ $query->execute();
                         <div class="col-md-4">
                             <div class="card alert">
                                 <div class="card-header pr">
-                                    <h4>Create A New Course</h4>
+                                    <h4>Créer un Nouveau Cours</h4>
                                     <form method="post" name="hjhgh">
                                         <div class="basic-form m-t-20">
                                             <div class="form-group">
-                                                <label>Course Name</label>
+                                                <label>Nom du Cours</label>
         <input type="text" class="form-control border-none input-flat bg-ash" placeholder="Course Name" name="coursename" required="true">
                                             </div>
                                         </div>
                                         <div class="basic-form m-t-20">
                                             <div class="form-group">
-                                                <label>Branch Name</label>
+                                                <label>Nom de la Filière</label>
                                                 <input type="text" class="form-control border-none input-flat bg-ash" placeholder="Branch Name" name="branchname" required="true">
                                             </div>
                                         </div>
                                    
                                 </div>
-                                <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Save</button>
-                                <button class="btn btn-default btn-lg m-b-10 m-l-5 sbmt-btn" type="reset">Reset</button> 
+                                <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Enregistrer</button>
+                                <button class="btn btn-default btn-lg m-b-10 m-l-5 sbmt-btn" type="reset">Réinitialiser</button> 
                             </form>
                             </div>
                         </div>
                         <div class="col-md-8">
                             <div class="card alert">
                                 <div class="card-header pr">
-                                    <h4>ALL Course</h4>
+                                    <h4>Tous les Cours</h4>
                                     
                                     <div class="card-header-right-icon">
                                         <ul>
                                             <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
                                             <li class="card-option drop-menu"><i class="ti-settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="link"></i>
                                                 <ul class="card-option-dropdown dropdown-menu">
-                                                    <li><a href="#"><i class="ti-loop"></i> Update data</a></li>
-                                                    <li><a href="#"><i class="ti-menu-alt"></i> Detail log</a></li>
-                                                    <li><a href="#"><i class="ti-pulse"></i> Statistics</a></li>
-                                                    <li><a href="#"><i class="ti-power-off"></i> Clear ist</a></li>
+                                                <li><a href="#"><i class="ti-loop"></i> Mettre à jour les données</a></li>
+                                            <li><a href="#"><i class="ti-menu-alt"></i> Journal des détails</a></li>
+                                            <li><a href="#"><i class="ti-pulse"></i> Statistiques</a></li>
+                                            <li><a href="#"><i class="ti-power-off"></i> Effacer la liste</a></li>
                                                 </ul>
                                             </li>
                                             <li class="doc-link"><a href="#"><i class="ti-link"></i></a></li>
@@ -143,10 +143,10 @@ $query->execute();
                                         <table class="table student-data-table m-t-20">
                                             <thead>
                                                 <tr>
-                                                    <th>S.No</th>
-                                                    <th>Course Name</th>
-                                                    <th>Branch Name</th>
-                                                    <th>Action</th>
+                                                <th>N° de série</th>
+                                                <th>Nom du Cours</th>
+                                                <th>Nom de la Filière</th>
+                                                <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

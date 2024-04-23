@@ -14,7 +14,7 @@ if (strlen($_SESSION['ocasaid']==0)) {
 
 <head>
    
-    <title>OCAS : Teacher Details</title>
+    <title>Détails de l'enseignant</title>
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">
     <link href="../assets/css/lib/menubar/sidebar.css" rel="stylesheet">
@@ -36,7 +36,7 @@ if (strlen($_SESSION['ocasaid']==0)) {
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Teacher Details</h1>
+                                <h1>Détails de l'enseignant</h1>
                             </div>
                         </div>
                     </div>
@@ -45,8 +45,8 @@ if (strlen($_SESSION['ocasaid']==0)) {
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Teacher Details</li>
+                                    <li><a href="dashboard.php">Tableau de bord</a></li>
+                                    <li class="active">Détails de l'enseignant</li>
                                 </ol>
                             </div>
                         </div>
@@ -59,16 +59,16 @@ if (strlen($_SESSION['ocasaid']==0)) {
                         <div class="col-lg-12">
                             <div class="card alert">
                                 <div class="card-header">
-                                    <h4>Teacher Details</h4>
+                                    <h4>Détails de l'enseignant</h4>
                                     <div class="card-header-right-icon">
                                         <ul>
                                             <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
                                             <li class="card-option drop-menu"><i class="ti-settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="link"></i>
                                                 <ul class="card-option-dropdown dropdown-menu">
-                                                    <li><a href="#"><i class="ti-loop"></i> Update data</a></li>
-                                                    <li><a href="#"><i class="ti-menu-alt"></i> Detail log</a></li>
-                                                    <li><a href="#"><i class="ti-pulse"></i> Statistics</a></li>
-                                                    <li><a href="#"><i class="ti-power-off"></i> Clear ist</a></li>
+                                                <li><a href="#"><i class="ti-loop"></i> Mettre à jour les données</a></li>
+                                                <li><a href="#"><i class="ti-menu-alt"></i> Journal des détails</a></li>
+                                                <li><a href="#"><i class="ti-pulse"></i> Statistiques</a></li>
+                                                <li><a href="#"><i class="ti-power-off"></i> Effacer la liste</a></li>
                                                 </ul>
                                             </li>
                                             <li class="doc-link"><a href="#"><i class="ti-link"></i></a></li>
@@ -105,21 +105,21 @@ foreach($results as $row)
 </div>
 <div class="custom-tab user-profile-tab">
 <ul class="nav nav-tabs" role="tablist">
-<li role="presentation" class="active"><a href="#1" aria-controls="1" role="tab" data-toggle="tab">About</a></li>
+<li role="presentation" class="active"><a href="#1" aria-controls="1" role="tab" data-toggle="tab">À propos</a></li>
 </ul>
 <div class="tab-content">
 <div role="tabpanel" class="tab-pane active" id="1">
 <div class="contact-information">
 <div class="phone-content">
-<span class="contact-title">Name:</span>
+<span class="contact-title">Nom:</span>
 <span class="phone-number"><?php  echo htmlentities($row->FirstName);?> <?php  echo htmlentities($row->LastName);?></span>
 </div>
 <div class="gender-content">
-<span class="contact-title">Gender:</span>
+<span class="contact-title">Genre:</span>
  <span class="gender"><?php  echo htmlentities($row->Gender);?></span>
 </div>
 <div class="birthday-content">
- <span class="contact-title">Date of Birth:</span>
+ <span class="contact-title">Date de naissance:</span>
     <span class="birth-date"><?php  echo htmlentities($row->Dob);?> </span>
  </div>
   <div class="phone-content">
@@ -131,15 +131,15 @@ foreach($results as $row)
 <span class="contact-email"><?php  echo htmlentities($row->Email);?></span>
 </div>
 <div class="email-content">
-<span class="contact-title">Course</span>
+<span class="contact-title">Cours</span>
 <span class="contact-email"><?php  echo htmlentities($row->CourseName);?> (<?php  echo htmlentities($row->BranchName);?>)</span>
 </div>
  <div class="email-content">
- <span class="contact-title">Address</span>
+ <span class="contact-title">Addresse</span>
 <span class="contact-email"><?php  echo htmlentities($row->Address);?></span>
 </div>
 <div class="email-content">
-<span class="contact-title">Joining Date</span>
+<span class="contact-title">Date d'adhésion</span>
   <span class="contact-email"><?php  echo htmlentities($row->JoiningDate);?></span>
   </div>
 </div>

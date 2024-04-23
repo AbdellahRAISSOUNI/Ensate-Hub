@@ -51,7 +51,7 @@ $query->execute();
 
 <head>
    
-    <title>OCAS : News or Announcement</title>
+    <title>Ensaté-Hub : Actualités ou Annonces</title>
 
        <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -73,7 +73,7 @@ $query->execute();
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Latest Updates</h1>
+                                <h1>Dernières Mises à Jour</h1>
                             </div>
                         </div>
                     </div>
@@ -82,8 +82,8 @@ $query->execute();
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Latest Updates</li>
+                                    <li><a href="dashboard.php">Tableau de Bord</a></li>
+                                    <li class="active">Dernières Mises à Jour</li>
                                 </ol>
                             </div>
                         </div>
@@ -96,9 +96,8 @@ $query->execute();
                         <div class="col-md-4">
                             <div class="card alert">
                                 <div class="card-header pr">
-                                    <h4>Latest Updates</h4>
+                                    <h4>Dernières Mises à Jour</h4>
                                     <form method="post" name="hjhgh">
-                                        
                                         <div class="basic-form m-t-20">
                                             <div class="form-group">
                                                 <label>Title</label>
@@ -113,25 +112,25 @@ $query->execute();
                                         </div>
                                     
                                 </div>
-                                <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Save</button>
-                                <button class="btn btn-default btn-lg m-b-10 m-l-5 sbmt-btn" type="reset">Reset</button> 
+                                <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Enregistrer</button>
+                                <button class="btn btn-default btn-lg m-b-10 m-l-5 sbmt-btn" type="reset">Réinitialiser</button> 
                             </form>
                             </div>
                         </div>
                         <div class="col-md-8">
                             <div class="card alert">
                                 <div class="card-header pr">
-                                    <h4>Latest Updates</h4>
+                                    <h4>Dernières Mises à Jour</h4>
                                     
                                     <div class="card-header-right-icon">
                                         <ul>
                                             <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
                                             <li class="card-option drop-menu"><i class="ti-settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="link"></i>
                                                 <ul class="card-option-dropdown dropdown-menu">
-                                                    <li><a href="#"><i class="ti-loop"></i> Update data</a></li>
-                                                    <li><a href="#"><i class="ti-menu-alt"></i> Detail log</a></li>
-                                                    <li><a href="#"><i class="ti-pulse"></i> Statistics</a></li>
-                                                    <li><a href="#"><i class="ti-power-off"></i> Clear ist</a></li>
+                                                <li><a href="#"><i class="ti-loop"></i> Mettre à jour les données</a></li>
+                                            <li><a href="#"><i class="ti-menu-alt"></i> Journal des détails</a></li>
+                                            <li><a href="#"><i class="ti-pulse"></i> Statistiques</a></li>
+                                            <li><a href="#"><i class="ti-power-off"></i> Effacer la liste</a></li>
                                                 </ul>
                                             </li>
                                             <li class="doc-link"><a href="#"><i class="ti-link"></i></a></li>
@@ -143,11 +142,11 @@ $query->execute();
                                         <table class="table student-data-table m-t-20">
                                             <thead>
                                                 <tr>
-                                                    <th>S.No</th>
-                                                    <th>Title</th>
-                                                    <th>Description</th>
-                                                    <th>Announcement Date</th>
-                                                    <th>Action</th>
+                                                <th>N° de série</th>
+                                                <th>Titre</th>
+                                                <th>Description</th>
+                                                <th>Date de l'Annonce</th>
+                                                <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

@@ -29,7 +29,7 @@ $query->bindParam(':remarks',$remarks,PDO::PARAM_STR);
 
 <head>
   
-    <title>OCAS : Update Assignment </title>
+    <title>Ensaté-Hub : Mettre à Jour le Devoir </title>
 
     <link href="../assets/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -53,7 +53,7 @@ $query->bindParam(':remarks',$remarks,PDO::PARAM_STR);
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Update Assignment</h1>
+                                <h1>Mettre à Jour le Devoir</h1>
                             </div>
                         </div>
                     </div>
@@ -62,8 +62,8 @@ $query->bindParam(':remarks',$remarks,PDO::PARAM_STR);
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Update Assignment Information</li>
+                                    <li><a href="dashboard.php">Tableau de bord</a></li>
+                                    <li class="active">Mettre à Jour les Informations du Devoir</li>
                                 </ol>
                             </div>
                         </div>
@@ -93,16 +93,16 @@ foreach($results as $row)
  
                             <div class="card-header m-b-20">
 
-                                <h4 style="color: blue">Assignment Number: <?php  echo htmlentities($row->AssignmentNumber);?><strong style="padding-left: 500px">Marks: <?php  echo htmlentities($row->AssigmentMarks);?></strong></h4>
+                                <h4 style="color: blue">Numéro de Devoir : <?php  echo htmlentities($row->AssignmentNumber);?><strong style="padding-left: 500px">Marks: <?php  echo htmlentities($row->AssigmentMarks);?></strong></h4>
                                 <div class="card-header-right-icon">
                                     <ul>
                                         <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
                                         <li class="card-option drop-menu"><i class="ti-settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="link"></i>
                                             <ul class="card-option-dropdown dropdown-menu">
-                                                <li><a href="#"><i class="ti-loop"></i> Update data</a></li>
-                                                <li><a href="#"><i class="ti-menu-alt"></i> Detail log</a></li>
-                                                <li><a href="#"><i class="ti-pulse"></i> Statistics</a></li>
-                                                <li><a href="#"><i class="ti-power-off"></i> Clear ist</a></li>
+                                            <li><a href="#"><i class="ti-loop"></i> Mettre à Jour les données</a></li>
+                                            <li><a href="#"><i class="ti-menu-alt"></i> Journal des détails</a></li>
+                                            <li><a href="#"><i class="ti-pulse"></i> Statistiques</a></li>
+                                            <li><a href="#"><i class="ti-power-off"></i> Effacer la liste</a></li>
                                             </ul>
                                         </li>
                                         <li class="doc-link"><a href="#"><i class="ti-link"></i></a></li>
@@ -112,28 +112,28 @@ foreach($results as $row)
                             <div class="row">
 
                              <table class="table table-bordered table-hover data-tables">
-                              <tr> <td colspan="4" style="text-align: center;color: blue">Submitted By <?php  echo htmlentities($row->FullName);?>  (Roll Number:  <?php  echo htmlentities($row->RollNumber);?>)</td></tr>
+                             <tr> <td colspan="4" style="text-align: center;color: blue">Soumis Par <?php  echo htmlentities($row->FullName);?>  (Numéro d'Inscription:  <?php  echo htmlentities($row->RollNumber);?>)</td></tr>
                                 <tr>
-  <th width="200"><strong>Course</strong></th>
+  <th width="200"><strong>Cours</strong></th>
   <td><?php  echo htmlentities($row->CourseName);?>(<?php  echo htmlentities($row->BranchName);?>)</td>
-  <th><strong>Subject Name</strong></th>
+  <th><strong>Nom de la matière</strong></th>
   <td><?php  echo htmlentities($row->SubjectFullname);?></td>
   </tr>
   <tr>
-  <th width="200"><strong>Subject Code</strong></th>
+  <th width="200"><strong>Code de la matière</strong></th>
   <td><?php  echo htmlentities($row->SubjectCode);?></td>
   <th><strong>Assignment Title</strong></th>
   <td><?php  echo htmlentities($row->AssignmenttTitle);?></td>
   </tr>
   <tr>
-  <th width="200"><strong>Assignment Description</strong></th>
+  <th width="200"><strong>Description de l'Affectation</strong></th>
   <td><?php  echo htmlentities($row->AssignmentDescription);?></td>
   <th><strong>Last Date of Submission</strong></th>
   <td><?php  echo $ldate=($row->SubmissionDate);?></td>
   </tr>
   <tr>
-  <th width="200"><strong>View Assignment Paper</strong></th>
-  <td colspan="3" style="text-align: center;"><a href="../teacher/assignmentfile/<?php echo $row->AssignmentFile;?>" width="100" height="100" target="_blank"> <strong style="color: red">View Assignment Paper</strong></a></td>
+  <th width="200"><strong>Afficher le devoir</strong></th>
+  <td colspan="3" style="text-align: center;"><a href="../teacher/assignmentfile/<?php echo $row->AssignmentFile;?>" width="100" height="100" target="_blank"> <strong style="color: red">Voir le papier de réponse</strong></a></td>
   
   </tr>
                              </table>
@@ -143,16 +143,16 @@ foreach($results as $row)
                             <br>
 
                             <table class="table table-bordered table-hover data-tables">
-        <tr ><td colspan="6" style="text-align: center;color: blue"><strong>Submitted Assignment Details</strong></td></tr>
+        <tr ><td colspan="6" style="text-align: center;color: blue"><strong>Détails du devoir soumis</strong></td></tr>
   <tr>
-    <th><strong>Assignment Description </strong></th>
+    <th><strong>Description de l'Affectation </strong></th>
     <td colspan="6" style="text-align: center;"><?php echo $row->AssDes?></td>
     
 </tr>
 <tr>
-    <th><strong>View Submitted Answer Paper </strong></th>
-    <td colspan="3" style="text-align: center;"><a href="../user/assignanswer/<?php echo $row->AnswerFile;?>" width="100" height="100" target="_blank"> <strong style="color: blue">View Answer Paper</strong></a></td>
-    <th><strong>Submitted Date </strong></th>
+    <th><strong>Voir le papier de réponse soumis</strong></th>
+    <td colspan="3" style="text-align: center;"><a href="../user/assignanswer/<?php echo $row->AnswerFile;?>" width="100" height="100" target="_blank"> <strong style="color: blue">Voir le papier de réponse</strong></a></td>
+    <th><strong>Date de Soumission </strong></th>
     <td><?php echo $row->SubmitDate?></td>
 </tr>
 </table><br>
@@ -169,12 +169,12 @@ if($row->Marks==""){
     
 <table class="table table-bordered table-hover data-tables">
 <tr>
-    <th><strong>Marks </strong></th>
+    <th><strong>Notes </strong></th>
     <?php if($row->Marks==""){ ?>
       <td colspan="2"><?php echo "Not Updated Yet"; ?></td>
 <?php } else { ?>
     <td colspan="6" style="text-align: center;"><?php echo $row->Marks?></td> <?php } ?>
-    <th><strong>Remarks </strong></th>
+    <th><strong>Remarques </strong></th>
      <?php if($row->Marks==""){ ?>
       <td colspan="2"><?php echo "Not Updated Yet"; ?></td>
 <?php } else { ?>

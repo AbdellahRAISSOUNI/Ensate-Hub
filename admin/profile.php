@@ -29,7 +29,7 @@ $query->execute();
 
 <head>
   
-    <title>OCAS Admin : Profile </title>
+    <title>Profil de l'Administrateur d'Ensaté-Hub </title>
     <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">
@@ -51,7 +51,7 @@ $query->execute();
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Profile</h1>
+                                <h1>Profil</h1>
                             </div>
                         </div>
                     </div>
@@ -60,8 +60,8 @@ $query->execute();
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Profile</li>
+                                    <li><a href="dashboard.php">Tableau de Bord</a></li>
+                                    <li class="active">Profil</li>
                                 </ol>
                             </div>
                         </div>
@@ -75,7 +75,7 @@ $query->execute();
                         <div class="col-lg-12">
                             <div class="card alert">
                                 <div class="card-header">
-                                    <h4>Admin Profile</h4>
+                                    <h4>Profil de l'Administrateur</h4>
                                     <div class="card-header-right-icon">
                                         <ul>
                                             <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
@@ -98,11 +98,11 @@ if($query->rowCount() > 0)
 foreach($results as $row)
 {               ?>
                                             <div class="form-group">
-                                                <label>Admin Name</label>
+                                                <label>Nom de l'Administrateur</label>
                                                 <input type="text" class="form-control"  name="adminname" value="<?php  echo $row->AdminName;?>" required='true'>
                                             </div>
                                             <div class="form-group">
-                                                <label>User Name</label>
+                                                <label>Nom d'Utilisateur</label>
                                                 <input type="text" class="form-control" name="username" value="<?php  echo $row->UserName;?>" readonly="true">
                                             </div>
                                             <div class="form-group">
@@ -110,16 +110,16 @@ foreach($results as $row)
                                                 <input type="email" class="form-control" name="email" value="<?php  echo $row->Email;?>" required='true'>
                                             </div>
                                              <div class="form-group">
-                                                <label>Contact Number</label>
+                                                <label>Numéro de Contact</label>
                                                 <input type="text" class="form-control" name="mobilenumber" value="<?php  echo $row->MobileNumber;?>" required='true' maxlength='10'>
                                             </div>
                                             <div class="form-group">
-                                                <label>Admin Registration Date</label>
+                                                <label>Date d'Enregistrement de l'Administrateur</label>
                                                <input type="text" class="form-control" id="email2" name="" value="<?php  echo $row->AdminRegdate;?>" readonly="true">
                                             </div>
                                            
                                             <?php $cnt=$cnt+1;}} ?>
-                                            <button type="submit" class="btn btn-default" name="submit">Submit</button>
+                                            <button type="submit" class="btn btn-default" name="submit">Soumettre</button>
                                         </form>
                                     </div>
                                 </div>
