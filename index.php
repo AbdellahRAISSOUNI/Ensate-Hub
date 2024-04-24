@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-<?php 
-=======
+
 <?php
->>>>>>> 7979e583f7779a4f85171f8c01ded0544073c632
 session_start();
 error_reporting(0);
 include('admin/includes/dbconnection.php');
