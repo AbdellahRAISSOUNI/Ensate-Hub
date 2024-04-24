@@ -160,7 +160,7 @@ foreach($results as $row)
         <button type="button" class="close">×</button>
         <form>
             <input type="search" value="" placeholder="type keyword(s) here" />
-            <button type="submit" class="btn btn-primary">Search</button>
+            <button type="submit" class="btn btn-primary">Rechercher</button>
         </form>
     </div>
     <!-- jquery vendor -->

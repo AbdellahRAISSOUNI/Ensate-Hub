@@ -12,7 +12,7 @@ if (strlen($_SESSION['ocastid']==0)) {
 
 <head>
   
-    <title>OCAS : Subject Wise Report </title>
+    <title>Ensaté-HUB : Rapport par matière </title>
 
     <link href="../assets/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -36,7 +36,7 @@ if (strlen($_SESSION['ocastid']==0)) {
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Subject Wise Report</h1>
+                                <h1>Rapport par matière</h1>
                             </div>
                         </div>
                     </div>
@@ -45,8 +45,8 @@ if (strlen($_SESSION['ocastid']==0)) {
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Subject Wise Report Information</li>
+                                    <li><a href="dashboard.php">Tableau de board</a></li>
+                                    <li class="active">Information Rapport par matière</li>
                                 </ol>
                             </div>
                         </div>
@@ -59,16 +59,16 @@ if (strlen($_SESSION['ocastid']==0)) {
                         <div class="card-body">
                             <form name="" method="post" action="subwise-report-assin.php" enctype="multipart/form-data">
                             <div class="card-header m-b-20">
-                                <h4>Between Dates Report of uploaded Assignment</h4>
+                                <h4>Affectation Téléchargée Rapport par matière</h4>
                                 <div class="card-header-right-icon">
                                     <ul>
                                         <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
                                         <li class="card-option drop-menu"><i class="ti-settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="link"></i>
                                             <ul class="card-option-dropdown dropdown-menu">
-                                                <li><a href="#"><i class="ti-loop"></i> Update data</a></li>
-                                                <li><a href="#"><i class="ti-menu-alt"></i> Detail log</a></li>
-                                                <li><a href="#"><i class="ti-pulse"></i> Statistics</a></li>
-                                                <li><a href="#"><i class="ti-power-off"></i> Clear ist</a></li>
+                                                <li><a href="#"><i class="ti-loop"></i> Mise à jour des données</a></li>
+                                                <li><a href="#"><i class="ti-menu-alt"></i> Détails</a></li>
+                                                <li><a href="#"><i class="ti-pulse"></i> Statistiques</a></li>
+                                                <li><a href="#"><i class="ti-power-off"></i> Effacer</a></li>
                                             </ul>
                                         </li>
                                         <li class="doc-link"><a href="#"><i class="ti-link"></i></a></li>
@@ -80,7 +80,7 @@ if (strlen($_SESSION['ocastid']==0)) {
                                 <div class="col-md-4">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>From Date</label>
+                                            <label>De la Date</label>
                                             <input class="form-control border-none input-flat bg-ash" name="fromdate" type="date" required="true">
                                         </div>
                                     </div>
@@ -88,7 +88,7 @@ if (strlen($_SESSION['ocastid']==0)) {
                                 <div class="col-md-4">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>To Date</label>
+                                            <label>Vers la Date</label>
                                             <input class="form-control border-none input-flat bg-ash" name="todate" required="true" type="date">
                                         </div>
                                     </div>
@@ -97,9 +97,9 @@ if (strlen($_SESSION['ocastid']==0)) {
                                 <div class="col-md-4">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Subject</label>
+                                            <label>Module</label>
                                             <select class="form-control border-none input-flat bg-ash" name="sid" required="true">
-            <option value="">Select Subject</option>
+            <option value="">Sélectionner le Module</option>
             <?php
      $tid=$_SESSION['ocastid'];
 $sql="SELECT tblsubject.SubjectFullname,tblsubject.ID as subid,tblsubject.SubjectCode from tblsubject 
@@ -122,7 +122,7 @@ foreach($results as $row)
                                 </div>
                             </div>
                             
-                            <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Submit</button>
+                            <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Soumettre</button>
                           
                         </form>
                         </div>

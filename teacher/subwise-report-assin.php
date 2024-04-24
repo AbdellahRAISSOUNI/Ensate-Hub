@@ -14,7 +14,7 @@ if (strlen($_SESSION['ocastid']==0)) {
 
 <head>
    
-    <title>OCAS Between Dates Reports</title>
+    <title>Ensaté-HUB Rapports entre deux dates</title>
 
     <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@ if (strlen($_SESSION['ocastid']==0)) {
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Dashboard</h1>
+                                <h1>Tableau de board</h1>
                             </div>
                         </div>
                     </div>
@@ -47,8 +47,8 @@ if (strlen($_SESSION['ocastid']==0)) {
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Between Dates Reports</li>
+                                    <li><a href="dashboard.php">Tableau de board</a></li>
+                                    <li class="active">Rapports entre deux dates</li>
                                 </ol>
                             </div>
                         </div>
@@ -61,7 +61,7 @@ if (strlen($_SESSION['ocastid']==0)) {
                         <div class="col-lg-12">
                             <div class="card alert">
                                 <div class="card-header">
-                                    <h4>Assignment</h4>
+                                    <h4>Affectation</h4>
                                     <div class="card-header-right-icon">
                                         <ul>
                                             <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
@@ -76,17 +76,17 @@ $fdate=$_POST['fromdate'];
 $tdate=$_POST['todate'];
 
 ?>
-<h4 align="center" style="color:blue">Report from <?php echo $fdate?> to <?php echo $tdate?></h4>   
+<h4 align="center" style="color:blue">Rapport de <?php echo $fdate?> vers <?php echo $tdate?></h4>   
 
                                         <table  class="table table-striped table-bordered">
                                             <thead>
                                                 <tr>
                                                     <th>S.No</th>
-                                                    <th>Assignment Number</th>
-                                                    <th>Course Name</th>
-                                                    <th>Subject</th>
-                                                    <th>Submitted By</th>
-                                                    <th>Submitted Date</th>
+                                                    <th>Numero d'Affectation</th>
+                                                    <th>Nom de Cours</th>
+                                                    <th>Module</th>
+                                                    <th>Soumis par</th>
+                                                    <th>Date de Soumission</th>
                                                     <th>Status</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -140,7 +140,7 @@ foreach($results as $row)
                                             <span class="badge badge-primary"><?php  echo "Checked Assignment";?></span>
                                         </td>
 <?php } ?> 
-                                                    <td><a href="submit-assignment.php?assinid=<?php echo htmlentities ($row->assinid);?> && uid=<?php echo htmlentities ($row->uid);?> ">View</a></td>
+                                                    <td><a href="submit-assignment.php?assinid=<?php echo htmlentities ($row->assinid);?> && uid=<?php echo htmlentities ($row->uid);?> ">Voir</a></td>
                                                 </tr>
                                              
                                             </tbody>
@@ -148,7 +148,7 @@ foreach($results as $row)
 $cnt=$cnt+1;
 } } else { ?>
   <tr>
-    <td colspan="8"> No record found against this date</td>
+    <td colspan="8"> Aucun enregistrement trouvé pour cette date.</td>
 
   </tr>
   <?php } ?>
@@ -159,7 +159,7 @@ $cnt=$cnt+1;
     <ul class="pagination">
 
 <li <?php if($page_no <= 1){ echo "class='disabled'"; } ?>>
-<a <?php if($page_no > 1){ echo "href='?page_no=$previous_page'"; } ?>>Previous</a>
+<a <?php if($page_no > 1){ echo "href='?page_no=$previous_page'"; } ?>>Précedent</a>
 </li>
 
 <?php
@@ -220,7 +220,7 @@ echo "<li><a href='?page_no=$counter'>$counter</a></li>";
 ?>
 
 <li <?php if($page_no >= $total_no_of_pages){ echo "class='disabled'"; } ?>>
-<a <?php if($page_no < $total_no_of_pages) { echo "href='?page_no=$next_page'"; } ?>>Next</a>
+<a <?php if($page_no < $total_no_of_pages) { echo "href='?page_no=$next_page'"; } ?>>Suivant</a>
 </li>
 <?php if($page_no < $total_no_of_pages){
 echo "<li><a href='?page_no=$total_no_of_pages'>Last &rsaquo;&rsaquo;</a></li>";

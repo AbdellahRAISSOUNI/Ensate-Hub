@@ -106,7 +106,7 @@ foreach($results as $row)
                                 </div>
                             </div>
                             
-                            <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Sauvgarder</button>
+                            <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Soumettre</button>
                           
                         </form>
                         </div>
