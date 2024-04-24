@@ -50,8 +50,9 @@ echo "<script>alert('Invalid Details');</script>";
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-            padding: 40px;
-        }
+            padding: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;        }
 
         .login-logo span {
             color: #15429b;
@@ -107,7 +108,7 @@ echo "<script>alert('Invalid Details');</script>";
                 <div class="col-lg-6 col-lg-offset-3">
                     <div class="login-content">
                         <div class="login-logo">
-                            <a href="../index.php"><span>Ensaté-Hub - Projet Web réalisé par des Ensatiens</span></a>
+                            <a href="../index.php"><span>Ensaté-Hub</span></a>
                         </div>
                         <div class="login-form">
                             <h4>Professeur : Connexion</h4>

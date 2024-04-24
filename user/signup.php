@@ -70,8 +70,9 @@ echo "<script>alert('Adresse mail o numéro existe déja. Essayer quelque chose'
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-            padding: 40px;
-        }
+            padding: 20px;
+            margin-top: 20px;
+            margin-bottom: 20px;        }
 
         .login-logo span {
             color: #15429b;
