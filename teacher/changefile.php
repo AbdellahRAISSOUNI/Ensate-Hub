@@ -31,9 +31,9 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head>Ensaté-HUB 
   
-    <title>Ensaté-HUB Professeur : Mise à jour Affectation </title>
+    <title>Professeur : Mise à jour Affectation </title>
 
     <link href="../assets/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -92,7 +92,7 @@ if($query->rowCount() > 0)
 foreach($results as $row1)
 {               ?>
                             <div class="card-header m-b-20">
-                                <h4>Update Assignment Number: <?php  echo htmlentities($row1->AssignmentNumber);?></h4>
+                                <h4>Mise à jour Numero d'Affectation: <?php  echo htmlentities($row1->AssignmentNumber);?></h4>
                                 <div class="card-header-right-icon">
                                     <ul>
                                         <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
@@ -125,7 +125,7 @@ foreach($results as $row1)
                                     <div class="basic-form">
                                         <div class="form-group image-type">
                                             <label>Fichier d'Affectation si existe</label>
-                                            <a href="assignmentfile/<?php echo $row1->AssignmentFile;?>" width="100" height="100" target="_blank"> <strong style="color: red">View</strong></a>
+                                            <a href="assignmentfile/<?php echo $row1->AssignmentFile;?>" width="100" height="100" target="_blank"> <strong style="color: red">Voir</strong></a>
 
                                         </div>
                                     </div>
