@@ -14,7 +14,7 @@ if (strlen($_SESSION['ocastid']==0)) {
 
 <head>
    
-    <title>OCAS Manage Assignment</title>
+    <title>Ensaté-HUB Gérer Affectation</title>
 
     <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
@@ -38,7 +38,7 @@ if (strlen($_SESSION['ocastid']==0)) {
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Dashboard</h1>
+                                <h1>Tableau de board</h1>
                             </div>
                         </div>
                     </div>
@@ -47,8 +47,8 @@ if (strlen($_SESSION['ocastid']==0)) {
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
-                                    <li><a href="dashboard.php">Dashboard</a></li>
-                                    <li class="active">Manage Assignment</li>
+                                    <li><a href="dashboard.php">Tableau de board</a></li>
+                                    <li class="active">Gérer Affectation</li>
                                 </ol>
                             </div>
                         </div>
@@ -61,7 +61,7 @@ if (strlen($_SESSION['ocastid']==0)) {
                         <div class="col-lg-12">
                             <div class="card alert">
                                 <div class="card-header">
-                                    <h4>Manage Assignment</h4>
+                                    <h4>Gérer Affectation</h4>
                                     <div class="card-header-right-icon">
                                         <ul>
                                             <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
@@ -75,11 +75,11 @@ if (strlen($_SESSION['ocastid']==0)) {
                                             <thead>
                                                 <tr>
                                                     <th>S.No</th>
-                                                    <th>Assignment Number</th>
-                                                    <th>Course Name</th>
-                                                    <th>Subject</th>
-                                                    <th>Submitted By</th>
-                                                    <th>Submitted Date</th>
+                                                    <th>Numero d'Affectation</th>
+                                                    <th>Nom de Cours</th>
+                                                    <th>Module</th>
+                                                    <th>Soumis par</th>
+                                                    <th>Date de soumission</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -105,7 +105,7 @@ foreach($results as $row)
                                                     <td><?php  echo htmlentities($row->FullName);?>(<?php  echo htmlentities($row->RollNumber);?>)</td>
                                                     <td><?php  echo htmlentities($row->SubmitDate);?></td>
                                                   
-                                                    <td><a href="submit-assignment.php?sid=<?php echo htmlentities ($row->ID);?>">Submit</a></td>
+                                                    <td><a href="submit-assignment.php?sid=<?php echo htmlentities ($row->ID);?>">Soumettre</a></td>
                                                 </tr>
                                               <?php $cnt=$cnt+1;}} ?> 
                                             </tbody>
@@ -124,7 +124,7 @@ foreach($results as $row)
                                     <li class="hidden-xs"><a href="#">8</a></li>
                                     <li class="hidden-xs"><a href="#">9</a></li>
                                     <li class="disabled hidden-xs"><span>...</span></li><li>
-                                    <li><a rel="next" href="#">Next</a></li>
+                                    <li><a rel="next" href="#">Suivant</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -140,7 +140,7 @@ foreach($results as $row)
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="footer">
-                                <p>This dashboard was generated on <span id="date-time"></span> <a href="#" class="page-refresh">Refresh Dashboard</a></p>
+                                <p>Ce tableau de bord a été généré le <span id="date-time"></span> <a href="#" class="page-refresh">Actualiser le tableau de bord</a></p>
                             </div>
                         </div>
                     </div>

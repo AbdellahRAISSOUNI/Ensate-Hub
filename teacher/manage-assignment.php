@@ -76,7 +76,7 @@ if (strlen($_SESSION['ocastid']==0)) {
                                                 <tr>
                                                     <th>S.No</th>
                                                     <th>Numero d'Affectation</th>
-                                                    <th>Nom Cours</th>
+                                                    <th>Nom de Cours</th>
                                                     <th>Module</th>
                                                     <th>Titre d'Affectation</th>
                                                     <th>Date de Soumission</th>
