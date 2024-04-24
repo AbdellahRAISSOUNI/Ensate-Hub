@@ -96,34 +96,86 @@ foreach($results as $row)
                                     </div>
                                 </div>
                                 <div class="recent-comment m-t-15">
-                                    <?php
-$cid=$_SESSION['ocasucid'];
-$sql="SELECT tblteacher.ID,tblteacher.FirstName,tblteacher.LastName,tblteacher.ProfilePic,tblteacher.CourseID,tblnewsbyteacher.ID,tblnewsbyteacher.TeacherID,tblnewsbyteacher.Title,tblnewsbyteacher.Description,tblnewsbyteacher.CreationDate from tblnewsbyteacher join tblteacher on tblteacher.ID=tblnewsbyteacher.TeacherID where tblteacher.CourseID=$cid";
-$query = $dbh -> prepare($sql);
+                                <?php
+$cid = $_SESSION['ocasucid'];
+$sql = "SELECT tblnewsbyteacher.ID, tblnewsbyteacher.Title, tblnewsbyteacher.Description, tblcomments.id as comment_id, tblcomments.comment, tblcomments.created_at, tblcomments.user_type, tbluser.FullName as student_name, tblteacher.FirstName as teacher_name, tblteacher.LastName as teacher_last_name
+FROM tblnewsbyteacher
+LEFT JOIN tblcomments ON tblnewsbyteacher.ID = tblcomments.post_id
+LEFT JOIN tbluser ON tblcomments.user_id = tbluser.ID AND tblcomments.user_type = 'student'
+LEFT JOIN tblteacher ON tblcomments.user_id = tblteacher.ID AND tblcomments.user_type = 'teacher'
+WHERE tblnewsbyteacher.TeacherID IN (SELECT ID FROM tblteacher WHERE CourseID = :cid)
+ORDER BY tblnewsbyteacher.ID, tblcomments.created_at;";
+
+$query = $dbh->prepare($sql);
+$query->bindParam(':cid', $cid, PDO::PARAM_INT);
 $query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
-$cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $row)
-{               ?>
-                                    <div class="media">
-                                        <div class="media-left">
-                                            <a href="#"><img class="media-object" src="../assets/images/avatar/Important-Announcement-292x300.jpg"  width="50" height="50" alt="..."></a>
-                                        </div>
-                                        
-                                        <div class="media-body">
-                                            <h4 class="media-heading color-primary"><?php  echo htmlentities($row->FirstName);?> <?php  echo htmlentities($row->LastName);?></h4>
-                                            <p style="font-weight: bold"><?php  echo htmlentities($row->Title);?></p>
-                                            
-                                            <p><?php  echo htmlentities($row->Description);?>
-                                                
-                                            </p>
-                                            <p><?php  echo htmlentities($row->CreationDate);?></p>
-                                        </div>
-                                        
-                                    </div>
-                                  <?php $cnt=$cnt+1;}} ?>
+$results = $query->fetchAll(PDO::FETCH_ASSOC);
+
+foreach ($results as $row) {
+    echo '<div class="media">';
+    echo '<div class="media-body">';
+    echo '<h4 class="media-heading color-primary">' . htmlentities($row['Title']) . '</h4>';
+    echo '<p>' . htmlentities($row['Description']) . '</p>';
+
+    if (!empty($row['comment'])) {
+        echo '<div class="comment">';
+        echo '<p><strong>';
+        if ($row['user_type'] == 'student') {
+            echo htmlentities($row['student_name']);
+        } else {
+            echo htmlentities($row['teacher_name'] . ' ' . $row['teacher_last_name']);
+        }
+        echo ':</strong> ' . htmlentities($row['comment']) . '</p>';
+        echo '<p><small>' . $row['created_at'] . '</small></p>';
+        echo '</div>';
+    }
+
+    echo '</div>';
+    echo '<form method="post" action="submit_comment.php">';
+    echo '<input type="hidden" name="post_id" value="' . $row['ID'] . '">';
+    echo '<textarea name="comment" placeholder="Enter your comment" required></textarea>';
+    echo '<button type="submit">Submit Comment</button>';
+    echo '</form>';
+}
+?>
+<?php
+if (isset($_SESSION['ocasteacherid'])) {
+    $teacher_id = $_SESSION['ocasteacherid'];
+    $sql = "SELECT tblnewsbyteacher.ID, tblnewsbyteacher.Title, tblnewsbyteacher.Description, tblcomments.id as comment_id, tblcomments.comment, tblcomments.created_at, tblcomments.user_type, tbluser.FullName as student_name
+    FROM tblnewsbyteacher
+    LEFT JOIN tblcomments ON tblnewsbyteacher.ID = tblcomments.post_id
+    LEFT JOIN tbluser ON tblcomments.user_id = tbluser.ID AND tblcomments.user_type = 'student'
+    WHERE tblnewsbyteacher.TeacherID = :teacher_id
+    ORDER BY tblnewsbyteacher.ID, tblcomments.created_at;";
+
+    $query = $dbh->prepare($sql);
+    $query->bindParam(':teacher_id', $teacher_id, PDO::PARAM_INT);
+    $query->execute();
+    $results = $query->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach ($results as $row) {
+        echo '<div class="media">';
+        echo '<div class="media-body">';
+        echo '<h4 class="media-heading color-primary">' . htmlentities($row['Title']) . '</h4>';
+        echo '<p>' . htmlentities($row['Description']) . '</p>';
+
+        if (!empty($row['comment'])) {
+            echo '<div class="comment">';
+            echo '<p><strong>' . htmlentities($row['student_name']) . ':</strong> ' . htmlentities($row['comment']) . '</p>';
+            echo '<p><small>' . $row['created_at'] . '</small></p>';
+            echo '</div>';
+        }
+
+        echo '</div>';
+        echo '<form method="post" action="submit_teacher_comment.php">';
+        echo '<input type="hidden" name="comment_id" value="' . $row['comment_id'] . '">';
+        echo '<textarea name="teacher_comment" placeholder="Enter your response" required></textarea>';
+        echo '<button type="submit">Submit Response</button>';
+        echo '</form>';
+        echo '</div>';
+    }
+}
+?>
                                 </div>
                             </div>
                             <!-- /# card -->

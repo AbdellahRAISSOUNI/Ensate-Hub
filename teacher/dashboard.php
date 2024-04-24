@@ -123,7 +123,53 @@ $totnews=$query->rowCount();
                         </div>
                      
                     </div>
-                  
+
+                    <?php
+if (isset($_SESSION['ocasteacherid'])) {
+    $teacher_id = $_SESSION['ocasteacherid'];
+    $sql = "SELECT tblcomments.id as comment_id, tblcomments.comment, tblcomments.created_at, tbluser.FullName as student_name
+            FROM tblcomments
+            JOIN tbluser ON tblcomments.user_id = tbluser.ID AND tblcomments.user_type = 'student'
+            WHERE tblcomments.post_id IN (
+                SELECT ID FROM tblnewsbyteacher WHERE TeacherID = :teacher_id
+            )
+            ORDER BY tblcomments.created_at DESC";
+    $query = $dbh->prepare($sql);
+    $query->bindParam(':teacher_id', $teacher_id, PDO::PARAM_INT);
+    $query->execute();
+    $comments = $query->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4>Student Comments</h4>
+            </div>
+            <div class="card-body">
+                <?php if (count($comments) > 0) { ?>
+                    <?php foreach ($comments as $comment) { ?>
+                        <div class="comment">
+                            <p><strong><?php echo $comment['student_name']; ?></strong> (<small><?php echo $comment['created_at']; ?></small>)</p>
+                            <p><?php echo $comment['comment']; ?></p>
+                            <form method="post" action="submit_teacher_comment.php">
+                                <input type="hidden" name="comment_id" value="<?php echo $comment['comment_id']; ?>">
+                                <div class="form-group">
+                                    <textarea class="form-control" name="teacher_comment" rows="3" placeholder="Write your response..."></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit Response</button>
+                            </form>
+                        </div>
+                        <hr>
+                    <?php } ?>
+                <?php } else { ?>
+                    <p>No comments found.</p>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+</div>
+<?php } ?>
                   
                    <?php include_once('includes/footer.php');?>
                 </div>
