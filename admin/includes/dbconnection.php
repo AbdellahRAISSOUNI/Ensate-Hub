@@ -1,13 +1,8 @@
 <?php 
 // DB credentials.
 define('DB_HOST','localhost');
-<<<<<<< HEAD
 define('DB_USER','root');
 define('DB_PASS','Ossamasm123');
-=======
-define('DB_USER','jihane');
-define('DB_PASS','password');
->>>>>>> c3b229f7885c4347ff688e2f8e65a7f636c44e9e
 define('DB_NAME','ocasdb');
 // Establish database connection.
 try
