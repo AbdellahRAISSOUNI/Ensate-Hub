@@ -108,7 +108,7 @@ echo "<script>alert('Invalid Details');</script>";
                 <div class="col-lg-6 col-lg-offset-3">
                     <div class="login-content">
                         <div class="login-logo">
-                            <a href="../index.php"><span>Ensaté-Hub - Projet Web réalisé par des Ensatiens</span></a>
+                            <a href="../index.php"><span>Ensaté-Hub</span></a>
                         </div>
                         <div class="login-form">
                             <h4>Professeur : Connexion</h4>
