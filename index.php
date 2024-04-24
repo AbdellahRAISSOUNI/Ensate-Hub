@@ -8,7 +8,7 @@ include('admin/includes/dbconnection.php');
 <html lang="en">
 
 <head>
-	<title>OCAS | Home Page</title>
+	<title>Ensaté-Hub | Page d'accueil</title>
 
 	<!-- Style-sheets -->
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
@@ -20,9 +20,96 @@ include('admin/includes/dbconnection.php');
 	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
 	<link href="//fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
 	<!--//web-fonts-->
+	<!-- top -->
+	<style>
+    .top-header-area {
+      background-color: #15429b;
+      padding: 10px 0;
+    }
+
+    .top-header-content a {
+      color: #fff;
+      margin-right: 20px;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .top-header-content a:last-child {
+      margin-right: 0;
+    }
+
+    .top-header-content a i {
+      margin-right: 5px;
+    }
+
+    .top-header-content span {
+      vertical-align: middle;
+    }
+
+    .top-header-content a:hover {
+      text-decoration: underline;
+    }
+/* nav bar */
+.navbar-toggle.collapsed .icon-bar {
+    background-color: #174ebb;
+  }
+
+  .navbar-toggle.collapsed .icon-bar:hover {
+    background-color: #174ebb; /* Optionnel: Si vous voulez changer la couleur au survol */
+  }
+
+  .navbar-toggle.collapsed:focus .icon-bar {
+    background-color: #174ebb; /* Optionnel: Si vous voulez changer la couleur lorsqu'il est en focus */
+  }
+
+/*--------------*/
+
+.single-footer-widget {
+  background-color: #174ebb;
+  padding: 30px;
+  color: #fff;
+}
+
+.single-footer-widget p {
+  margin-bottom: 20px;
+}
+
+.footer-contact p {
+  margin-bottom: 10px;
+}
+
+.footer-contact p i {
+  margin-right: 10px;
+}
+
+
+  </style>
+	<!-- -->
+
 </head>
 
 <body>
+	<!--top -->
+
+	<div class="top-header-area">
+      <div class="container h-100">
+        <div class="row h-100 align-items-center">
+          <!-- Top Content -->
+          <div class="col-6 col-md-9 col-lg-8">
+            <div class="top-header-content">
+              <a href="#" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="BP: 2222 M'hannech Tétouan Morocco"><i class="fa fa-map-marker"></i> <span>BP: 2222 M'hannech Tétouan Morocco</span></a>
+              <a href="mailto:admin@gmail.ma" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="admin@gmail.ma"><i class="fa fa-envelope"></i> <span>admin@gmail.ma</span></a>
+            </div>
+          </div>
+          <!-- Top Header Social Info -->
+          <div class="col-6 col-md-3 col-lg-4">
+            <div class="top-header-social-info text-right">
+                          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+	<!-- end top -->
 	<!-- banner -->
 	<div class="banner" id="home">
 		<div class="container">
@@ -31,7 +118,13 @@ include('admin/includes/dbconnection.php');
 
 				<div class="header-bottom-w3layouts">
 					<div class="main-w3ls-logo">
-						<h1><a href="index.php"><span class="fa fa-check-square-o" aria-hidden="true"></span>OCAS</a></h1>
+					<h1>
+  <a href="index.php" style="color: #fff;">
+    <span class="fa fa-graduation-cap" aria-hidden="true"></span>
+    Ensaté-Hub
+  </a>
+</h1>
+
 					</div>
 					<!-- navigation -->
 					<nav class="navbar navbar-default">
@@ -39,7 +132,7 @@ include('admin/includes/dbconnection.php');
 						<div class="navbar-header">
 							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
 							    aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
+					<span class="sr-only">Bascule de navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -50,10 +143,10 @@ include('admin/includes/dbconnection.php');
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
-								<li><a class="active" href="index.php">Home</a></li>
-								<li><a href="user/login.php">Students</a></li>
-								<li><a href="teacher/login.php">Teacher</a></li>
-								<li><a href="admin/login.php">Admin</a></li>
+							<li><a class="active" href="index.php">Accueil</a></li>
+							<li><a href="user/login.php">Étudiants</a></li>
+							<li><a href="teacher/login.php">Enseignant</a></li>
+							<li><a href="admin/login.php">Administrateur</a></li>
 								
 							</ul>
 
@@ -73,16 +166,17 @@ include('admin/includes/dbconnection.php');
 					<ul class="rslides" id="slider3">
 						<li>
 							<div class="slider-info">
-								<h3>It is never too late to Study</h3>
-								<p>Education Needs Complete Solution</p>
+							<h3>Il n'est jamais trop tard pour étudier</h3>
+							<p>L'éducation a besoin d'une solution complète</p>
 								
 							</div>
 						</li>
 						<li>
 
 							<div class="slider-info">
-								<h3>The best learning institute</h3>
-								<p>Successful career starts with good training</p>
+							<h3>La meilleure institution d'apprentissage</h3>
+							<p>Une carrière réussie commence par une bonne formation</p>
+
 								
 							</div>
 						</li>
@@ -99,7 +193,7 @@ include('admin/includes/dbconnection.php');
 	<!-- Notice -->
 	<div class="testimonials-section">
 		<div class="container">
-			<h5 class="main-w3l-title">Notice By College</h5>
+			<h5 class="main-w3l-title">Avis de l'École</h5>
 			<section class="slider">
 				<div class="flexslider">
 					<ul class="slides">
@@ -137,14 +231,23 @@ foreach($results as $row)
 	<div class="footer-agileits-w3layouts">
 		<div class="container">
 			<div class="btm-logo-w3ls">
-				<h2><a href="index.html"><span class="fa fa-check-square-o" aria-hidden="true"></span>OCAS</a></h2>
+				<h2><a href="index.html"><span class="fa fa-check-square-o" aria-hidden="true"></span>Ensaté-Hub</a></h2>
 			</div>
 			<div class="clearfix"> </div>
 		</div>
 	</div>
+	<div class="single-footer-widget">
+            <a href="./index.html" class="d-block mb-4"><img src="../images/logoensa.png" style="max-width: 60%" alt=""></a>
+            <p>Ensaté-Hub : Votre Plateforme d'Enseignement Supérieur en Ligne.</p>
+            <div class="footer-contact">
+              <p><i class="fa fa-map-marker"></i>BP: 2222 M'hannech Tétouan</p>
+              <p><i class="fa fa-phone"></i>+212. 500. 000. 000</p>
+              <p><i class="fa fa-envelope"></i>admin@gmail.ma</p>
+            </div>
+          </div>
 	<div class="copyright-w3layouts">
 		<div class="container">
-			<p>&copy; 2020 OCAS . Online College Assignment System | </p>
+			<p>&copy; 2024 : Ensaté-Hub - TOUS LES DROITS SONT RÉSERVÉS | </p>
 		</div>
 	</div>
 	<!-- //Footer -->
