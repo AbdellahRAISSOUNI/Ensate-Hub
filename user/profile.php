@@ -99,11 +99,11 @@ if($query->rowCount() > 0)
 foreach($results as $row)
 {               ?>
                                             <div class="form-group">
-                                                <label>Full Name</label>
+                                                <label> Nom complet</label>
                                                 <input type="text" class="form-control"  name="name" value="<?php  echo $row->FullName;?>" required='true'>
                                             </div>
                                             <div class="form-group">
-                                                <label>Roll Number</label>
+                                                <label>Apogée</label>
                                                 <input type="text" class="form-control" name="username" value="<?php  echo $row->RollNumber;?>" readonly="true">
                                             </div>
                                             <div class="form-group">
@@ -111,11 +111,11 @@ foreach($results as $row)
                                                 <input type="email" class="form-control" name="email" value="<?php  echo $row->Email;?>" required='true'>
                                             </div>
                                              <div class="form-group">
-                                                <label>Contact Number</label>
+                                                <label>Numero telephone</label>
                                                 <input type="text" class="form-control" name="mobilenumber" value="<?php  echo $row->MobileNumber;?>" required='true' maxlength='10' readonly>
                                             </div>
                                             <div class="form-group">
-                                                <label>Registration Date</label>
+                                                <label>Date d'inscription</label>
                                                <input type="text" class="form-control" id="email2" name="" value="<?php  echo $row->RegDate;?>" readonly="true">
                                             </div>
                                            

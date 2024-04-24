@@ -1,3 +1,4 @@
+<?php 
 session_start();
 error_reporting(0);
 include('admin/includes/dbconnection.php');
