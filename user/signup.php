@@ -52,18 +52,75 @@ echo "<script>alert('Adresse mail o numéro existe déja. Essayer quelque chose'
 <html lang="en">
 
 <head>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OCAS User : Signup</title>
-
     <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">
     <link href="../assets/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/lib/unix.css" rel="stylesheet">
     <link href="../assets/css/style.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #15429b;
+        }
+
+        .login-content {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+
+        .login-logo span {
+            color: #15429b;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .login-form h4 {
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .form-group label {
+            color: #333;
+            font-weight: bold;
+        }
+
+        .form-group label.bold {
+            font-weight: bold;
+        }
+
+        .form-control {
+            border-radius: 25px;
+        }
+
+        .btn-primary {
+            border-radius: 25px;
+            background-color: #15429b;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #12347a;
+        }
+
+        .register-link a {
+            color: #15429b;
+        }
+
+        .register-link a:hover {
+            color: #12347a;
+        }
+    </style>
 </head>
 
-<body class="bg-primary">
+<body>
 
     <div class="unix-login">
         <div class="container">
@@ -81,11 +138,11 @@ echo "<script>alert('Adresse mail o numéro existe déja. Essayer quelque chose'
                                     <input type="text" value="" name="fname" required="true" class="form-control">
                                 </div>
                                 <div class="form-group">
-                                    <label>Numéro de Téléphone</label>
+                                    <label class="bold">Numéro de Téléphone</label>
                                     <input type="text" name="mobno" class="form-control" required="true" maxlength="10" pattern="[0-9]+">
                                 </div>
                                 <div class="form-group">
-                                    <label>Adresse mail</label>
+                                    <label class="bold">Adresse mail</label>
                                     <input type="email" class="form-control" value="" name="email" required="true">
                                 </div>
                                 <div class="form-group">
@@ -112,7 +169,7 @@ foreach($results as $row)
 
    ?>
                                        <option value="<?php  echo $row->ID;?>"><?php  echo htmlentities($row->CourseName);?>(<?php  echo htmlentities($row->BranchName);?>)</option><?php $cnt=$cnt+1;}} ?>
-                                    </select>
+                                       </select>
                                 </div>
                                 <div class="form-group">
                                     <label>Mot de passe</label>
@@ -122,7 +179,7 @@ foreach($results as $row)
                                 <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30" name="submit">Register</button>
                                
                                 <div class="register-link m-t-15 text-center">
-                                    <p>Vous avez déja un compte ? <a href="login.php"> Connectez Vous !</a></p>
+                                    <p>Vous avez déjà un compte ? <a href="login.php"> Connectez Vous !</a></p>
                                 </div>
                             </form>
                         </div>

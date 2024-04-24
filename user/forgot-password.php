@@ -34,29 +34,81 @@ echo "<script>alert('Email o Numéro invalides');</script>";
 <html lang="en">
 
 <head>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mot de passe oublié</title>
-    
+    <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">
     <link href="../assets/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/lib/unix.css" rel="stylesheet">
     <link href="../assets/css/style.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #15429b;
+        }
+
+        .login-content {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+
+        .login-logo span {
+            color: #15429b;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .login-form h4 {
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .form-group label {
+            color: #333;
+            font-weight: bold;
+        }
+
+        .form-control {
+            border-radius: 25px;
+        }
+
+        .btn-primary {
+            border-radius: 25px;
+            background-color: #15429b;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #12347a;
+        }
+
+        .register-link a {
+            color: #333;
+        }
+
+        .register-link a:hover {
+            color: #15429b;
+        }
+    </style>
     <script type="text/javascript">
-function valid()
-{
-if(document.chngpwd.newpassword.value!= document.chngpwd.confirmpassword.value)
-{
-alert("New Password and Confirm Password Field do not match  !!");
-document.chngpwd.confirmpassword.focus();
-return false;
-}
-return true;
-}
-</script>
+        function valid() {
+            if (document.chngpwd.newpassword.value != document.chngpwd.confirmpassword.value) {
+                alert("Les nouveaux mots de passe ne correspondent pas !!");
+                document.chngpwd.confirmpassword.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 
-<body class="bg-primary">
+<body>
 
     <div class="unix-login">
         <div class="container">
@@ -64,35 +116,33 @@ return true;
                 <div class="col-lg-6 col-lg-offset-3">
                     <div class="login-content">
                         <div class="login-logo">
-                            <a href="dashboard.php"><span>Etudiant</span></a>
+                            <a href="dashboard.php"><span>Ensaté-Hub Etudiant</span></a>
                         </div>
                         <div class="login-form">
                             <h4>J'ai Oublié mon Mot de Passe</h4>
                             <form method="post" name="chngpwd" onSubmit="return valid();">
                                 <div class="form-group">
                                     <label>Adresse Mail:</label>
-                                    <input type="email" class="form-control" placeholder="Qliquer ici pour entrer votre adresse mail" required="true" name="email">
+                                    <input type="email" class="form-control" placeholder="Entrez votre adresse mail" required="true" name="email">
                                 </div>
                                 <div class="form-group">
-                                    <label>Numéro de téléphone</label>
-                                    <input type="text" class="form-control" placeholder="Qliquer ici pour entrer votre numéro de téléphone" required="true" name="mobile" maxlength="10" pattern="[0-9]+">
+                                    <label>Numéro de téléphone :</label>
+                                    <input type="text" class="form-control" placeholder="Entrez votre numéro de téléphone" required="true" name="mobile" maxlength="10" pattern="[0-9]+">
                                 </div>
                                 <div class="form-group">
-                                    <label>Nouveau mot de passe</label>
-                                    <input type="password" name="newpassword" class="form-control" placeholder="Qliquer pour entrer le nouveau mot de passe" required="true">
+                                    <label>Nouveau mot de passe :</label>
+                                    <input type="password" name="newpassword" class="form-control" placeholder="Entrez le nouveau mot de passe" required="true">
                                 </div>
                                 <div class="form-group">
-                                    <label>Confirmer le nouveau mot de passe</label>
-                                    <input type="password" name="confirmpassword" class="form-control" placeholder="Confirmer le nouveau mot de passe" required="true">
+                                    <label>Confirmer le nouveau mot de passe :</label>
+                                    <input type="password" name="confirmpassword" class="form-control" placeholder="Confirmez le nouveau mot de passe" required="true">
                                 </div>
                                 <div class="checkbox">
-                                    
                                     <label class="pull-right">
-										<a href="login.php">Connectez vous?</a>
-									</label>
-
+                                        <a href="login.php">Connectez vous?</a>
+                                    </label>
                                 </div>
-                                <button type="submit" name="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Restorer votre mot de passe</button>
+                                <button type="submit" name="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Restaurer votre mot de passe</button>
                             </form>
                         </div>
                     </div>

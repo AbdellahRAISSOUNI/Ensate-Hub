@@ -34,29 +34,87 @@ echo "<script>alert('Email id or Mobile no is invalid');</script>";
 <html lang="en">
 
 <head>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Utilisateur d'Ensaté-Hub : Mot de Passe Oublié</title>
-    
+    <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">
     <link href="../assets/css/lib/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/lib/unix.css" rel="stylesheet">
     <link href="../assets/css/style.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #15429b;
+        }
+
+        .login-content {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+        }
+
+        .login-logo span {
+            color: #15429b;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .login-form h4 {
+            margin-bottom: 30px;
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .form-group label {
+            color: #333;
+            font-weight: bold;
+
+        }
+
+        .form-control {
+            border-radius: 25px;
+        }
+
+        .btn-primary {
+            border-radius: 25px;
+            background-color: #15429b;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #12347a;
+        }
+
+        .checkbox label {
+            color: #333;
+            font-weight: bold;
+        }
+
+        .checkbox label a {
+            color: #15429b;
+        }
+
+        .checkbox label a:hover {
+            color: #12347a;
+        }
+    </style>
     <script type="text/javascript">
-function valid()
-{
-if(document.chngpwd.newpassword.value!= document.chngpwd.confirmpassword.value)
-{
-alert("New Password and Confirm Password Field do not match  !!");
-document.chngpwd.confirmpassword.focus();
-return false;
-}
-return true;
-}
-</script>
+        function valid() {
+            if (document.chngpwd.newpassword.value != document.chngpwd.confirmpassword.value) {
+                alert("New Password and Confirm Password Field do not match  !!");
+                document.chngpwd.confirmpassword.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
 </head>
 
-<body class="bg-primary">
+<body>
 
     <div class="unix-login">
         <div class="container">
@@ -87,7 +145,7 @@ return true;
                                 </div>
                                 <div class="checkbox">
                                     <label class="pull-right">
-                                        <a href="login.php">se connecter</a>
+                                        <a href="login.php"> Connecter Vouz</a>
                                     </label>
                                 </div>
                                 <button type="submit" name="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Réinitialiser</button>
