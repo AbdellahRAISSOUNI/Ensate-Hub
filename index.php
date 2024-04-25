@@ -262,7 +262,8 @@ foreach($results as $row)
 		</div>
 	</div>
 	<div class="single-footer-widget">
-            <a href="./index.html" class="d-block mb-4"><img src="../images/logoensa.png" style="max-width: 60%" alt="logo" color="white"></a>
+					<div href="./index.html" class="d-block mb-4"><img src="ensatelogo.png" style="max-width: 10%" alt="logo" color="white"></div>
+
             <p>Ensaté-Hub : Votre Plateforme d'Enseignement Supérieur en Ligne.</p>
             <div class="footer-contact">
               <p><i class="fa fa-map-marker"></i>BP: 2222 M'hannech Tétouan</p>
