@@ -76,7 +76,7 @@ label {
 .main-w3ls-logo h1 a span {
 	display: inline-block;
 	font-size: 1.5em;
-	color: #15429b;
+	color: #265dcc;
 }
 
 .navbar {
@@ -239,7 +239,7 @@ nav.shift ul li a.active:after ,nav.shift ul li a:hover:after {
 .navbar-default .navbar-nav>.open>a,
 .navbar-default .navbar-nav>.open>a:hover,
 .navbar-default .navbar-nav>.open>a:focus {
-	color: #15429b;
+	color: #2c66d8;
 	background-color: transparent;
 }
 
@@ -257,7 +257,7 @@ nav.shift ul li a.active:after ,nav.shift ul li a:hover:after {
 .navbar-nav>li>a.active,
 .navbar-default .navbar-nav>li>a:hover,
 .navbar-default .navbar-nav>li>a:focus {
-	color: #15429b;
+	color: #2c66d8;
 	border-bottom: 2px solid #fff;
 }
 
@@ -285,7 +285,7 @@ nav.shift ul li a.active:after ,nav.shift ul li a:hover:after {
 .dropdown-menu>li>a:hover {
 	color: #fff;
 	text-decoration: none;
-	background-color: #00b6e3;
+	background-color: #265dcc;
 }
 
 .header-bottom-w3layouts {
@@ -416,7 +416,7 @@ nav.shift ul li a.active:after ,nav.shift ul li a:hover:after {
 	margin-top: -2px;
 	left: 50%;
 	margin-left: -11px;
-	background: #15429b;
+	background: #265dcc;
 	opacity: 0;
 	/* Force Hardware Acceleration in WebKit */
 	-webkit-transform: translateZ(0);
@@ -573,6 +573,7 @@ nav.shift ul li a.active:after ,nav.shift ul li a:hover:after {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Couleur grise semi-transparente */
+	color:#265dcc;
 }
 
 
@@ -796,7 +797,7 @@ nav.shift ul li a.active:after ,nav.shift ul li a:hover:after {
 }
 
 .callbacks_here a:after {
-	background: #1751c5;
+	background: #265DCC;
 }
 
 p.sub-para {
@@ -1079,8 +1080,8 @@ select#country1,
 }
 
 .login-social-grids ul li a i.fa.fa-rss:hover {
-	border: solid 2px #f26522;
-	background: #f26522;
+	border: solid 2px #55acee;
+	background: #55acee;
 	color: #FFFFFF;
 }
 
@@ -1168,7 +1169,7 @@ ul.radio-buttons li {
 }
 
 .modal-content h4 {
-	color: #f74f08;
+	color: #55acee;
 	text-align: center;
 	font-size: 35px;
 	margin-bottom: 15px;
@@ -1205,7 +1206,7 @@ h5.main-w3l-title {
 	text-transform: capitalize;
 	text-align: left;
 	margin-bottom: 0.6em;
-	color: #000;
+	color: #265dcc;
 	letter-spacing: 4px;
 	font-family: 'Righteous', cursive;
 }
@@ -2757,7 +2758,7 @@ p.white-clr {
 	height: 32px;
 	border: none;
 	text-indent: 100%;
-	background: url(../images/arr1.png) no-repeat 0px 0px;
+	background: url(../images/arr2.png) no-repeat 0px 0px;
 }
 
 #toTopHover {
@@ -3052,7 +3053,7 @@ p.white-clr {
 		border-color: #ffffff;
 	}
 	.navbar-default .navbar-toggle .icon-bar {
-		background-color: #00b6e3;
+		background-color: #fff;
 	}
 	.navbar-default .navbar-toggle:hover,
 	.navbar-default .navbar-toggle:focus {

@@ -62,6 +62,62 @@ include('admin/includes/dbconnection.php');
     background-color: #174ebb; /* Optionnel: Si vous voulez changer la couleur lorsqu'il est en focus */
   }
 
+  .contact-info span{
+	color:#fff;
+  }
+
+  .contact-info {
+            color: white;
+            font-size: 16px;
+            transition: transform 0.3s, #fff 0.3s;
+            margin-bottom: 10px;
+        }
+
+        .contact-info a:hover {
+            transform: scale(1.05);
+            color: gray;
+        }
+
+        .contact-info i {
+			color:#fff;
+            margin: 5px;
+        }
+
+		.contact-info a{
+			color:#fff;
+		}
+
+
+
+        .elementor-icon-box-wrapper {
+            display: inline-block;
+            margin: 30px;
+            width: 400px;
+            color: #ffffff; /* couleur du texte */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            background-color: #265dcc; /* couleur de fond */
+			height: 390px;
+			margin-inline: 60px;
+			
+        }
+
+        .elementor-icon-box-content {
+            text-align: justify;
+        }
+
+        .elementor-icon-box-title span {
+            display: block;
+            color: #ffffff; /* couleur du titre */
+            font-weight: bold; /* mise en gras du titre */
+			text-align: center;
+			margin-bottom: 10px;
+        }
+
+        .elementor-icon-box-description {
+            color: #ffffff; /* couleur de la description */
+        }
 /*--------------*/
 
 .single-footer-widget {
@@ -80,6 +136,32 @@ include('admin/includes/dbconnection.php');
 
 .footer-contact p i {
   margin-right: 10px;
+}
+
+.banner {
+        position: relative;
+        min-height: 795px;
+        background: url('baner1.png') no-repeat 0 0;
+        background-size: cover;
+
+    }
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value (0.5) for darkness */
+}
+
+
+h2 a .fa.fa-graduation-cap {
+    color: #265dcc; /* couleur spécifique */
+}
+
+h1 a .fa.fa-graduation-cap {
+    color: #265dcc; /* couleur spécifique */
 }
 
 
@@ -120,9 +202,7 @@ include('admin/includes/dbconnection.php');
 					<div class="main-w3ls-logo">
 					<h1>
   <a href="index.php" style="color: #fff;">
-    <span class="fa fa-graduation-cap" aria-hidden="true"></span>
-    Ensaté-Hub
-  </a>
+    <span class="fa fa-graduation-cap" aria-hidden="true"></span>Ensaté-Hub</a>
 </h1>
 
 					</div>
@@ -231,18 +311,45 @@ foreach($results as $row)
 	<div class="footer-agileits-w3layouts">
 		<div class="container">
 			<div class="btm-logo-w3ls">
-				<h2><a href="index.html"><span class="fa fa-check-square-o" aria-hidden="true"></span>Ensaté-Hub</a></h2>
+				<h2><a href="index.html"><span class="fa fa-graduation-cap" aria-hidden="true"></span>Ensaté-Hub</a></h2>
 			</div>
+			<div class="elementor-icon-box-wrapper">
+    <div class="elementor-icon-box-content">
+        <h3 class="elementor-icon-box-title">
+            <span>
+			Réalisateurs de projets :
+            </span>
+        </h3>
+        <p class="elementor-icon-box-description">
+		L'équipe de réalisateurs, composée de <b>Oussama Ben Kacem</b>, <b>Abdellah Raissouni</b>, <b>Jihan Elamrani</b> et <b>Mohamed Salim Soulmani</b>, sont des étudiants de l'École Nationale des Sciences Appliquées de Tétouan. Ils ont créé la plateforme <b>Ensaté-Hub</b> dans le cadre du module de développement web 1, répondant ainsi à un besoin spécifique : offrir un espace d'apprentissage en ligne aux étudiants. Grâce à leur collaboration et à leurs compétences en développement web, ils ont réussi à concevoir une plateforme moderne et fonctionnelle pour soutenir l'enseignement et l'apprentissage.
+        </p>
+    </div>
+</div>
+
+<div class="elementor-icon-box-wrapper">
+    <div class="elementor-icon-box-content">
+        <h3 class="elementor-icon-box-title">
+            <span>
+			Encadrant :
+            </span>
+        </h3>
+        <p class="elementor-icon-box-description">
+		Nous avons eu la chance d'être encadrés par notre meilleur professeur de développement web1, <b>El Jourani Reda</b>, tout au long de la réalisation de ce projet. Son expertise, ses conseils avisés et son soutien indéfectible ont été précieux pour nous guider dans la conception et le développement de la plateforme <b>Ensaté-Hub</b>. Nous lui exprimons notre profonde gratitude pour son dévouement et son engagement envers notre réussite. Ses encouragements ont été une source d'inspiration et nous ont permis d'atteindre nos objectifs avec succès.
+        </p>
+    </div>
+</div>
+
+
 			<div class="clearfix"> </div>
 		</div>
 	</div>
-	<div class="single-footer-widget">
-            <a href="./index.html" class="d-block mb-4"><img src="../images/logoensa.png" style="max-width: 60%" alt=""></a>
+	<div class="single-footer-widget" >
+					<div href="./index.html" class="d-block mb-4"><img src="ensatelogo.png" style="max-width: 10%" alt="logo" color="white"></div>
             <p>Ensaté-Hub : Votre Plateforme d'Enseignement Supérieur en Ligne.</p>
             <div class="footer-contact">
-              <p><i class="fa fa-map-marker"></i>BP: 2222 M'hannech Tétouan</p>
-              <p><i class="fa fa-phone"></i>+212. 500. 000. 000</p>
-              <p><i class="fa fa-envelope"></i>admin@gmail.ma</p>
+			<p class="contact-info" color="white"><span class="c1"><i class="fa fa-map-marker"></i></span><span><a href="#">BP: 2222 M'hannech Tétouan</a></span></p>
+			<p class="contact-info"><span><i class="fa fa-phone"></i></span><span><a href="#">+212. 500. 000. 000</a></span></p>
+			<p class="contact-info"><span><i class="fa fa-envelope"></i></span><span><a href="mailto:admin@gmail.ma">admin@gmail.ma</a></span></p>
             </div>
           </div>
 	<div class="copyright-w3layouts">
