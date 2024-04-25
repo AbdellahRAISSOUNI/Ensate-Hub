@@ -83,6 +83,15 @@ include('admin/includes/dbconnection.php');
 }
 
 
+h2 a .fa.fa-graduation-cap {
+    color: #265dcc; /* couleur spécifique */
+}
+
+h1 a .fa.fa-graduation-cap {
+    color: #265dcc; /* couleur spécifique */
+}
+
+
   </style>
 	<!-- -->
 
@@ -120,8 +129,7 @@ include('admin/includes/dbconnection.php');
 					<div class="main-w3ls-logo">
 					<h1>
   <a href="index.php" style="color: #fff;">
-    <span class="fa fa-graduation-cap" aria-hidden="true"></span>
-    Ensaté-Hub
+    <span class="fa fa-graduation-cap" aria-hidden="true"></span>Ensaté-Hub
   </a>
 </h1>
 
@@ -231,13 +239,13 @@ foreach($results as $row)
 	<div class="footer-agileits-w3layouts">
 		<div class="container">
 			<div class="btm-logo-w3ls">
-				<h2><a href="index.html"><span class="fa fa-check-square-o" aria-hidden="true"></span>Ensaté-Hub</a></h2>
+				<h2><a href="index.html"><span class="fa fa-graduation-cap" aria-hidden="true"></span>Ensaté-Hub</a></h2>
 			</div>
 			<div class="clearfix"> </div>
 		</div>
 	</div>
 	<div class="single-footer-widget">
-            <a href="./index.html" class="d-block mb-4"><img src="../images/logoensa.png" style="max-width: 60%" alt=""></a>
+            <a href="./index.html" class="d-block mb-4"><img src="../images/logoensa.png" style="max-width: 60%" alt="logo" color="white"></a>
             <p>Ensaté-Hub : Votre Plateforme d'Enseignement Supérieur en Ligne.</p>
             <div class="footer-contact">
               <p><i class="fa fa-map-marker"></i>BP: 2222 M'hannech Tétouan</p>

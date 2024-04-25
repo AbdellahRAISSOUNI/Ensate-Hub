@@ -2,7 +2,7 @@
 // DB credentials.
 define('DB_HOST','localhost');
 define('DB_USER','root');
-define('DB_PASS','1003'); // Updated password
+define('DB_PASS','Ossamasm123'); // Updated password
 define('DB_NAME','ocasdb');
 
 // Establish database connection.
