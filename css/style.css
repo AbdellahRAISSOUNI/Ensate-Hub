@@ -76,7 +76,7 @@ label {
 .main-w3ls-logo h1 a span {
 	display: inline-block;
 	font-size: 1.5em;
-	color: #15429b;
+	color: #265dcc;
 }
 
 .navbar {
@@ -1206,7 +1206,7 @@ h5.main-w3l-title {
 	text-transform: capitalize;
 	text-align: left;
 	margin-bottom: 0.6em;
-	color: #000;
+	color: #265dcc;
 	letter-spacing: 4px;
 	font-family: 'Righteous', cursive;
 }
