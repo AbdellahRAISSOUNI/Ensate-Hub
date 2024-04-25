@@ -87,7 +87,17 @@ include('admin/includes/dbconnection.php');
         min-height: 795px;
         background: url('baner1.png') no-repeat 0 0;
         background-size: cover;
+
     }
+.banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value (0.5) for darkness */
+}
 
 
   </style>
