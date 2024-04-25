@@ -87,6 +87,34 @@ include('admin/includes/dbconnection.php');
 			color:#fff;
 		}
 
+
+
+        .elementor-icon-box-wrapper {
+            display: inline-block;
+            margin: 20px;
+            width: 400px;
+            color: #ffffff; /* couleur du texte */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            background-color: #265dcc; /* couleur de fond */
+			max-height: 400px;
+			justify-content: space-between;
+        }
+
+        .elementor-icon-box-content {
+            text-align: justify;
+        }
+
+        .elementor-icon-box-title span {
+            display: block;
+            color: #ffffff; /* couleur du titre */
+            font-weight: bold; /* mise en gras du titre */
+        }
+
+        .elementor-icon-box-description {
+            color: #ffffff; /* couleur de la description */
+        }
 /*--------------*/
 
 .single-footer-widget {
@@ -171,8 +199,7 @@ h1 a .fa.fa-graduation-cap {
 					<div class="main-w3ls-logo">
 					<h1>
   <a href="index.php" style="color: #fff;">
-    <span class="fa fa-graduation-cap" aria-hidden="true"></span>Ensaté-Hub
-  </a>
+    <span class="fa fa-graduation-cap" aria-hidden="true"></span>Ensaté-Hub</a>
 </h1>
 
 					</div>
@@ -283,6 +310,33 @@ foreach($results as $row)
 			<div class="btm-logo-w3ls">
 				<h2><a href="index.html"><span class="fa fa-graduation-cap" aria-hidden="true"></span>Ensaté-Hub</a></h2>
 			</div>
+			<div class="elementor-icon-box-wrapper">
+    <div class="elementor-icon-box-content">
+        <h3 class="elementor-icon-box-title">
+            <span>
+			Réalisateurs de projets :
+            </span>
+        </h3>
+        <p class="elementor-icon-box-description">
+            Nos étudiants sont toujours au centre de nos préoccupations. Nous accordons une attention particulière au développement personnel de nos étudiants grâce à une large variété de programmes parascolaires et d'activités associatives, permettant le renforcement de leurs liens avec l'ENSATE ainsi que leur épanouissement personnel.
+        </p>
+    </div>
+</div>
+
+<div class="elementor-icon-box-wrapper">
+    <div class="elementor-icon-box-content">
+        <h3 class="elementor-icon-box-title">
+            <span>
+			Encadrés par :
+            </span>
+        </h3>
+        <p class="elementor-icon-box-description">
+		Nos étudiants sont toujours au centre de nos préoccupations. Nous accordons une attention particulière au développement personnel de nos étudiants grâce à une large variété de programmes parascolaires et d'activités associatives, permettant le renforcement de leurs liens avec l'ENSATE ainsi que leur épanouissement personnel.
+        </p>
+    </div>
+</div>
+
+
 			<div class="clearfix"> </div>
 		</div>
 	</div>
