@@ -82,6 +82,13 @@ include('admin/includes/dbconnection.php');
   margin-right: 10px;
 }
 
+.banner {
+        position: relative;
+        min-height: 795px;
+        background: url('baner1.png') no-repeat 0 0;
+        background-size: cover;
+    }
+
 
 h2 a .fa.fa-graduation-cap {
     color: #265dcc; /* couleur spécifique */
