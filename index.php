@@ -62,6 +62,31 @@ include('admin/includes/dbconnection.php');
     background-color: #174ebb; /* Optionnel: Si vous voulez changer la couleur lorsqu'il est en focus */
   }
 
+  .contact-info span{
+	color:#fff;
+  }
+
+  .contact-info {
+            color: white;
+            font-size: 16px;
+            transition: transform 0.3s, #fff 0.3s;
+            margin-bottom: 10px;
+        }
+
+        .contact-info a:hover {
+            transform: scale(1.05);
+            color: gray;
+        }
+
+        .contact-info i {
+			color:#fff;
+            margin: 5px;
+        }
+
+		.contact-info a{
+			color:#fff;
+		}
+
 /*--------------*/
 
 .single-footer-widget {
@@ -261,14 +286,13 @@ foreach($results as $row)
 			<div class="clearfix"> </div>
 		</div>
 	</div>
-	<div class="single-footer-widget">
+	<div class="single-footer-widget" >
 					<div href="./index.html" class="d-block mb-4"><img src="ensatelogo.png" style="max-width: 10%" alt="logo" color="white"></div>
-
             <p>Ensaté-Hub : Votre Plateforme d'Enseignement Supérieur en Ligne.</p>
             <div class="footer-contact">
-              <p><i class="fa fa-map-marker"></i>BP: 2222 M'hannech Tétouan</p>
-              <p><i class="fa fa-phone"></i>+212. 500. 000. 000</p>
-              <p><i class="fa fa-envelope"></i>admin@gmail.ma</p>
+			<p class="contact-info" color="white"><span class="c1"><i class="fa fa-map-marker"></i></span><span><a href="#">BP: 2222 M'hannech Tétouan</a></span></p>
+			<p class="contact-info"><span><i class="fa fa-phone"></i></span><span><a href="#">+212. 500. 000. 000</a></span></p>
+			<p class="contact-info"><span><i class="fa fa-envelope"></i></span><span><a href="mailto:admin@gmail.ma">admin@gmail.ma</a></span></p>
             </div>
           </div>
 	<div class="copyright-w3layouts">
