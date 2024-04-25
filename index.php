@@ -91,15 +91,16 @@ include('admin/includes/dbconnection.php');
 
         .elementor-icon-box-wrapper {
             display: inline-block;
-            margin: 20px;
+            margin: 30px;
             width: 400px;
             color: #ffffff; /* couleur du texte */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
             background-color: #265dcc; /* couleur de fond */
-			max-height: 400px;
-			justify-content: space-between;
+			height: 390px;
+			margin-inline: 60px;
+			
         }
 
         .elementor-icon-box-content {
@@ -110,6 +111,8 @@ include('admin/includes/dbconnection.php');
             display: block;
             color: #ffffff; /* couleur du titre */
             font-weight: bold; /* mise en gras du titre */
+			text-align: center;
+			margin-bottom: 10px;
         }
 
         .elementor-icon-box-description {
@@ -318,7 +321,7 @@ foreach($results as $row)
             </span>
         </h3>
         <p class="elementor-icon-box-description">
-            Nos étudiants sont toujours au centre de nos préoccupations. Nous accordons une attention particulière au développement personnel de nos étudiants grâce à une large variété de programmes parascolaires et d'activités associatives, permettant le renforcement de leurs liens avec l'ENSATE ainsi que leur épanouissement personnel.
+		L'équipe de réalisateurs, composée de <b>Oussama Ben Kacem</b>, <b>Abdellah Raissouni</b>, <b>Jihan Elamrani</b> et <b>Mohamed Salim Soulmani</b>, sont des étudiants de l'École Nationale des Sciences Appliquées de Tétouan. Ils ont créé la plateforme Ensaté-Hub dans le cadre du module de développement web 1, répondant ainsi à un besoin spécifique : offrir un espace d'apprentissage en ligne aux étudiants. Grâce à leur collaboration et à leurs compétences en développement web, ils ont réussi à concevoir une plateforme moderne et fonctionnelle pour soutenir l'enseignement et l'apprentissage.
         </p>
     </div>
 </div>
@@ -327,11 +330,11 @@ foreach($results as $row)
     <div class="elementor-icon-box-content">
         <h3 class="elementor-icon-box-title">
             <span>
-			Encadrés par :
+			Encadrant :
             </span>
         </h3>
         <p class="elementor-icon-box-description">
-		Nos étudiants sont toujours au centre de nos préoccupations. Nous accordons une attention particulière au développement personnel de nos étudiants grâce à une large variété de programmes parascolaires et d'activités associatives, permettant le renforcement de leurs liens avec l'ENSATE ainsi que leur épanouissement personnel.
+		Nous avons eu la chance d'être encadrés par notre meilleur professeur de développement web1, <b>El Jourani Reda</b>, tout au long de la réalisation de ce projet. Son expertise, ses conseils avisés et son soutien indéfectible ont été précieux pour nous guider dans la conception et le développement de la plateforme <b>Ensaté-Hub</b>. Nous lui exprimons notre profonde gratitude pour son dévouement et son engagement envers notre réussite. Ses encouragements ont été une source d'inspiration et nous ont permis d'atteindre nos objectifs avec succès.
         </p>
     </div>
 </div>

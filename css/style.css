@@ -239,7 +239,7 @@ nav.shift ul li a.active:after ,nav.shift ul li a:hover:after {
 .navbar-default .navbar-nav>.open>a,
 .navbar-default .navbar-nav>.open>a:hover,
 .navbar-default .navbar-nav>.open>a:focus {
-	color: #154dbd;
+	color: #2c66d8;
 	background-color: transparent;
 }
 
@@ -257,7 +257,7 @@ nav.shift ul li a.active:after ,nav.shift ul li a:hover:after {
 .navbar-nav>li>a.active,
 .navbar-default .navbar-nav>li>a:hover,
 .navbar-default .navbar-nav>li>a:focus {
-	color: #15429b;
+	color: #2c66d8;
 	border-bottom: 2px solid #fff;
 }
 
@@ -797,7 +797,7 @@ nav.shift ul li a.active:after ,nav.shift ul li a:hover:after {
 }
 
 .callbacks_here a:after {
-	background: #1751c5;
+	background: #265DCC;
 }
 
 p.sub-para {
@@ -3053,7 +3053,7 @@ p.white-clr {
 		border-color: #ffffff;
 	}
 	.navbar-default .navbar-toggle .icon-bar {
-		background-color: #00b6e3;
+		background-color: #fff;
 	}
 	.navbar-default .navbar-toggle:hover,
 	.navbar-default .navbar-toggle:focus {
