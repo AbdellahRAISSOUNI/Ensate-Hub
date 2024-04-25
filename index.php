@@ -321,7 +321,7 @@ foreach($results as $row)
             </span>
         </h3>
         <p class="elementor-icon-box-description">
-		L'équipe de réalisateurs, composée de <b>Oussama Ben Kacem</b>, <b>Abdellah Raissouni</b>, <b>Jihan Elamrani</b> et <b>Mohamed Salim Soulmani</b>, sont des étudiants de l'École Nationale des Sciences Appliquées de Tétouan. Ils ont créé la plateforme Ensaté-Hub dans le cadre du module de développement web 1, répondant ainsi à un besoin spécifique : offrir un espace d'apprentissage en ligne aux étudiants. Grâce à leur collaboration et à leurs compétences en développement web, ils ont réussi à concevoir une plateforme moderne et fonctionnelle pour soutenir l'enseignement et l'apprentissage.
+		L'équipe de réalisateurs, composée de <b>Oussama Ben Kacem</b>, <b>Abdellah Raissouni</b>, <b>Jihan Elamrani</b> et <b>Mohamed Salim Soulmani</b>, sont des étudiants de l'École Nationale des Sciences Appliquées de Tétouan. Ils ont créé la plateforme <b>Ensaté-Hub</b> dans le cadre du module de développement web 1, répondant ainsi à un besoin spécifique : offrir un espace d'apprentissage en ligne aux étudiants. Grâce à leur collaboration et à leurs compétences en développement web, ils ont réussi à concevoir une plateforme moderne et fonctionnelle pour soutenir l'enseignement et l'apprentissage.
         </p>
     </div>
 </div>
