@@ -573,6 +573,7 @@ nav.shift ul li a.active:after ,nav.shift ul li a:hover:after {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Couleur grise semi-transparente */
+	color:#15429b;
 }
 
 
@@ -1079,8 +1080,8 @@ select#country1,
 }
 
 .login-social-grids ul li a i.fa.fa-rss:hover {
-	border: solid 2px #f26522;
-	background: #f26522;
+	border: solid 2px #55acee;
+	background: #55acee;
 	color: #FFFFFF;
 }
 
@@ -1168,7 +1169,7 @@ ul.radio-buttons li {
 }
 
 .modal-content h4 {
-	color: #f74f08;
+	color: #55acee;
 	text-align: center;
 	font-size: 35px;
 	margin-bottom: 15px;
