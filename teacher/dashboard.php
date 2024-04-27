@@ -163,7 +163,7 @@ if (isset($_SESSION['ocasteacherid'])) {
                         <hr>
                     <?php } ?>
                 <?php } else { ?>
-                    <p>No comments found.</p>
+                    <p>Pas de commantaires trouvé.</p>
                 <?php } ?>
             </div>
         </div>
