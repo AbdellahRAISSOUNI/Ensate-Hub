@@ -89,35 +89,86 @@ include('admin/includes/dbconnection.php');
 
 
 
-        .elementor-icon-box-wrapper {
-            display: inline-block;
-            margin: 30px;
-            width: 400px;
-            color: #ffffff; /* couleur du texte */
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
-            background-color: #265dcc; /* couleur de fond */
-			height: 390px;
-			margin-inline: 60px;
-			
-        }
+/* Styles de base */
+.elementor-icon-box-wrapper {
+    display: inline-block;
+    margin: 30px;
+    width: 400px;
+    min-width: 250px; /* Largeur minimale */
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    background-color: #265dcc;
+    height: 390px;
+    margin-inline: 60px;
+}
 
-        .elementor-icon-box-content {
-            text-align: justify;
-        }
+.elementor-icon-box-content {
+    text-align: justify;
+    overflow: hidden;
+}
 
-        .elementor-icon-box-title span {
-            display: block;
-            color: #ffffff; /* couleur du titre */
-            font-weight: bold; /* mise en gras du titre */
-			text-align: center;
-			margin-bottom: 10px;
-        }
+.elementor-icon-box-title span {
+    display: block;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
 
-        .elementor-icon-box-description {
-            color: #ffffff; /* couleur de la description */
-        }
+.elementor-icon-box-description {
+    color: #ffffff;
+}
+
+/* Media Queries */
+
+/* Pour les écrans de taille moyenne (tablettes) */
+@media only screen and (max-width: 992px) {
+    .elementor-icon-box-wrapper {
+        width: 70%;
+        min-width: 200px; /* Largeur minimale ajustée */
+        max-width: 100%;
+        height: auto;
+        margin: 20px auto; /* Centrer horizontalement */
+    }
+}
+
+/* Pour les écrans de petite taille (téléphones) */
+@media only screen and (max-width: 576px) {
+    .elementor-icon-box-wrapper {
+        width: 90%;
+        min-width: 150px; /* Largeur minimale ajustée */
+        max-width: 100%;
+        height: auto;
+        margin: 10px auto; /* Centrer horizontalement */
+    }
+    .elementor-icon-box-content {
+        font-size: 90%;
+    }
+    .elementor-icon-box-title span {
+        font-size: 16px; /* Ajustement de la taille du titre */
+    }
+}
+
+/* Pour les écrans de très petite taille (smartphones) */
+@media only screen and (max-width: 360px) {
+    .elementor-icon-box-wrapper {
+        width: 95%;
+        min-width: 120px; /* Largeur minimale ajustée */
+        max-width: 100%;
+        height: auto;
+        margin: 5px auto; /* Centrer horizontalement */
+    }
+    .elementor-icon-box-content {
+        font-size: 80%;
+    }
+    .elementor-icon-box-title span {
+        font-size: 14px; /* Ajustement de la taille du titre */
+    }
+}
+
+
 /*--------------*/
 
 .single-footer-widget {
