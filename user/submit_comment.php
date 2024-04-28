@@ -16,11 +16,11 @@ if (isset($_POST['comment']) && isset($_POST['post_id'])) {
     $query->bindParam(':user_type', $user_type, PDO::PARAM_STR);
 
     if ($query->execute()) {
-        echo "Comment submitted successfully.";
+        echo "Commentaire envoyé avec succes.";
         header("Location: dashboard.php");
         exit();
     } else {
-        echo "Error submitting comment.";
+        echo "Erreur lors de l'nvoi de commentaire.";
     }
 }
 ?>

@@ -24,12 +24,12 @@ $query->bindParam(':subcode',$subcode,PDO::PARAM_STR);
 
    $LastInsertId=$dbh->lastInsertId();
    if ($LastInsertId>0) {
-    echo '<script>alert("Subject has been added.")</script>';
+    echo '<script>alert("Matiere ajouté avec succes.")</script>';
 echo "<script>window.location.href ='subject.php'</script>";
   }
   else
     {
-         echo '<script>alert("Something Went Wrong. Please try again")</script>';
+         echo '<script>alert("Oops il y a une erreur")</script>';
     }
 
   
@@ -42,7 +42,7 @@ $sql="delete from tblsubject where ID=:rid";
 $query=$dbh->prepare($sql);
 $query->bindParam(':rid',$rid,PDO::PARAM_STR);
 $query->execute();
- echo "<script>alert('Data deleted');</script>"; 
+ echo "<script>alert('Donné Supprimé');</script>"; 
   echo "<script>window.location.href = 'subject.php'</script>";     
 
 
@@ -124,19 +124,19 @@ foreach($results as $row)
                                         <div class="basic-form m-t-20">
                                             <div class="form-group">
                                                 <label>Nom Complet de la Matière</label>
-                                                <input type="text" class="form-control border-none input-flat bg-ash" placeholder="Subject Full Name" name="sfname" required="true">
+                                                <input type="text" class="form-control border-none input-flat bg-ash" placeholder="Nom complet" name="sfname" required="true">
                                             </div>
                                         </div>
                                     <div class="basic-form m-t-20">
                                             <div class="form-group">
                                                 <label>Nom Court de la Matière</label>
-                                                <input type="text" class="form-control border-none input-flat bg-ash" placeholder="Subject Short Name" name="ssname" required="true">
+                                                <input type="text" class="form-control border-none input-flat bg-ash" placeholder="Nom réduit" name="ssname" required="true">
                                             </div>
                                         </div>
                                         <div class="basic-form m-t-20">
                                             <div class="form-group">
                                                 <label>Code de la Matière</label>
-                                                <input type="text" class="form-control border-none input-flat bg-ash" placeholder="Subject Code" name="subcode" required="true">
+                                                <input type="text" class="form-control border-none input-flat bg-ash" placeholder="Code" name="subcode" required="true">
                                             </div>
                                         </div>
                                 </div>

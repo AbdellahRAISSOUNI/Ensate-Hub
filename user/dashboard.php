@@ -133,8 +133,8 @@ foreach ($results as $row) {
     echo '</div>';
     echo '<form method="post" action="submit_comment.php">';
     echo '<input type="hidden" name="post_id" value="' . $row['ID'] . '">';
-    echo '<textarea name="comment" placeholder="Enter your comment" required></textarea>';
-    echo '<button type="submit">Submit Comment</button>';
+    echo '<textarea name="comment" placeholder="Entrer votre commentaire" required></textarea>';
+    echo '<button type="submit">Envoyer Commentaire</button>';
     echo '</form>';
 }
 ?>
@@ -169,8 +169,8 @@ if (isset($_SESSION['ocasteacherid'])) {
         echo '</div>';
         echo '<form method="post" action="submit_teacher_comment.php">';
         echo '<input type="hidden" name="comment_id" value="' . $row['comment_id'] . '">';
-        echo '<textarea name="teacher_comment" placeholder="Enter your response" required></textarea>';
-        echo '<button type="submit">Submit Response</button>';
+        echo '<textarea name="teacher_comment" placeholder="Entrer votre réponse" required></textarea>';
+        echo '<button type="submit">Soumettre réponse</button>';
         echo '</form>';
         echo '</div>';
     }

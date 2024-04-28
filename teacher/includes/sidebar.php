@@ -13,7 +13,7 @@
                            
                         </ul>
                     </li>
-                      <li><a href="newsorannouncement.php"><i class="ti-blackboard"></i>Announcements/Nouveautés</a>
+                      <li><a href="newsorannouncement.php"><i class="ti-blackboard"></i>Announcements</a>
                     </li>
                    
                   

@@ -61,12 +61,12 @@ $query->bindParam(':propic',$propic,PDO::PARAM_STR);
 
    $LastInsertId=$dbh->lastInsertId();
    if ($LastInsertId>0) {
-    echo '<script>alert("Teacher detail has been added.")</script>';
+    echo '<script>alert("Professeur Ajouté avec succes")</script>';
 echo "<script>window.location.href ='add-teacher.php'</script>";
   }
   else
     {
-         echo '<script>alert("Something Went Wrong. Please try again")</script>';
+         echo '<script>alert("Oops il ya une erreur!")</script>';
     }
 
   
@@ -74,7 +74,7 @@ echo "<script>window.location.href ='add-teacher.php'</script>";
 else
 {
 
-echo "<script>alert('Email-id,Employee Id or Mobile Number already exist. Please try again');</script>";
+echo "<script>alert('Ces données existes déja');</script>";
 }
 }
 }
@@ -239,7 +239,7 @@ foreach($results as $row)
                                 <div class="col-md-3">
                                     <div class="basic-form">
                                         <div class="form-group">
-                                            <label>Religion</label>
+                                            <label>Nationalité</label>
                                             <input type="text" class="form-control border-none input-flat bg-ash" name="religion" required="true">
                                         </div>
                                     </div>

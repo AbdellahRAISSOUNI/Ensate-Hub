@@ -17,11 +17,11 @@
                         <ul>
                              <li><a href="add-teacher.php">Ajouter Professeur</a>
                     </li>
-                            <li><a href="manage-teacher.php">Manage Teacher</a></li>
+                            <li><a href="manage-teacher.php">Gerer les professeurs</a></li>
                            
                         </ul>
                     </li>
-                      <li><a href="newsorannouncement.php"><i class="ti-files"></i>Announcements/Nouveautés</a>
+                      <li><a href="newsorannouncement.php"><i class="ti-files"></i>Announcements</a>
                     </li>
                     <li><a class="sidebar-sub-toggle"><i class="ti-user"></i> Affectations uploadés <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                         <ul>

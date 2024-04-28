@@ -22,12 +22,12 @@ $query->bindParam(':coursename',$cname,PDO::PARAM_STR);
 
    $LastInsertId=$dbh->lastInsertId();
    if ($LastInsertId>0) {
-    echo '<script>alert("Course has been added.")</script>';
+    echo '<script>alert("Cours Ajouté.")</script>';
 echo "<script>window.location.href ='course.php'</script>";
   }
   else
     {
-         echo '<script>alert("Something Went Wrong. Please try again")</script>';
+         echo '<script>alert("Oops! il y a une problème")</script>';
     }
 
   
@@ -40,7 +40,7 @@ $sql="delete from tblcourse where ID=:rid";
 $query=$dbh->prepare($sql);
 $query->bindParam(':rid',$rid,PDO::PARAM_STR);
 $query->execute();
- echo "<script>alert('Data deleted');</script>"; 
+ echo "<script>alert('Donnée supprimé');</script>"; 
   echo "<script>window.location.href = 'course.php'</script>";     
 
 
@@ -97,18 +97,18 @@ $query->execute();
                         <div class="col-md-4">
                             <div class="card alert">
                                 <div class="card-header pr">
-                                    <h4>Créer un Nouveau Cours</h4>
+                                    <h4>Créer un Nouveau Module</h4>
                                     <form method="post" name="hjhgh">
                                         <div class="basic-form m-t-20">
                                             <div class="form-group">
-                                                <label>Nom du Cours</label>
-        <input type="text" class="form-control border-none input-flat bg-ash" placeholder="Course Name" name="coursename" required="true">
+                                                <label>Nom du Module</label>
+        <input type="text" class="form-control border-none input-flat bg-ash" placeholder="Nom du module" name="coursename" required="true">
                                             </div>
                                         </div>
                                         <div class="basic-form m-t-20">
                                             <div class="form-group">
                                                 <label>Nom de la Filière</label>
-                                                <input type="text" class="form-control border-none input-flat bg-ash" placeholder="Branch Name" name="branchname" required="true">
+                                                <input type="text" class="form-control border-none input-flat bg-ash" placeholder="Nom du filière" name="branchname" required="true">
                                             </div>
                                         </div>
                                    
@@ -144,7 +144,7 @@ $query->execute();
                                             <thead>
                                                 <tr>
                                                 <th>N° de série</th>
-                                                <th>Nom du Cours</th>
+                                                <th>Nom du module</th>
                                                 <th>Nom de la Filière</th>
                                                 <th>Action</th>
                                                 </tr>
@@ -173,7 +173,7 @@ foreach($results as $row)
                                                     <td>
                                                        
                                                         <span><a href="edit-course.php?editid=<?php echo htmlentities ($row->ID);?>"><i class="ti-pencil-alt color-success"></i></a></span>
-                                                        <span><a href="course.php?delid=<?php echo ($row->ID);?>"  onclick="return confirm('Do you really want to Delete ?');"><i class="ti-trash color-danger"></i> </a></span>
+                                                        <span><a href="course.php?delid=<?php echo ($row->ID);?>"  onclick="return confirm('Voulez vous vraiment supprimer ?');"><i class="ti-trash color-danger"></i> </a></span>
                                                     </td>
                                                 </tr>
                                                  <?php $cnt=$cnt+1;}} ?> 
