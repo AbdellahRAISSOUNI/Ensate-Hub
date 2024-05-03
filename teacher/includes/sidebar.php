@@ -27,6 +27,7 @@
                     </li>
                    <li><a href="reg-coursewiseusers.php"><i class="ti-user"></i> Etudiants reguliers</a>
                     </li>
+                    <li><a href="demande_suppression.php"><i class="fa fa-user-times"></i>Envoyer une Demande de Suppression</a></li>
                 </ul>
             </div>
         </div>

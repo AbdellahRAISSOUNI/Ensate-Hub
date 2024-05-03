@@ -15,7 +15,7 @@
                            
                         </ul>
                     </li>
-                   
+                    <li><a href="demande_suppression.php"><i class="fa fa-user-times"></i>Envoyer une Demande de Suppression</a></li>
                 </ul>
             </div>
         </div>

@@ -29,6 +29,14 @@
                             <li><a href="checked-assignment.php">Checké</a></li>
                         </ul>
                     </li>
+                    <!-- Rubrique de Gestion des Demandes de Suppression -->
+                    <li>
+                        <a href="admin_demandes.php" class="sidebar-link">
+                            <i class="icon fa fa-user-times"></i>
+                            Gestion Demandes Suppression
+                        </a>
+                    </li>
+                
                
                   <li><a href="bwdates-assign-report.php" ><i class="ti-folder"></i>Report B/w dates affectations </a></li>
                   <li><a href="search.php" ><i class="ti-search"></i>Chercher</a></li>
