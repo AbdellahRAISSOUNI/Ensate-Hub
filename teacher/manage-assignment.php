@@ -80,8 +80,9 @@ if (strlen($_SESSION['ocastid']==0)) {
                                                     <th>Module</th>
                                                     <th>Titre d'Affectation</th>
                                                     <th>Date de Soumission</th>
-                                                   
+                                                    <th>Visibilité</th>
                                                     <th>Action</th>
+                                                    
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -105,8 +106,7 @@ $total_rows=$query1->rowCount();
 $total_no_of_pages = ceil($total_rows / $no_of_records_per_page);
   $second_last = $total_no_of_pages - 1; // total page minus 1
                                                 $tid=$_SESSION['ocastid'];
-$sql="SELECT tblcourse.ID,tblcourse.BranchName,tblcourse.CourseName,tblsubject.SubjectFullname,tblsubject.SubjectCode,tblassigment.AssignmentNumber,tblassigment.AssignmenttTitle,tblassigment.SubmissionDate,tblassigment.ID as aid from tblassigment join tblcourse on tblcourse.ID=tblassigment.Cid join tblsubject on tblsubject.ID=tblassigment.Sid where tblassigment.Tid=$tid LIMIT $offset, $no_of_records_per_page";
-$query = $dbh -> prepare($sql);
+                                                $sql = "SELECT tblcourse.ID, tblcourse.BranchName, tblcourse.CourseName, tblsubject.SubjectFullname, tblsubject.SubjectCode, tblassigment.AssignmentNumber, tblassigment.AssignmenttTitle, tblassigment.SubmissionDate, tblassigment.ID as aid, tblassigment.visible FROM tblassigment JOIN tblcourse ON tblcourse.ID=tblassigment.Cid JOIN tblsubject ON tblsubject.ID=tblassigment.Sid WHERE tblassigment.Tid=$tid LIMIT $offset, $no_of_records_per_page";$query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 
@@ -122,7 +122,9 @@ foreach($results as $row)
                                                     <td><?php  echo htmlentities($row->SubjectFullname);?>(<?php  echo htmlentities($row->SubjectCode);?>)</td>
                                                     <td><?php  echo htmlentities($row->AssignmenttTitle);?></td>
                                                     <td><?php  echo htmlentities($row->SubmissionDate);?></td>
-                                                   
+                                                    <td>
+                                                       <input type="checkbox" class="toggle-visibility" data-id="<?php echo $row->aid; ?>" <?php echo ($row->visible) ? 'checked' : ''; ?>>
+                                                    </td>
                                                     <td><a href="edit-assignment.php?editid=<?php echo htmlentities ($row->aid);?>">Changer Details</a></td>
                                                 </tr>
                                               <?php $cnt=$cnt+1;}} ?> 
@@ -245,6 +247,27 @@ echo "<li><a href='?page_no=$total_no_of_pages'>Last &rsaquo;&rsaquo;</a></li>";
     <script src="../assets/js/lib/data-table/datatables-init.js"></script>
     <script src="../assets/js/scripts.js"></script>
     <!-- scripit init-->
+
+    <script>
+$(document).ready(function() {
+    $('.toggle-visibility').change(function() {
+        var assignmentId = $(this).data('id');
+        var visible = $(this).is(':checked') ? 1 : 0;
+
+        $.ajax({
+            url: 'update_visibility.php',
+            type: 'POST',
+            data: {id: assignmentId, visible: visible},
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+    });
+});
+</script>
 <?php }  ?>
 
 
