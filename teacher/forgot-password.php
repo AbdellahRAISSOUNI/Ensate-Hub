@@ -36,7 +36,7 @@ echo "<script>alert('Email id or Mobile no is invalid');</script>";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ensaté-HUB Proffesseur : Mot de passe oublié</title>
+    <title>Ensaté-Hub Proffesseur : Mot de passe oublié</title>
     <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">

@@ -64,7 +64,7 @@ echo "<script>window.location.href ='add-assignment.php'</script>";
 
 <head>
   
-    <title>Ensaté-HUB Proffesseur : Ajouter Affectations </title>
+    <title>Ensaté-Hub Proffesseur : Ajouter Affectations </title>
 
     <link href="../assets/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">

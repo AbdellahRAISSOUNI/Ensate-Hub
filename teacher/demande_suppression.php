@@ -23,7 +23,7 @@ if (strlen($_SESSION['ocastid']) == 0) {
 <html lang="en">
 
 <head>
-    <title>Ensaté-HUB : Demande de Suppression de Compte</title>
+    <title>Ensaté-Hub : Demande de Suppression de Compte</title>
     <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">

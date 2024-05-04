@@ -14,7 +14,7 @@ if (strlen($_SESSION['ocastid']==0)) {
 
 <head>
    
-    <title>Ensaté-HUB Voir les étudiants</title>
+    <title>Ensaté-Hub Voir les étudiants</title>
 
     <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">

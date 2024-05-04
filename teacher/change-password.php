@@ -39,7 +39,7 @@ echo '<script>alert("Your current password is wrong")</script>';
 
 <head>
   
-    <title>Ensaté-HUB Professeur : Changer Mot de passe</title>
+    <title>Ensaté-Hub Professeur : Changer Mot de passe</title>
     <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">

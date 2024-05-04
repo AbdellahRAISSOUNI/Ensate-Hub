@@ -31,7 +31,7 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
 <!DOCTYPE html>
 <html lang="en">
 
-<head>Ensaté-HUB 
+<head>Ensaté-Hub 
   
     <title>Professeur : Mise à jour Affectation </title>
 

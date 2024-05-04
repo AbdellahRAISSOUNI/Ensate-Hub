@@ -12,7 +12,7 @@ if (strlen($_SESSION['ocastid']==0)) {
 
 <head>
   
-    <title>Ensaté-HUB : Rapport par matière </title>
+    <title>Ensaté-Hub : Rapport par matière </title>
 
     <link href="../assets/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">

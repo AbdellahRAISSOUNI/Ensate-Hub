@@ -30,7 +30,7 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
 
 <head>
   
-    <title>Ensaté-HUB : Mise à jour d'Affectation </title>
+    <title>Ensaté-Hub : Mise à jour d'Affectation </title>
 
     <link href="../assets/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">

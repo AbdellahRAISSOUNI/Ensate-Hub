@@ -34,7 +34,7 @@ echo "<script>alert('Invalid Details');</script>";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ensaté-HUB Professeur : Connexion</title>
+    <title>Ensaté-Hub Professeur : Connexion</title>
     <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">

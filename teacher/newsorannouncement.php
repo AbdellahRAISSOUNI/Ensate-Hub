@@ -52,7 +52,7 @@ $query->execute();
 
 <head>
    
-    <title>Ensaté-HUB : Actualités ou Annonces</title>
+    <title>Ensaté-Hub : Actualités ou Annonces</title>
 
        <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
