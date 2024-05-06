@@ -223,7 +223,7 @@ h1 a .fa.fa-graduation-cap {
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
-							<li><a class="active" href="index.php">Accueil</a></li>
+							<li><a href="index.php">Accueil</a></li>
 							<li><a href="user/login.php">Étudiants</a></li>
 							<li><a href="teacher/login.php">Enseignant</a></li>
 							<li><a href="admin/login.php">Administrateur</a></li>
