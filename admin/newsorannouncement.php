@@ -21,12 +21,12 @@ $query->bindParam(':desc',$desc,PDO::PARAM_STR);
 
    $LastInsertId=$dbh->lastInsertId();
    if ($LastInsertId>0) {
-    echo '<script>alert("News has been added.")</script>';
+    echo '<script>alert("Anounecement ajouté avec succés")</script>';
 echo "<script>window.location.href ='newsorannouncement.php'</script>";
   }
   else
     {
-         echo '<script>alert("Something Went Wrong. Please try again")</script>';
+         echo '<script>alert("Oups il y a une erreur !")</script>';
     }
 
   
@@ -39,7 +39,7 @@ $sql="delete from tblnews where ID=:rid";
 $query=$dbh->prepare($sql);
 $query->bindParam(':rid',$rid,PDO::PARAM_STR);
 $query->execute();
- echo "<script>alert('Data deleted');</script>"; 
+ echo "<script>alert('Donné supprimé');</script>"; 
   echo "<script>window.location.href = 'newsorannouncement.php'</script>";     
 
 
@@ -175,7 +175,7 @@ foreach($results as $row)
                                                     </td>
                                                     <td>
                                                        
-                                                        <span><a href="newsorannouncement.php?delid=<?php echo ($row->ID);?>"  onclick="return confirm('Do you really want to Delete ?');"><i class="ti-trash color-danger"></i> </a></span>
+                                                        <span><a href="newsorannouncement.php?delid=<?php echo ($row->ID);?>"  onclick="return confirm('Voulez vous vraiment supprimer ?');"><i class="ti-trash color-danger"></i> </a></span>
                                                     </td>
                                                 </tr>
                                                  <?php $cnt=$cnt+1;}} ?> 
