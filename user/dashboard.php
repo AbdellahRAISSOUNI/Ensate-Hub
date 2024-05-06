@@ -1,8 +1,8 @@
 <?php
-session_start();
-error_reporting(0);
-include('includes/dbconnection.php');
-if (strlen($_SESSION['ocasuid']==0)) {
+session_start(); // Démarrer la session pour accéder aux données de session
+error_reporting(0);// Désactiver l'affichage des erreurs pour un environnement de production
+include('includes/dbconnection.php'); // Inclure le fichier de connexion à la base de données pour utiliser les fonctions de connexion
+if (strlen($_SESSION['ocasuid']==0)) { // Vérifier si l'utilisateur est connecté en vérifiant la valeur de la variable de session 'ocasuid', sinon le rediriger vers la page de déconnexion
   header('location:logout.php');
   } else{
 
@@ -17,6 +17,7 @@ if (strlen($_SESSION['ocasuid']==0)) {
     <title>Acceuil Etudiant</title>
   
     <!-- Styles -->
+    <!-- Inclure les fichiers CSS nécessaires pour la mise en forme et les styles -->   
     <link href="../assets/css/lib/calendar2/semantic.ui.min.css" rel="stylesheet">
     <link href="../assets/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
     <link href="../assets/css/lib/chartist/chartist.min.css" rel="stylesheet">
@@ -36,6 +37,7 @@ if (strlen($_SESSION['ocasuid']==0)) {
  <?php include_once('includes/sidebar.php');?>
    
     <?php include_once('includes/header.php');?>
+    <!-- Inclure les fichiers de sidebar et header pour la structure de la page -->
     <div class="content-wrap">
         <div class="main">
             <div class="container-fluid">
@@ -43,8 +45,8 @@ if (strlen($_SESSION['ocasuid']==0)) {
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title"><?php
-$uid=$_SESSION['ocasuid'];
-$sql="SELECT * from  tbluser where ID=:uid";
+$uid=$_SESSION['ocasuid'];// Récupérer l'ID de l'utilisateur à partir de la session
+$sql="SELECT * from  tbluser where ID=:uid";// Requête SQL pour récupérer les informations de l'utilisateur
 $query = $dbh -> prepare($sql);
 $query->bindParam(':uid',$uid,PDO::PARAM_STR);
 $query->execute();
@@ -97,7 +99,8 @@ foreach($results as $row)
                                 </div>
                                 <div class="recent-comment m-t-15">
                                 <?php
-$cid = $_SESSION['ocasucid'];
+$cid = $_SESSION['ocasucid'];// Récupérer l'ID du cours de la session
+// Requête SQL pour récupérer les informations des cours, commentaires, enseignants et étudiants
 $sql = "SELECT tblnewsbyteacher.ID, tblnewsbyteacher.Title, tblnewsbyteacher.Description, tblcomments.id as comment_id, tblcomments.comment, tblcomments.created_at, tblcomments.user_type, tbluser.FullName as student_name, tblteacher.FirstName as teacher_name, tblteacher.LastName as teacher_last_name
 FROM tblnewsbyteacher
 LEFT JOIN tblcomments ON tblnewsbyteacher.ID = tblcomments.post_id
