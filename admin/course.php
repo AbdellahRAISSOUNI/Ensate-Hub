@@ -32,7 +32,6 @@ echo "<script>window.location.href ='course.php'</script>";
 
   
 }
-// Code for deleting product from cart
 if(isset($_GET['delid']))
 {
 $rid=intval($_GET['delid']);

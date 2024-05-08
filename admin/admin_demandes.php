@@ -20,11 +20,19 @@ if (isset($_POST['approve'])) {
     $deleteUser->bindParam(':email', $email, PDO::PARAM_STR);
     $deleteUser->execute();
 
-    // Supprimer le compte professeur si nécessaire
-    $sql = "DELETE FROM tblteacher WHERE Email = :email";
-    $deleteTeacher = $dbh->prepare($sql);
-    $deleteTeacher->bindParam(':email', $email, PDO::PARAM_STR);
-    $deleteTeacher->execute();
+    // Vérifier si un compte professeur existe avec la même adresse e-mail
+    $sql = "SELECT * FROM tblteacher WHERE Email = :email";
+    $checkTeacherQuery = $dbh->prepare($sql);
+    $checkTeacherQuery->bindParam(':email', $email, PDO::PARAM_STR);
+    $checkTeacherQuery->execute();
+
+    // Si un compte professeur existe, le supprimer également
+    if ($checkTeacherQuery->rowCount() > 0) {
+        $sql = "DELETE FROM tblteacher WHERE Email = :email";
+        $deleteTeacher = $dbh->prepare($sql);
+        $deleteTeacher->bindParam(':email', $email, PDO::PARAM_STR);
+        $deleteTeacher->execute();
+    }
 
     echo '<script>alert("La demande de suppression a été approuvée et le compte a été supprimé.")</script>';
 }

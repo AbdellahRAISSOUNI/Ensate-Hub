@@ -90,7 +90,7 @@ if (strlen($_SESSION['ocasaid']==0)) {
   } else {
     $page_no = 1;
         }
-        // Formula for pagination
+        // Formule de pagination
         $no_of_records_per_page = 10;
         $offset = ($page_no-1) * $no_of_records_per_page;
         $previous_page = $page_no - 1;
@@ -102,7 +102,7 @@ $query1->execute();
 $results1=$query1->fetchAll(PDO::FETCH_OBJ);
 $total_rows=$query1->rowCount();
 $total_no_of_pages = ceil($total_rows / $no_of_records_per_page);
-  $second_last = $total_no_of_pages - 1; // total page minus 1
+  $second_last = $total_no_of_pages - 1; // total page moin 1
 $sql="SELECT tblcourse.ID,tblcourse.BranchName,tblcourse.CourseName,tblteacher.ID,tblteacher.EmpID,tblteacher.FirstName,tblteacher.LastName,tblteacher.MobileNumber,tblteacher.Email,tblteacher.Gender,tblteacher.Dob,tblteacher.CourseID,tblteacher.Religion,tblteacher.Address,tblteacher.Password,tblteacher.ProfilePic,tblteacher.JoiningDate from tblteacher join tblcourse on tblcourse.ID=tblteacher.CourseID";
 $query = $dbh -> prepare($sql);
 $query->execute();
