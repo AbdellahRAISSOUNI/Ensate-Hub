@@ -1,25 +1,30 @@
 <?php
-session_start();
-error_reporting(0);
-include('includes/dbconnection.php');
+session_start(); // Démarre la session
+error_reporting(0); // Désactive les rapports d'erreur
+include('includes/dbconnection.php'); // Inclut le fichier de connexion à la base de données
+
+// Vérifie si l'utilisateur est connecté, sinon le redirige vers la page de déconnexion
 if (strlen($_SESSION['ocastid']==0)) {
   header('location:logout.php');
   } else{
+    // Si le formulaire est soumis
     if(isset($_POST['submit']))
   {
 $eid=$_GET['editid'];
 $file=$_FILES["assfile"]["name"];
 $extension = substr($file,strlen($file)-4,strlen($file));
 $allowed_extensions = array("docs",".doc",".pdf");
+// Vérifie si l'extension du fichier est autorisée
 if(!in_array($extension,$allowed_extensions))
 {
 echo "<script>alert('Le fichier a un format invalide. Seuls les formats docs / doc / pdf sont autorisés.');</script>";
 }
 else
 {
-
+// Renomme le fichier et le déplace vers le répertoire 'assignmentfile'
 $file=md5($file).time().$extension;
  move_uploaded_file($_FILES["assfile"]["tmp_name"],"assignmentfile/".$file);
+// Met à jour le nom du fichier dans la base de données
 $sql="update tblassigment set AssignmentFile=:file where ID=:eid";
 $query=$dbh->prepare($sql);
 $query->bindParam(':file',$file,PDO::PARAM_STR);
@@ -34,7 +39,7 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
 <head>Ensaté-Hub 
   
     <title>Professeur : Mise à jour Affectation </title>
-
+    <!-- Styles -->
     <link href="../assets/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">
@@ -45,7 +50,7 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
 </head>
 
 <body>
-
+<!--Inclusion de la bar de side et le header -->
 <?php include_once('includes/sidebar.php');?>
    
     <?php include_once('includes/header.php');?>
@@ -115,6 +120,7 @@ foreach($results as $row1)
                                     <div class="basic-form">
                                         <div class="form-group">
                                             <label>Titre d'Affectation</label>
+                                            <!-- Champ d'entrée pour le titre de l'affectation -->
                                             <input type="text" class="form-control border-none input-flat bg-ash" name="asstitle" required="true" value="<?php  echo htmlentities($row1->AssignmenttTitle);?>">
                                         </div>
                                     </div>
@@ -125,6 +131,7 @@ foreach($results as $row1)
                                     <div class="basic-form">
                                         <div class="form-group image-type">
                                             <label>Fichier d'Affectation si existe</label>
+                                             <!-- Lien pour afficher le fichier d'affectation existant -->
                                             <a href="assignmentfile/<?php echo $row1->AssignmentFile;?>" width="100" height="100" target="_blank"> <strong style="color: red">Voir</strong></a>
 
                                         </div>
@@ -137,17 +144,21 @@ foreach($results as $row1)
                                     </div>
                                 </div>
                             </div><?php $cnt=$cnt+1;}} ?>
+                            <!-- Boutons pour soumettre le formulaire et le réinitialiser -->
                             <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Mise à jour </button>
                             <button class="btn btn-default btn-lg m-b-10 m-l-5 sbmt-btn" type="reset">Réinitialiser</button>
                         </form>
                         </div>
                     </div>
-                   
+                    <!-- Footer -->
                      <?php include_once('includes/footer.php');?>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- JavaScript imports -->
+
     <!-- jquery vendor -->
     <script src="../assets/js/lib/jquery.min.js"></script>
     <script src="../assets/js/lib/jquery.nanoscroller.min.js"></script>
