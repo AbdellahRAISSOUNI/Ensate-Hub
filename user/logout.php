@@ -1,7 +1,7 @@
 <?php
-session_start();
-session_unset();
-session_destroy();
-header('location:login.php');
+session_start(); //Démarre une nouvelle session ou restaure une session existante
+session_unset(); // Efface toutes les données de la session
+session_destroy(); //Détruit la session courante
+header('location:login.php'); //Redirige l'utilisateur vers la page de connexion login.php
 
 ?>

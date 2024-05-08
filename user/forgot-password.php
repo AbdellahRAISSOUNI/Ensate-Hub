@@ -1,19 +1,26 @@
 <?php
-session_start();
-error_reporting(0);
+session_start(); // Démarrer la session
+error_reporting(0); // Désactiver l'affichage des erreurs PHP
+// Inclure le fichier de connexion à la base de données
 include('includes/dbconnection.php');
 
+// Vérifier si le formulaire de restauration de mot de passe est soumis
 if(isset($_POST['submit']))
   {
+    // Récupérer les données du formulaire
     $email=$_POST['email'];
 $mobile=$_POST['mobile'];
 $newpassword=md5($_POST['newpassword']);
+
+    // Vérifier si l'email et le numéro de téléphone correspondent à un utilisateur dans la base de données
   $sql ="SELECT Email FROM tbluser WHERE Email=:email and MobileNumber=:mobile";
 $query= $dbh -> prepare($sql);
 $query-> bindParam(':email', $email, PDO::PARAM_STR);
 $query-> bindParam(':mobile', $mobile, PDO::PARAM_STR);
 $query-> execute();
 $results = $query -> fetchAll(PDO::FETCH_OBJ);
+
+// Si les informations sont valides, mettre à jour le mot de passe de l'utilisateur
 if($query -> rowCount() > 0)
 {
 $con="update tbluser set Password=:newpassword where Email=:email and MobileNumber=:mobile";
@@ -38,6 +45,9 @@ echo "<script>alert('Email o Numéro invalides');</script>";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mot de passe oublié</title>
     <!-- Styles -->
+    <!-- Inclure les fichiers CSS nécessaires -->
+    <!-- Styles spécifiques à cette page -->
+    <!-- Scripts JavaScript -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">
     <link href="../assets/css/lib/bootstrap.min.css" rel="stylesheet">
@@ -121,6 +131,7 @@ echo "<script>alert('Email o Numéro invalides');</script>";
                         </div>
                         <div class="login-form">
                             <h4>J'ai Oublié mon Mot de Passe</h4>
+                            <!-- Formulaire de restauration de mot de passe -->
                             <form method="post" name="chngpwd" onSubmit="return valid();">
                                 <div class="form-group">
                                     <label>Adresse Mail:</label>
@@ -143,6 +154,7 @@ echo "<script>alert('Email o Numéro invalides');</script>";
                                         <a href="login.php">Connectez vous?</a>
                                     </label>
                                 </div>
+                                <!-- Bouton de soumission du formulaire -->
                                 <button type="submit" name="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Restaurer votre mot de passe</button>
                             </form>
                         </div>

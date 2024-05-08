@@ -46,7 +46,7 @@ echo '<script>alert("Le mot de passe que vous avez entré est incorrecte")</scri
 
 <head>
   
-    <title>Ensaté-Hub Etudiant : Changer Mot le passe </title>
+    <title>Ensaté-Hub Etudiant : Changer votre le passe </title>
     <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">

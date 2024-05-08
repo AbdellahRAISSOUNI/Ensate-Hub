@@ -1,5 +1,5 @@
 <?php
-session_start(); // Démarrer la session pour accéder aux données de session
+session_start(); // Demarrer la session pour accéder aux données de session
 error_reporting(0);// Désactiver l'affichage des erreurs pour un environnement de production
 include('includes/dbconnection.php'); // Inclure le fichier de connexion à la base de données pour utiliser les fonctions de connexion
 if (strlen($_SESSION['ocasuid']==0)) { // Vérifier si l'utilisateur est connecté en vérifiant la valeur de la variable de session 'ocasuid', sinon le rediriger vers la page de déconnexion

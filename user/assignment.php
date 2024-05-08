@@ -39,7 +39,7 @@ if (strlen($_SESSION['ocasuid']==0)) { // Vérifier si l'utilisateur est connect
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Tabmeau de board</h1>
+                                <h1>Tableau de board</h1>
                             </div>
                         </div>
                     </div>

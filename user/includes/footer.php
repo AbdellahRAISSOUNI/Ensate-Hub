@@ -11,7 +11,7 @@
     /* Style du texte dans le footer */
     .footer p {
         color: #000; /* Couleur du texte */
-        font-size: 16px; /* Taille de la police */
+        font-size: 16px; /* Taile de la police */
         margin: 0;
         font-weight: bold; /* Texte en gras */
     }

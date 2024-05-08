@@ -1,8 +1,11 @@
 <?php
-session_start();
-error_reporting(0);
+session_start(); // Démarrer la session et désactiver la notification des erreurs
+error_reporting(0); 
+// Inclure le fichier de connexion à la base de données
 include('includes/dbconnection.php');
+// Vérifier si l'utilisateur est connecté
 if (strlen($_SESSION['ocasuid']==0)) {
+  // Rediriger vers la page de déconnexion si la session est vide
   header('location:logout.php');
   } else{
 
@@ -35,6 +38,7 @@ if (strlen($_SESSION['ocasuid']==0)) {
         <div class="main">
             <div class="container-fluid">
                 <div class="row">
+                    <!-- Titre de la page -->
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
@@ -42,8 +46,7 @@ if (strlen($_SESSION['ocasuid']==0)) {
                             </div>
                         </div>
                     </div>
-                    <!-- /# column -->
-                    <div class="col-lg-4 p-l-0 title-margin-left">
+                    <!-- Fil d'Ariane -->                    <div class="col-lg-4 p-l-0 title-margin-left">
                         <div class="page-header">
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
@@ -69,6 +72,7 @@ if (strlen($_SESSION['ocasuid']==0)) {
                                         </ul>
                                     </div>
                                 </div>
+                                <!-- Tableau de données -->
                                 <div class="bootstrap-data-table-panel">
                                     <div class="table-responsive">
                                         <table  class="table table-striped table-bordered">
@@ -94,6 +98,7 @@ if (strlen($_SESSION['ocasuid']==0)) {
         }
         $no_of_records_per_page = 10;
         $offset = ($page_no-1) * $no_of_records_per_page;
+        // Requête pour récupérer le nombre total de lignes
         $previous_page = $page_no - 1;
   $next_page = $page_no + 1;
   $adjacents = "2"; 
@@ -104,13 +109,15 @@ $results1=$query1->fetchAll(PDO::FETCH_OBJ);
 $total_rows=$query1->rowCount();
 $total_no_of_pages = ceil($total_rows / $no_of_records_per_page);
   $second_last = $total_no_of_pages - 1; 
-                                                
+
+// Requête pour récupérer les données paginées
 $sql="SELECT tblcourse.ID,tblcourse.BranchName,tblcourse.CourseName,tblsubject.SubjectFullname,tblsubject.SubjectCode,tblassigment.AssignmentNumber,tblassigment.AssignmenttTitle,tblassigment.SubmissionDate,tblassigment.CreationDate,tblteacher.ID,tblteacher.FirstName,tblteacher.LastName,tblassigment.ID as aid from tblassigment join tblcourse on tblcourse.ID=tblassigment.Cid join tblsubject on tblsubject.ID=tblassigment.Sid join tblteacher on tblteacher.ID=tblassigment.Tid where tblassigment.Cid=$cid order by tblassigment.CreationDate desc LIMIT $offset, $no_of_records_per_page";
 $query = $dbh -> prepare($sql);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 
 $cnt=1;
+// Affichage des données dans le tableau
 if($query->rowCount() > 0)
 {
 foreach($results as $row)
@@ -124,6 +131,7 @@ foreach($results as $row)
                                                     <td><?php  echo $lsd=htmlentities($row->SubmissionDate);?></td>
                                                    <td><?php  echo $pd= htmlentities($row->CreationDate);?></td>
                                                    <?php
+// Vérification de la date de soumission                                     
 $cdate=date('Y-m-d');
 $ppd = date("Y-m-d", strtotime($pd));
 $llsd = date("Y-m-d", strtotime($lsd));
