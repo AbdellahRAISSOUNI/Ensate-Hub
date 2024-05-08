@@ -32,7 +32,7 @@
                     <i class="ti-email" style="color: #fff;"></i>
                     <div class="drop-down">
                         <div class="dropdown-content-heading" style="background-color: #15429b; color: #fff; padding: 10px;">
-                            <span class="text-left"><?php echo $uploadedassign; ?> New Assignment Uploaded</span>
+                            <span class="text-left"><?php echo $uploadedassign; ?> Nouvelle Affectation</span>
                         </div>
                         <div class="dropdown-content-body" style="background-color: #fff; color: #333; padding: 10px;">
                             <ul>
@@ -47,14 +47,14 @@
                                                 <div class="notification-heading">
                                                     <?php echo $row->FullName; ?>(<?php echo $row->RollNumber; ?>)
                                                 </div>
-                                                <div class="notification-text">Uploaded Assignment</div>
+                                                <div class="notification-text">Affectations disponibles</div>
                                             </div>
                                         </a>
                                     </li>
                                 <?php } ?>
 
                                 <li class="text-center">
-                                    <a href="#" class="more-link" style="color: #15429b;">See All</a>
+                                    <a href="#" class="more-link" style="color: #15429b;">Voir tout</a>
                                 </li>
                             </ul>
                         </div>
@@ -82,8 +82,8 @@
                             <div class="dropdown-content-body" style="background-color: #fff; color: #333; padding: 10px;">
                                 <ul>
                                     <li><a href="profile.php" style="text-decoration: none; color: #333;"><i class="ti-user"></i> <span>Profile</span></a></li>
-                                    <li><a href="change-password.php" style="text-decoration: none; color: #333;"><i class="ti-settings"></i> <span>Setting</span></a></li>
-                                    <li><a href="logout.php" style="text-decoration: none; color: #333;"><i class="ti-power-off"></i> <span>Logout</span></a></li>
+                                    <li><a href="change-password.php" style="text-decoration: none; color: #333;"><i class="ti-settings"></i> <span>Paramètres</span></a></li>
+                                    <li><a href="logout.php" style="text-decoration: none; color: #333;"><i class="ti-power-off"></i> <span>Déconnexion</span></a></li>
                                 </ul>
                             </div>
                         </div>

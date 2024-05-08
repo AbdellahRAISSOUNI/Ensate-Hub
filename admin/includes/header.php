@@ -36,8 +36,8 @@
                             <div class="dropdown-content-body" style="background-color: #fff; color: #333; padding: 10px;">
                                 <ul>
                                     <li><a href="profile.php" style="text-decoration: none; color: #333;"><i class="ti-user"></i> <span>Profile</span></a></li>
-                                    <li><a href="change-password.php" style="text-decoration: none; color: #333;"><i class="ti-settings"></i> <span>Setting</span></a></li>
-                                    <li><a href="logout.php" style="text-decoration: none; color: #333;"><i class="ti-power-off"></i> <span>Logout</span></a></li>
+                                    <li><a href="change-password.php" style="text-decoration: none; color: #333;"><i class="ti-settings"></i> <span>Paramètres</span></a></li>
+                                    <li><a href="logout.php" style="text-decoration: none; color: #333;"><i class="ti-power-off"></i> <span>Déconnexion</span></a></li>
                                 </ul>
                             </div>
                         </div>
