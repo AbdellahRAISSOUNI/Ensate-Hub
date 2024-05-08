@@ -203,14 +203,14 @@ foreach($results as $row)
                                     <div class="basic-form">
                                         <div class="form-group image-type">
                                             <label>Fichier d`Affectation, si existe</label>
-                                            <a href="assignmentfile/<?php echo $row1->AssignmentFile;?>" width="100" height="100" target="_blank"> <strong style="color: red">View</strong></a>
-<a href="changefile.php?editid=<?php echo $row1->ID;?>" > &nbsp;<strong style="color: red"> Edit</strong></a>
+                                            <a href="assignmentfile/<?php echo $row1->AssignmentFile;?>" width="100" height="100" target="_blank"> <strong style="color: red">  Consulter</strong></a>
+<a href="changefile.php?editid=<?php echo $row1->ID;?>" > &nbsp;<strong style="color: red"> Changer </strong></a>
                                         </div>
                                     </div>
                                 </div>
                             </div><?php $cnt=$cnt+1;}} ?>
-                            <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Update</button>
-                            <button class="btn btn-default btn-lg m-b-10 m-l-5 sbmt-btn" type="reset">Reset</button>
+                            <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Mettre à jour</button>
+                            <button class="btn btn-default btn-lg m-b-10 m-l-5 sbmt-btn" type="reset">Reseter</button>
                         </form>
                         </div>
                     </div>
