@@ -1,8 +1,8 @@
 <?php
-session_start();
-error_reporting(0);
-include('includes/dbconnection.php');
-if (strlen($_SESSION['ocasuid']==0)) {
+session_start(); // Démarrer la session pour accéder aux données de session
+error_reporting(0);// Désactiver l'affichage des erreurs pour un environnement de production
+include('includes/dbconnection.php');// Inclure le fichier de connexion à la base de données pour utiliser les fonctions de connexion
+if (strlen($_SESSION['ocasuid']==0)) { // Vérifier si l'utilisateur est connecté en vérifiant la valeur de la variable de session 'ocasuid', sinon le rediriger vers la page de déconnexion
   header('location:logout.php');
   } else{
 
@@ -17,6 +17,7 @@ if (strlen($_SESSION['ocasuid']==0)) {
     <title>Devoirs</title>
 
     <!-- Styles -->
+    <!-- Inclure les fichiers CSS nécessaires pour la mise en forme et les styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">
     <link href="../assets/css/lib/datatable/dataTables.bootstrap.min.css" rel="stylesheet" />
@@ -29,7 +30,7 @@ if (strlen($_SESSION['ocasuid']==0)) {
 
 <body>
  <?php include_once('includes/sidebar.php');?>
-   
+     <!-- Inclure les fichiers de sidebar et header pour la structure de la page -->
     <?php include_once('includes/header.php');?>
     <div class="content-wrap">
         <div class="main">
@@ -38,7 +39,7 @@ if (strlen($_SESSION['ocasuid']==0)) {
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Tabmeau de board</h1>
+                                <h1>Tableau de board</h1>
                             </div>
                         </div>
                     </div>
@@ -87,7 +88,9 @@ if (strlen($_SESSION['ocasuid']==0)) {
                                             </thead>
                                             <tbody>
                                                 <?php
+                                                // Récupérer l'ID du cours de la session
                                                 $cid=$_SESSION['ocasucid'];
+                                                // Requête SQL pour récupérer les informations des devoirs
 $sql="SELECT tblcourse.ID,tblcourse.BranchName,tblcourse.CourseName,tblsubject.SubjectFullname,tblsubject.SubjectCode,tblassigment.AssignmentNumber,tblassigment.AssignmenttTitle,tblassigment.SubmissionDate,tblassigment.CreationDate,tblteacher.ID,tblteacher.FirstName,tblteacher.LastName,tblassigment.ID as aid,tbluploadass.Marks from tblassigment join tblcourse on tblcourse.ID=tblassigment.Cid join tblsubject on tblsubject.ID=tblassigment.Sid join tblteacher on tblteacher.ID=tblassigment.Tid join tbluploadass on tbluploadass.AssId=tblassigment.ID where tblassigment.Cid=$cid";
 $query = $dbh -> prepare($sql);
 $query->execute();

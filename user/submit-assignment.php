@@ -1,36 +1,43 @@
 <?php
-session_start();
-error_reporting(0);
-include('includes/dbconnection.php');
+session_start();// Démarrage de la session
+error_reporting(0);// Désactivation de l'affichage des erreurs
+include('includes/dbconnection.php');// Inclusion du fichier de connexion à la base de données
+// Vérification de la session utilisateur
 if (strlen($_SESSION['ocasuid']==0)) {
   header('location:logout.php');
   } else{
+    // Traitement du formulaire lorsque soumis
 if(isset($_POST['submit']))
+// Récupération de l'ID de l'assignation depuis l'URL
 {
 
 
 
 $asid=$_GET['sid'];
+// Récupération de l'ID de l'utilisateur connecté
 $userid= $_SESSION['ocasuid'];
+// Récupération de la description de l'assignation depuis le formulaire
 $assdes= $_POST['assdes'];
+// Récupération du fichier de réponse depuis le formulaire
 $ansfile=$_FILES["ansfile"]["name"];
 
 
+ // Récupération de l'extension du fichier
 $extension = substr($ansfile,strlen($ansfile)-4,strlen($ansfile));
-// allowed extensions
+// Extensions autorisées
 $allowed_extensions = array(".docs",".pdf",".doc");
-// Validation for allowed extensions .in_array() function searches an array for a specific value.
-if(!in_array($extension,$allowed_extensions))
+// Validation des extensions autoriséesif(!in_array($extension,$allowed_extensions))
 {
 echo "<script>alert('Answer has Invalid format. docs and pdf format allowed');</script>";
 }
 else
 {
 
+// Génération d'un nom de fichier unique et déplacement du fichier dans le répertoire d'assignation
 $ansfile=md5($ansfile).time().$extension;
 move_uploaded_file($_FILES["ansfile"]["tmp_name"],"assignanswer/".$ansfile);
 
-
+// Insertion des données de l'assignation dans la base de données
 $sql="insert into tbluploadass(UserID,AssId,AssDes,AnswerFile)values(:userid,:asid,:assdes,:ansfile)";
 $query=$dbh->prepare($sql);
 $query->bindParam(':userid',$userid,PDO::PARAM_STR);
@@ -62,6 +69,7 @@ echo "<script>window.location.href ='assignment.php'</script>";
   
     <title>Ensaté-Hub : Soumettre Affectation </title>
 
+    <!-- Liens vers les fichiers CSS -->
     <link href="../assets/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">
@@ -77,6 +85,7 @@ echo "<script>window.location.href ='assignment.php'</script>";
    
     <?php include_once('includes/header.php');?>
 
+    <!-- Contenu principal -->
     <div class="content-wrap">
         <div class="main">
             <div class="container-fluid">
@@ -101,10 +110,11 @@ echo "<script>window.location.href ='assignment.php'</script>";
                     </div>
                     <!-- /# column -->
                 </div>
-                <!-- /# row -->
+                <!-- Corps de la page -->
                 <div id="main-content">
                     <div class="card alert">
                         <div class="card-body">
+                            <!-- Formulaire de soumission d'assignation -->
                             <form name="" method="post" action="" enctype="multipart/form-data">
                                 <?php
                                     $sid=$_GET['sid'];
@@ -135,6 +145,7 @@ foreach($results as $row)
                                     </ul>
                                 </div>
                             </div>
+                             <!-- Affichage des détails de l'assignation -->
                             <div class="row">
 
                              <table class="table table-bordered table-hover data-tables">
@@ -252,6 +263,7 @@ foreach($results as $data){?>
             </div>
         </div>
     </div>
+    <!-- Liens vers les fichiers JavaScript -->
     <!-- jquery vendor -->
     <script src="../assets/js/lib/jquery.min.js"></script>
     <script src="../assets/js/lib/jquery.nanoscroller.min.js"></script>

@@ -1,10 +1,12 @@
 <?php
-session_start();
-error_reporting(0);
-include('includes/dbconnection.php');
+session_start();// Démarrage de la session
+error_reporting(0);// Désactivation de l'affichage des erreurs
+include('includes/dbconnection.php');// Inclusion du fichier de connexion à la base de données
+// Vérification de la session utilisateur
 if (strlen($_SESSION['ocasuid']==0)) {
   header('location:logout.php');
   } else{
+    // Début de la structure HTML
 
 
 
@@ -17,6 +19,7 @@ if (strlen($_SESSION['ocasuid']==0)) {
     <title>Ensat-Hub</title>
 
     <!-- Styles -->
+    <!-- Liens vers les fichiers CSS -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">
     <link href="../assets/css/lib/datatable/dataTables.bootstrap.min.css" rel="stylesheet" />
@@ -28,13 +31,16 @@ if (strlen($_SESSION['ocasuid']==0)) {
 </head>
 
 <body>
- <?php include_once('includes/sidebar.php');?>
+ <?php
+    // Inclusion de la barre latérale et de l'en-tête
+    include_once('includes/sidebar.php');?>
    
     <?php include_once('includes/header.php');?>
     <div class="content-wrap">
         <div class="main">
             <div class="container-fluid">
                 <div class="row">
+                    <!-- Entête de page -->
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
@@ -59,9 +65,11 @@ if (strlen($_SESSION['ocasuid']==0)) {
                 <div id="main-content">
                     <div class="row">
                         <div class="col-lg-12">
+                            <!-- Carte pour afficher les affectations -->
                             <div class="card alert">
                                 <div class="card-header">
                                     <h4>Télecharger Affectation</h4>
+                                    <!-- Boutons de fermeture et de lien -->
                                     <div class="card-header-right-icon">
                                         <ul>
                                             <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
@@ -73,6 +81,7 @@ if (strlen($_SESSION['ocasuid']==0)) {
                                     <div class="table-responsive">
                                         <table  class="table table-striped table-bordered">
                                             <thead>
+                                                <!-- Entêtes de tableau -->
                                                 <tr>
                                                     <th>Apogé</th>
                                                     <th>Numéro Affectation</th>
@@ -87,35 +96,37 @@ if (strlen($_SESSION['ocasuid']==0)) {
                                             </thead>
                                             <tbody>
                                                 <?php
+                                                // Récupération de l'ID de l'utilisateur
                                                 $cid=$_SESSION['ocasucid'];
                                                 if (isset($_GET['page_no']) && $_GET['page_no']!="") {
-  $page_no = $_GET['page_no'];
-  } else {
-    $page_no = 1;
-        }
-        // Formula for pagination
-        $no_of_records_per_page = 5;
-        $offset = ($page_no-1) * $no_of_records_per_page;
-        $previous_page = $page_no - 1;
-  $next_page = $page_no + 1;
-  $adjacents = "2"; 
-$ret = "SELECT ID FROM tbluploadass where tbluploadass.SubmitDate is not null";
-$query1 = $dbh -> prepare($ret);
-$query1->execute();
-$results1=$query1->fetchAll(PDO::FETCH_OBJ);
-$total_rows=$query1->rowCount();
-$total_no_of_pages = ceil($total_rows / $no_of_records_per_page);
-  $second_last = $total_no_of_pages - 1; 
-  $uid=$_SESSION['ocasuid'];
-$sql="SELECT tblcourse.ID,tblcourse.BranchName,tblcourse.CourseName,tblsubject.SubjectFullname,tblsubject.SubjectCode,tblassigment.AssignmentNumber,tblassigment.AssignmenttTitle,tblassigment.SubmissionDate,tblassigment.CreationDate,tblteacher.ID,tblteacher.FirstName,tblteacher.LastName,tblassigment.ID as aid,tbluploadass.Marks, tbluploadass.SubmitDate from tblassigment join tblcourse on tblcourse.ID=tblassigment.Cid join tblsubject on tblsubject.ID=tblassigment.Sid join tblteacher on tblteacher.ID=tblassigment.Tid join tbluploadass on tbluploadass.AssId=tblassigment.ID where tblassigment.Cid=$cid && tbluploadass.UserID=$uid  LIMIT $offset, $no_of_records_per_page";
-$query = $dbh -> prepare($sql);
-$query->execute();
-$results=$query->fetchAll(PDO::FETCH_OBJ);
+                                                    $page_no = $_GET['page_no'];
+                                                } else {
+                                                    $page_no = 1;
+                                                }
+                                                // Formula for pagination
+                                                $no_of_records_per_page = 5;
+                                                $offset = ($page_no-1) * $no_of_records_per_page;
+                                                $previous_page = $page_no - 1;
+                                                $next_page = $page_no + 1;
+                                                $adjacents = "2"; 
+                                                $ret = "SELECT ID FROM tbluploadass where tbluploadass.SubmitDate is not null";
+                                                $query1 = $dbh -> prepare($ret);
+                                                $query1->execute();
+                                                $results1=$query1->fetchAll(PDO::FETCH_OBJ);
+                                                $total_rows=$query1->rowCount();
+                                                $total_no_of_pages = ceil($total_rows / $no_of_records_per_page);
+                                                $second_last = $total_no_of_pages - 1; 
+                                                $uid=$_SESSION['ocasuid'];
+                                                // Requête pour récupérer les données des affectations                                                $sql="SELECT tblcourse.ID,tblcourse.BranchName,tblcourse.CourseName,tblsubject.SubjectFullname,tblsubject.SubjectCode,tblassigment.AssignmentNumber,tblassigment.AssignmenttTitle,tblassigment.SubmissionDate,tblassigment.CreationDate,tblteacher.ID,tblteacher.FirstName,tblteacher.LastName,tblassigment.ID as aid,tbluploadass.Marks, tbluploadass.SubmitDate from tblassigment join tblcourse on tblcourse.ID=tblassigment.Cid join tblsubject on tblsubject.ID=tblassigment.Sid join tblteacher on tblteacher.ID=tblassigment.Tid join tbluploadass on tbluploadass.AssId=tblassigment.ID where tblassigment.Cid=$cid && tbluploadass.UserID=$uid  LIMIT $offset, $no_of_records_per_page";
+                                                $query = $dbh -> prepare($sql);
+                                                $query->execute();
+                                                $results=$query->fetchAll(PDO::FETCH_OBJ);
 
-$cnt=1;
-if($query->rowCount() > 0)
-{
-foreach($results as $row)
+                                                $cnt=1;
+                                                if($query->rowCount() > 0)
+                                                {
+                                                    // Affichage des données de l'affectation
+                                            foreach($results as $row)
 {               ?>
                                                 <tr>
                                                     <td><?php echo htmlentities($cnt);?></td>
@@ -232,6 +243,7 @@ echo "<li><a href='?page_no=$total_no_of_pages'>Last &rsaquo;&rsaquo;</a></li>";
         </div>
     </div>
     
+    <!-- Liens vers les fichiers JavaScript -->
     <!-- jquery vendor -->
     <script src="../assets/js/lib/bootstrap.min.js"></script>
     <!-- bootstrap -->

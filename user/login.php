@@ -1,10 +1,13 @@
 <?php
-session_start();
-error_reporting(0);
-include('includes/dbconnection.php');
+session_start(); // Démarrer la session
+error_reporting(0);// Désactiver l'affichage des erreurs PHP
+// Inclure le fichier de connexion à la base de données
+include('includes/dbconnection.php'); 
 
+// Vérifier si le formulaire de connexion est soumis
 if(isset($_POST['login'])) 
   {
+    // Récupérer les données du formulaire
     $rollmobilenum=$_POST['rollmobilenum'];
     $mobnum=$_POST['mobnum'];
     $password=md5($_POST['password']);
@@ -14,8 +17,13 @@ if(isset($_POST['login']))
     $query->bindParam(':mobnum',$mobnum,PDO::PARAM_STR);
 $query-> bindParam(':password', $password, PDO::PARAM_STR);
     $query-> execute();
+
+    // Récupérer les résultats de la requête
     $results=$query->fetchAll(PDO::FETCH_OBJ);
+    // Vérifier si les informations sont valides
     if($query->rowCount() > 0)
+
+    // Parcourir les résultats et stocker les informations de l'utilisateur dans la session
 {
 foreach ($results as $result) {
 $_SESSION['ocasuid']=$result->ID;
@@ -23,8 +31,10 @@ $_SESSION['ocasucid']=$result->Cid;
 }
 $_SESSION['login']=$_POST['rollmobilenum'];
 
+   // Rediriger l'utilisateur vers le tableau de bord
 echo "<script type='text/javascript'> document.location ='dashboard.php'; </script>";
 } else{
+        // Afficher un message d'erreur si les informations sont incorrectes
 echo "<script>alert('Détailles invalides');</script>";
 }
 }
@@ -34,6 +44,12 @@ echo "<script>alert('Détailles invalides');</script>";
 <html lang="en">
 
 <head>
+
+    <!-- Métadonnées -->
+    <!-- Titre de la page -->
+    <!-- Inclure les fichiers CSS nécessaires -->
+    <!-- Styles spécifiques à cette page -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ensaté-Hub Connection-Etudiant</title>
@@ -101,6 +117,7 @@ echo "<script>alert('Détailles invalides');</script>";
 
 <body>
 
+    <!-- Formulaire de connexion -->
     <div class="unix-login">
         <div class="container">
             <div class="row">
@@ -108,6 +125,7 @@ echo "<script>alert('Détailles invalides');</script>";
                     <div class="login-content">
                         <div class="login-logo">
                             <a href="../index.php"><span>Ensaté-Hub</span></a>
+                        <!-- Formulaire de connexion -->
                         </div>
                         <div class="login-form">
                             <h4>Connection : Etudiant</h4>
@@ -120,16 +138,20 @@ echo "<script>alert('Détailles invalides');</script>";
                                     <label>Mot de passe</label>
                                     <input type="password" class="form-control" placeholder="Cliquer ici pour entrer le mot de passe" name="password" required="true">
                                 </div>
+                                <!-- Lien pour récupérer le mot de passe -->
                                 <div class="checkbox">
                                     <label class="pull-right">
 										<a href="forgot-password.php">Vous avez oublié votre mot de passe ?</a>
 									</label>
                                 </div>
+                                <!-- Bouton de connexion -->
                                 <button type="submit" name="login" class="btn btn-primary btn-flat m-b-30 m-t-30">Connectez-vous</button>
 
+                                <!-- Lien pour s'inscrire -->
                                 <div class="register-link m-t-15 text-center">
                                     <p>Vous n'avez pas de compte ? <a href="signup.php">Créer un compte</a></p>
                                 </div>
+                                <!-- Lien pour retourner à l'accueil -->
                                 <label>
                                     <a href="../index.php">Retour à l'accueil</a>
                                 </label>

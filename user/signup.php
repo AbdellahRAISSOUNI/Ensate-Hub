@@ -1,15 +1,19 @@
 <?php 
-session_start();
-error_reporting(0);
+session_start(); // Démarrer la session et désactiver la notification des erreurs
+error_reporting(0); // Inclure le fichier de connexion à la base de données
 include('includes/dbconnection.php');
+// Vérifier si le formulaire d'inscription a été soumis
 if(isset($_POST['submit']))
   {
+    // Récupérer les données du formulaire
     $fname=$_POST['fname'];
     $mobno=$_POST['mobno'];
     $email=$_POST['email'];
     $cid=$_POST['cid'];
     $rollnum=$_POST['rollnum'];
+    // Crypter le mot de passe avant de le stocker en base de données
     $password=md5($_POST['password']);
+    // Vérifier si l'adresse e-mail, le numéro de téléphone ou l'apogée existe déjà dans la base de données
     $ret="select Email,MobileNumber,RollNumber from tbluser where Email=:email || MobileNumber=:mobno || RollNumber=:rollnum ";
     $query= $dbh -> prepare($ret);
     $query-> bindParam(':email', $email, PDO::PARAM_STR);
@@ -17,6 +21,7 @@ if(isset($_POST['submit']))
     $query->bindParam(':rollnum',$rollnum,PDO::PARAM_INT);
     $query-> execute();
     $results = $query -> fetchAll(PDO::FETCH_OBJ);
+    // Si aucun enregistrement correspondant n'est trouvé, insérer les données de l'utilisateur dans la base de données
 if($query -> rowCount() == 0)
 {
 $sql="insert into tbluser(FullName,MobileNumber,Email,Cid,RollNumber,Password)Values(:fname,:mobno,:email,:cid,:rollnum,:password)";
@@ -28,7 +33,9 @@ $query->bindParam(':cid',$cid,PDO::PARAM_INT);
 $query->bindParam(':rollnum',$rollnum,PDO::PARAM_INT);
 $query->bindParam(':password',$password,PDO::PARAM_STR);
 $query->execute();
+// Récupérer l'ID de l'utilisateur nouvellement inscrit
 $lastInsertId = $dbh->lastInsertId();
+// Si l'inscription réussit, afficher un message de succès et rediriger vers la page de connexion
 if($lastInsertId)
 {
 
@@ -37,13 +44,13 @@ echo "<script>window.location.href ='login.php'</script>";
 }
 else
 {
-
+// Sinon, afficher un message d'erreur
 echo "<script>alert('Erreur');</script>";
 }
 }
  else
 {
-
+// Si l'adresse e-mail, le numéro de téléphone ou l'apogée existe déjà, afficher un message d'erreur
 echo "<script>alert('Adresse mail o numéro existe déja. Essayer quelque chose');</script>";
 }
 }
@@ -52,9 +59,10 @@ echo "<script>alert('Adresse mail o numéro existe déja. Essayer quelque chose'
 <html lang="en">
 
 <head>
+    <!-- Metadonnées -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OCAS User : Signup</title>
+    <title>EnsateHub -  Creation du compte</title>
     <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">
@@ -122,7 +130,7 @@ echo "<script>alert('Adresse mail o numéro existe déja. Essayer quelque chose'
 </head>
 
 <body>
-
+    <!-- Formulaire d'inscription -->
     <div class="unix-login">
         <div class="container">
             <div class="row">

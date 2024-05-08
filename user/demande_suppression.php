@@ -1,20 +1,26 @@
 <?php
-session_start();
-error_reporting(0);
+session_start(); // Démarrer la session
+error_reporting(0); // Désactiver l'affichage des erreurs PHP
+// Inclure le fichier de connexion à la base de données
 include('includes/dbconnection.php');
+// Vérifier si l'utilisateur est connecté, sinon le rediriger vers la page de déconnexion
 if (strlen($_SESSION['ocasuid']) == 0) {
     header('location:logout.php');
 } else {
+    // Si le formulaire est soumis
     if (isset($_POST['submit'])) {
+        // Récupérer les données du formulaire
         $email = $_POST['email'];
         $message = $_POST['message'];
 
+        // Requête SQL pour insérer la demande de suppression dans la base de données
         $sql = "INSERT INTO demandes_suppression (email, message, statut) VALUES (:email, :message, 'en_attente')";
         $query = $dbh->prepare($sql);
         $query->bindParam(':email', $email, PDO::PARAM_STR);
         $query->bindParam(':message', $message, PDO::PARAM_STR);
         $query->execute();
 
+        // Afficher un message de succès et rediriger vers la page de demande de suppression
         echo '<script>alert("Votre demande de suppression a été envoyée.")</script>';
         echo "<script>window.location.href ='demande_suppression.php'</script>";
     }

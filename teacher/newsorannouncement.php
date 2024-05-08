@@ -179,7 +179,7 @@ foreach($results as $row)
                                                     </td>
                                                     <td>
                                                        
-                                                        <span><a href="newsorannouncement.php?delid=<?php echo ($row->ID);?>"  onclick="return confirm('Do you really want to Delete ?');"><i class="ti-trash color-danger"></i> </a></span>
+                                                        <span><a href="newsorannouncement.php?delid=<?php echo ($row->ID);?>"  onclick="return confirm('Voulez vous vraiment supprimer ?');"><i class="ti-trash color-danger"></i> </a></span>
                                                     </td>
                                                 </tr>
                                                  <?php $cnt=$cnt+1;}} ?> 

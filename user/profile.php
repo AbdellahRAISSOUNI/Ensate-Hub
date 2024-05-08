@@ -1,16 +1,21 @@
 <?php
-session_start();
+session_start();// Démarrer la session et désactiver la notification des erreurs
 error_reporting(0);
-include('includes/dbconnection.php');
+include('includes/dbconnection.php');// Inclure le fichier de connexion à la base de données
+// Vérifier si l'utilisateur est connecté
 if (strlen($_SESSION['ocasuid']==0)) {
+    // Rediriger vers la page de déconnexion si la session est vide
   header('location:logout.php');
   } else{
-     if(isset($_POST['submit']))
-  {
+    // Vérifier si le formulaire de mise à jour du profil a été soumis
+     if(isset($_POST['submit']))  {
+    // Récupérer l'ID de l'utilisateur connecté
     $uid=$_SESSION['ocasuid'];
+    // Récupérer les données du formulaire
     $fname=$_POST['name'];
   $mobno=$_POST['mobilenumber'];
   $email=$_POST['email'];
+  // Requête pour mettre à jour le profil de l'utilisateur dans la base de données
   $sql="update tbluser set FullName=:name,MobileNumber=:mobilenumber,Email=:email where ID=:uid";
      $query = $dbh->prepare($sql);
      $query->bindParam(':name',$fname,PDO::PARAM_STR);
@@ -19,6 +24,7 @@ if (strlen($_SESSION['ocasuid']==0)) {
      $query->bindParam(':uid',$uid,PDO::PARAM_STR);
 $query->execute();
 
+        // Afficher un message d'alerte après la mise à jour du profil
         echo '<script>alert("Profile est mit à jour")</script>';
      
 
@@ -55,7 +61,7 @@ $query->execute();
                             </div>
                         </div>
                     </div>
-                    <!-- /# column -->
+                    <!-- Fil d'Ariane -->
                     <div class="col-lg-4 p-l-0 title-margin-left">
                         <div class="page-header">
                             <div class="page-title">
@@ -68,7 +74,7 @@ $query->execute();
                     </div>
                     <!-- /# column -->
                 </div>
-                <!-- /# row -->
+                <!-- Formulaire de mise à jour du profil -->
                 <div id="main-content">
                  
                     <div class="row">
@@ -87,6 +93,7 @@ $query->execute();
                                     <div class="basic-form">
                                         <form method="post">
                                             <?php
+// Récupérer les détails du profil de l'utilisateur connect
 $uid=$_SESSION['ocasuid'];
 $sql="SELECT * from  tbluser where ID=:uid";
 $query = $dbh -> prepare($sql);

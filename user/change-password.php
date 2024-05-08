@@ -1,16 +1,20 @@
 <?php
-session_start();
-error_reporting(0);
-include('includes/dbconnection.php');
-error_reporting(0);
-if (strlen($_SESSION['ocasuid']==0)) {
+session_start(); // Démarrer la session pour accéder aux données de session
+error_reporting(0);// Désactiver l'affichage des erreurs pour un environnement de production
+include('includes/dbconnection.php'); // Inclure le fichier de connexion à la base de données pour utiliser les fonctions de connexion
+error_reporting(0); // Désactiver l'affichage des erreurs pour un environnement de production (redondant avec la ligne 5)
+if (strlen($_SESSION['ocasuid']==0)) { // Vérifier si l'utilisateur est connecté en vérifiant la valeur de la variable de session 'ocasuid', sinon le rediriger vers la page de déconnexion
+
   header('location:logout.php');
   } else{
-if(isset($_POST['submit']))
+if(isset($_POST['submit'])) // Vérifier si le formulaire a été soumis
+
 {
+// Récupérer l'ID de l'utilisateur à partir de la session
 $uid=$_SESSION['ocasuid'];
-$cpassword=md5($_POST['currentpassword']);
-$newpassword=md5($_POST['newpassword']);
+$cpassword=md5($_POST['currentpassword']); // Hacher le mot de passe actuel soumis avec md5
+$newpassword=md5($_POST['newpassword']); // Hacher le nouveau mot de passe soumis avec md5
+// Requête SQL pour vérifier si l'ID de l'utilisateur et le mot de passe actuel sont corrects
 $sql ="SELECT ID FROM tbluser WHERE ID=:uid and Password=:cpassword";
 $query= $dbh -> prepare($sql);
 $query-> bindParam(':uid', $uid, PDO::PARAM_STR);
@@ -18,17 +22,20 @@ $query-> bindParam(':cpassword', $cpassword, PDO::PARAM_STR);
 $query-> execute();
 $results = $query -> fetchAll(PDO::FETCH_OBJ);
 
+// Vérifier si la requête a retourné des résultats
 if($query -> rowCount() > 0)
 {
+// Requête SQL pour mettre à jour le mot de passe de l'utilisateur
 $con="update tbluser set Password=:newpassword where ID=:uid";
 $chngpwd1 = $dbh->prepare($con);
 $chngpwd1-> bindParam(':uid', $uid, PDO::PARAM_STR);
 $chngpwd1-> bindParam(':newpassword', $newpassword, PDO::PARAM_STR);
 $chngpwd1->execute();
-
+// Afficher un message de succès et rediriger vers la page "change-password.php"
 echo '<script>alert("Votre mot de passe a été changé avec succés")</script>';
  echo "<script>window.location.href ='change-password.php'</script>";
 } else {
+// Afficher un message d'erreur si le mot de passe actuel est incorrect
 echo '<script>alert("Le mot de passe que vous avez entré est incorrecte")</script>';
 
 }
@@ -39,7 +46,7 @@ echo '<script>alert("Le mot de passe que vous avez entré est incorrecte")</scri
 
 <head>
   
-    <title>Ensaté-Hub Etudiant : Changer Mot le passe </title>
+    <title>Ensaté-Hub Etudiant : Changer votre le passe </title>
     <!-- Styles -->
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">
@@ -48,6 +55,7 @@ echo '<script>alert("Le mot de passe que vous avez entré est incorrecte")</scri
     <link href="../assets/css/lib/unix.css" rel="stylesheet">
     <link href="../assets/css/style.css" rel="stylesheet">
     <script type="text/javascript">
+// Fonction JavaScript pour vérifier que le nouveau mot de passe et la confirmation sont identiques
 function checkpass()
 {
 if(document.changepassword.newpassword.value!=document.changepassword.confirmpassword.value)
