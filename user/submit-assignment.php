@@ -1,43 +1,36 @@
 <?php
-session_start();// Démarrage de la session
-error_reporting(0);// Désactivation de l'affichage des erreurs
-include('includes/dbconnection.php');// Inclusion du fichier de connexion à la base de données
-// Vérification de la session utilisateur
+session_start();
+error_reporting(0);
+include('includes/dbconnection.php');
 if (strlen($_SESSION['ocasuid']==0)) {
   header('location:logout.php');
   } else{
-    // Traitement du formulaire lorsque soumis
 if(isset($_POST['submit']))
-// Récupération de l'ID de l'assignation depuis l'URL
 {
 
 
 
 $asid=$_GET['sid'];
-// Récupération de l'ID de l'utilisateur connecté
 $userid= $_SESSION['ocasuid'];
-// Récupération de la description de l'assignation depuis le formulaire
 $assdes= $_POST['assdes'];
-// Récupération du fichier de réponse depuis le formulaire
 $ansfile=$_FILES["ansfile"]["name"];
 
 
- // Récupération de l'extension du fichier
 $extension = substr($ansfile,strlen($ansfile)-4,strlen($ansfile));
-// Extensions autorisées
+// allowed extensions
 $allowed_extensions = array(".docs",".pdf",".doc");
-// Validation des extensions autoriséesif(!in_array($extension,$allowed_extensions))
+// Validation for allowed extensions .in_array() function searches an array for a specific value.
+if(!in_array($extension,$allowed_extensions))
 {
 echo "<script>alert('Answer has Invalid format. docs and pdf format allowed');</script>";
 }
 else
 {
 
-// Génération d'un nom de fichier unique et déplacement du fichier dans le répertoire d'assignation
 $ansfile=md5($ansfile).time().$extension;
 move_uploaded_file($_FILES["ansfile"]["tmp_name"],"assignanswer/".$ansfile);
 
-// Insertion des données de l'assignation dans la base de données
+
 $sql="insert into tbluploadass(UserID,AssId,AssDes,AnswerFile)values(:userid,:asid,:assdes,:ansfile)";
 $query=$dbh->prepare($sql);
 $query->bindParam(':userid',$userid,PDO::PARAM_STR);
@@ -67,9 +60,8 @@ echo "<script>window.location.href ='assignment.php'</script>";
 
 <head>
   
-    <title>Ensaté-Hub : Soumettre Affectation </title>
+    <title>Ensaté - hub Voir cours et repondre </title>
 
-    <!-- Liens vers les fichiers CSS -->
     <link href="../assets/css/lib/calendar2/pignose.calendar.min.css" rel="stylesheet">
     <link href="../assets/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../assets/css/lib/themify-icons.css" rel="stylesheet">
@@ -85,7 +77,6 @@ echo "<script>window.location.href ='assignment.php'</script>";
    
     <?php include_once('includes/header.php');?>
 
-    <!-- Contenu principal -->
     <div class="content-wrap">
         <div class="main">
             <div class="container-fluid">
@@ -93,7 +84,7 @@ echo "<script>window.location.href ='assignment.php'</script>";
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Mettre à jour Affectation</h1>
+                                <h1>Update Assignment</h1>
                             </div>
                         </div>
                     </div>
@@ -103,18 +94,17 @@ echo "<script>window.location.href ='assignment.php'</script>";
                             <div class="page-title">
                                 <ol class="breadcrumb text-right">
                                     <li><a href="dashboard.php">Tableau de board</a></li>
-                                    <li class="active">Soumettre Affectation</li>
+                                    <li class="active">Soumettre reponse</li>
                                 </ol>
                             </div>
                         </div>
                     </div>
                     <!-- /# column -->
                 </div>
-                <!-- Corps de la page -->
+                <!-- /# row -->
                 <div id="main-content">
                     <div class="card alert">
                         <div class="card-body">
-                            <!-- Formulaire de soumission d'assignation -->
                             <form name="" method="post" action="" enctype="multipart/form-data">
                                 <?php
                                     $sid=$_GET['sid'];
@@ -129,47 +119,46 @@ if($query->rowCount() > 0)
 foreach($results as $row)
 {               ?>
                             <div class="card-header m-b-20">
-                                <h4 style="color: blue">Nom d'affectation: <?php  echo htmlentities($row->AssignmentNumber);?><strong style="padding-left: 500px">Marks: <?php  echo htmlentities($row->AssigmentMarks);?></strong></h4>
+                                <h4 style="color: blue">Numero de cour: <?php  echo htmlentities($row->AssignmentNumber);?><strong style="padding-left: 500px">Notes: <?php  echo htmlentities($row->AssigmentMarks);?></strong></h4>
                                 <div class="card-header-right-icon">
                                     <ul>
                                         <li class="card-close" data-dismiss="alert"><i class="ti-close"></i></li>
                                         <li class="card-option drop-menu"><i class="ti-settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" role="link"></i>
                                             <ul class="card-option-dropdown dropdown-menu">
-                                                <li><a href="#"><i class="ti-loop"></i> Mettre à jour donnée </a></li>
-                                                <li><a href="#"><i class="ti-menu-alt"></i> Details</a></li>
+                                                <li><a href="#"><i class="ti-loop"></i> Modifer donné</a></li>
+                                                <li><a href="#"><i class="ti-menu-alt"></i> Detailles</a></li>
                                                 <li><a href="#"><i class="ti-pulse"></i> Statistiques</a></li>
-                                                <li><a href="#"><i class="ti-power-off"></i> Clairer</a></li>
+                                                <li><a href="#"><i class="ti-power-off"></i> Effacer</a></li>
                                             </ul>
                                         </li>
                                         <li class="doc-link"><a href="#"><i class="ti-link"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
-                             <!-- Affichage des détails de l'assignation -->
                             <div class="row">
 
                              <table class="table table-bordered table-hover data-tables">
                                 <tr>
-  <th width="200"><strong>Course</strong></th>
+  <th width="200"><strong>Cours</strong></th>
   <td><?php  echo htmlentities($row->CourseName);?>(<?php  echo htmlentities($row->BranchName);?>)</td>
-  <th><strong>Subject Name</strong></th>
+  <th><strong>Nom module</strong></th>
   <td><?php  echo htmlentities($row->SubjectFullname);?></td>
   </tr>
   <tr>
   <th width="200"><strong>Subject Code</strong></th>
   <td><?php  echo htmlentities($row->SubjectCode);?></td>
-  <th><strong>Assignment Title</strong></th>
+  <th><strong>Titre</strong></th>
   <td><?php  echo htmlentities($row->AssignmenttTitle);?></td>
   </tr>
   <tr>
-  <th width="200"><strong>Assignment Description</strong></th>
+  <th width="200"><strong> Description</strong></th>
   <td><?php  echo htmlentities($row->AssignmentDescription);?></td>
-  <th><strong>Last Date of Submission</strong></th>
+  <th><strong>Date limite</strong></th>
   <td><?php  echo $ldate=($row->SubmissionDate);?></td>
   </tr>
   <tr>
-  <th width="200"><strong>View Assignment Paper</strong></th>
-  <td colspan="3" style="text-align: center;"><a href="../teacher/assignmentfile/<?php echo $row->AssignmentFile;?>" width="100" height="100" target="_blank"> <strong style="color: red">View Assignment Paper</strong></a></td>
+  <th width="200"><strong>Voir Document</strong></th>
+  <td colspan="3" style="text-align: center;"><a href="../teacher/assignmentfile/<?php echo $row->AssignmentFile;?>" width="100" height="100" target="_blank"> <strong style="color: red">Voir fichier</strong></a></td>
   
   </tr>
                              </table>
@@ -192,12 +181,12 @@ $query->bindParam(':asid',$asid,PDO::PARAM_STR);
 <table class="table table-bordered table-hover data-tables">
 <form method="post" name="submit" enctype="multipart/form-data">
     <tr>
-    <th><strong>Description d'Affectation</strong></th>
+    <th><strong> Description</strong></th>
     <td>
-    <textarea  name="assdes" placeholder="Assignment Description" rows="12" cols="14" class="form-control wd-450" required="true"></textarea></td>
+    <textarea  name="assdes" placeholder="Ecrivez Description ici" rows="12" cols="14" class="form-control wd-450" required="true"></textarea></td>
   </tr>
 <tr>
-    <th><strong>Déposer réponse </strong></th>
+    <th><strong>Uploader votre fichier </strong></th>
     <td>
     <input type='file' name="ansfile" placeholder="resume" rows="12" cols="14" class="form-control wd-450" required="true"></td>
   </tr>
@@ -208,11 +197,11 @@ if(($cdate < $lldate ))
 {
     ?>
     <tr align="center">
-    <td colspan="3"><button type="submit" name="submit" class="btn btn-primary">Soumettre</button></td>
+    <td colspan="3"><button type="submit" name="submit" class="btn btn-primary">Sauvegarder</button></td>
   </tr>
   <?php } else {?>
   <tr>
-<th colspan="2" style="text-align:center; font-weight:bold; color:red; font-size:22px;">Date de soumise</th>
+<th colspan="2" style="text-align:center; font-weight:bold; color:red; font-size:22px;">Date of Submission Over</th>
   </tr>
 <?php } ?>
 
@@ -220,25 +209,25 @@ if(($cdate < $lldate ))
 foreach($results as $data){?>
     <br>
     <table class="table table-bordered table-hover data-tables">
-        <tr ><td colspan="6" style="text-align: center;color: blue"><strong>Details d'Affectation soumis</strong></td></tr>
+        <tr ><td colspan="6" style="text-align: center;color: blue"><strong>Affectations soumises</strong></td></tr>
   <tr>
-    <th><strong> Description Affectation </strong></th>
+    <th><strong>Assignment Description </strong></th>
     <td colspan="6" style="text-align: center;"><?php echo $data->AssDes?></td>
     
 </tr>
 <tr>
-    <th><strong>Voir votre réponse soumis </strong></th>
+    <th><strong>Affectations soumises </strong></th>
     <td colspan="3" style="text-align: center;"><a href="assignanswer/<?php echo $data->AnswerFile;?>" width="100" height="100" target="_blank"> <strong style="color: blue">View Answer Paper</strong></a></td>
-    <th><strong> Date de soumettre </strong></th>
+    <th><strong>Date </strong></th>
     <td><?php echo $data->SubmitDate?></td>
 </tr>
 <tr>
-    <th><strong>Notes </strong></th>
+    <th><strong>Note </strong></th>
     <?php if($data->Marks==""){ ?>
       <td colspan="2"><?php echo "Not Updated Yet"; ?></td>
 <?php } else { ?>
     <td colspan="2" style="text-align: center;"><?php echo $data->Marks?></td> <?php } ?>
-    <th colspan="2"><strong>Remarques </strong></th>
+    <th colspan="2"><strong>Remarks </strong></th>
      <?php if($data->Marks==""){ ?>
       <td colspan="2" ><?php echo "Not Updated Yet"; ?></td>
 <?php } else { ?>
@@ -263,7 +252,6 @@ foreach($results as $data){?>
             </div>
         </div>
     </div>
-    <!-- Liens vers les fichiers JavaScript -->
     <!-- jquery vendor -->
     <script src="../assets/js/lib/jquery.min.js"></script>
     <script src="../assets/js/lib/jquery.nanoscroller.min.js"></script>

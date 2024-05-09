@@ -221,7 +221,7 @@ foreach($results as $row)
                                     <div class="basic-form">
                                         <div class="form-group">
                                             <label>Notes</label>
-                                            <input type="text" class="form-control border-none input-flat bg-ash" name="assmarks" required="true">
+                                            <input type="number" class="form-control border-none input-flat bg-ash" name="assmarks" required="true">
                                         </div>
                                     </div>
                                 </div>
@@ -238,7 +238,7 @@ foreach($results as $row)
                                     </div>
                                 </div>
                             </div>
-                            <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Sauvgarder</button>
+                            <button class="btn btn-default btn-lg m-b-10 bg-warning border-none m-r-5 sbmt-btn" type="submit" name="submit">Sauvegarder</button>
                             <button class="btn btn-default btn-lg m-b-10 m-l-5 sbmt-btn" type="reset">Réinitialiser</button>
                         </form>
                         </div>
