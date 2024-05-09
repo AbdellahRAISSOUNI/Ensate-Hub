@@ -105,28 +105,17 @@ $totassign=$query->rowCount();
                                         <span><i class="ti-comment f-s-22 color-success border-success round-widget"></i></span>
                                     </div>
                                     <div class="media-body media-text-right">
-                                        <?php 
-                       $tid=$_SESSION['ocastid'];
+<?php 
+$tid=$_SESSION['ocastid'];
 $sql="SELECT * from tblnewsbyteacher where TeacherID=:tid";
 $query = $dbh -> prepare($sql);
 $query-> bindParam(':tid', $tid, PDO::PARAM_STR);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 $totnews=$query->rowCount();
-?>
-                                       <h4 style="color: blue">Tous les Announcements</h4>
-                                         <h4 style="color: blue"><?php echo htmlentities($totnews);?></h4>
-                                         <a href="newsorannouncement.php"><h5>Voir les Détails</h5></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                     
-                    </div>
 
-                    <?php
-if (isset($_SESSION['ocasteacherid'])) {
-    $teacher_id = $_SESSION['ocasteacherid'];
+if (isset($_SESSION['ocastid'])) {
+    $teacher_id = $_SESSION['ocastid'];
     $sql = "SELECT tblcomments.id as comment_id, tblcomments.comment, tblcomments.created_at, tbluser.FullName as student_name
             FROM tblcomments
             JOIN tbluser ON tblcomments.user_id = tbluser.ID AND tblcomments.user_type = 'student'
@@ -140,11 +129,26 @@ if (isset($_SESSION['ocasteacherid'])) {
     $comments = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<div class="row">
+
+<?php } ?>
+
+
+
+                                       <h4 style="color: blue">Tous les Announcements</h4>
+                                         <h4 style="color: blue"><?php echo htmlentities($totnews);?></h4>
+                                         <a href="newsorannouncement.php"><h5>Voir les Détails</h5></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     
+                    </div>
+
+                    <div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="card-header">
-                <h4>Student Comments</h4>
+                <h4>Commentaires des étudiants</h4>
             </div>
             <div class="card-body">
                 <?php if (count($comments) > 0) { ?>
@@ -155,22 +159,21 @@ if (isset($_SESSION['ocasteacherid'])) {
                             <form method="post" action="submit_teacher_comment.php">
                                 <input type="hidden" name="comment_id" value="<?php echo $comment['comment_id']; ?>">
                                 <div class="form-group">
-                                    <textarea class="form-control" name="teacher_comment" rows="3" placeholder="Write your response..."></textarea>
+                                    <textarea class="form-control" name="teacher_comment" rows="3" placeholder="Ecrivez votre réponse..."></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit Response</button>
+                                <button type="submit" class="btn btn-primary">Envoyer commentaire</button>
                             </form>
                         </div>
                         <hr>
                     <?php } ?>
                 <?php } else { ?>
-                    <p>Pas de commantaires trouvé.</p>
+                    <p>Il n' ya pas de commentaires </p>
                 <?php } ?>
             </div>
         </div>
     </div>
 </div>
-<?php } ?>
-                  
+                                      
                    <?php include_once('includes/footer.php');?>
                 </div>
             </div>
