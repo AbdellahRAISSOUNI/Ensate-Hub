@@ -1,10 +1,13 @@
 <?php
-session_start();
-error_reporting(0);
-include('includes/dbconnection.php');
+session_start();// Démarre la session
+error_reporting(0);// Désactive les rapports d'erreur
+include('includes/dbconnection.php');// Inclut le fichier de connexion à la base de données
+
+// Vérifie si l'utilisateur est connecté, sinon le redirige vers la page de déconnexion
 if (strlen($_SESSION['ocastid']==0)) {
   header('location:logout.php');
   } else{
+    // Si le formulaire est soumis
     if(isset($_POST['submit']))
   {
 
@@ -23,6 +26,7 @@ $assignno=mt_rand(10000, 99999);
 $asgnnumber=$subcode."-".$assignno;
 $extension = substr($file,strlen($file)-4,strlen($file));
 $allowed_extensions = array("docs",".doc",".pdf");
+// Vérifie si l'extension du fichier est autorisée
 if(!in_array($extension,$allowed_extensions))
 {
 echo "<script>alert('Le fichier a un format invalide. Seuls les formats docs / doc / pdf sont autorisés.');</script>";
@@ -32,6 +36,7 @@ else
 
 $file=md5($file).time().$extension;
  move_uploaded_file($_FILES["assfile"]["tmp_name"],"assignmentfile/".$file);
+ // Requête d'insertion dans la base de données
 $sql="insert into tblassigment(Tid,Cid,Sid,AssignmentNumber,AssignmenttTitle,AssignmentDescription,SubmissionDate,AssigmentMarks,AssignmentFile)values(:tid,:cid,:sid,:asgnnumber,:asstitle,:assdesc,:lsdate,:assmarks,:file)";
 $query=$dbh->prepare($sql);
 $query->bindParam(':tid',$tid,PDO::PARAM_STR);
@@ -47,6 +52,7 @@ $query->bindParam(':file',$file,PDO::PARAM_STR);
  $query->execute();
 
    $LastInsertId=$dbh->lastInsertId();
+   // Vérifie si l'insertion a réussi
    if ($LastInsertId>0) {
     echo '<script>alert("Une nouvelle mission a été ajoutée.")</script>';
 echo "<script>window.location.href ='add-assignment.php'</script>";
@@ -76,14 +82,16 @@ echo "<script>window.location.href ='add-assignment.php'</script>";
 </head>
 
 <body>
-
+<!--Inclusion de la bar de side et de header -->
 <?php include_once('includes/sidebar.php');?>
    
     <?php include_once('includes/header.php');?>
-
+    <!-- Main content -->
     <div class="content-wrap">
         <div class="main">
             <div class="container-fluid">
+                <!-- Page header -->
+                <!-- Form to add assignment -->
                 <div class="row">
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
@@ -235,12 +243,13 @@ foreach($results as $row)
                         </form>
                         </div>
                     </div>
-                   
+                    <!-- Footer -->
                      <?php include_once('includes/footer.php');?>
                 </div>
             </div>
         </div>
     </div>
+    <!-- JavaScript imports -->
     <!-- jquery vendor -->
     <script src="../assets/js/lib/jquery.min.js"></script>
     <script src="../assets/js/lib/jquery.nanoscroller.min.js"></script>

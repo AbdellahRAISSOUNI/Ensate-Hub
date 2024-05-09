@@ -1,16 +1,21 @@
 <?php
-session_start();
-error_reporting(0);
-include('includes/dbconnection.php');
+session_start(); // Démarre la session
+error_reporting(0); // Désactive les rapports d'erreur
+include('includes/dbconnection.php');  // Inclut le fichier de connexion à la base de données
+
+// Vérifie si l'utilisateur est connecté, sinon le redirige vers la page de déconnexion
 error_reporting(0);
 if (strlen($_SESSION['ocastid']==0)) {
   header('location:logout.php');
   } else{
+    // Si le formulaire est soumis
 if(isset($_POST['submit']))
 {
 $tid=$_SESSION['ocastid'];
-$cpassword=md5($_POST['currentpassword']);
-$newpassword=md5($_POST['newpassword']);
+$cpassword=md5($_POST['currentpassword']); // Mot de passe actuel
+$newpassword=md5($_POST['newpassword']); // Nouveau mot de passe
+
+// Vérifie si le mot de passe actuel est correct
 $sql ="SELECT ID FROM tblteacher WHERE ID=:tid and Password=:cpassword";
 $query= $dbh -> prepare($sql);
 $query-> bindParam(':tid', $tid, PDO::PARAM_STR);
@@ -20,6 +25,7 @@ $results = $query -> fetchAll(PDO::FETCH_OBJ);
 
 if($query -> rowCount() > 0)
 {
+    // Met à jour le mot de passe dans la base de données
 $con="update tblteacher set Password=:newpassword where ID=:tid";
 $chngpwd1 = $dbh->prepare($con);
 $chngpwd1-> bindParam(':tid', $tid, PDO::PARAM_STR);
@@ -63,7 +69,7 @@ return true;
 </head>
 
 <body>
-
+<!--Inclusion de la bar de side et de header -->
 <?php include_once('includes/sidebar.php');?>
    
     <?php include_once('includes/header.php');?>
@@ -71,6 +77,7 @@ return true;
         <div class="main">
             <div class="container-fluid">
                 <div class="row">
+                    <!-- Header -->
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
@@ -108,6 +115,7 @@ return true;
                                 </div>
                                 <div class="card-body">
                                     <div class="basic-form">
+                                    <!-- Formulaire de changement de mot de passe -->
                     <form method="post"  name="changepassword" onsubmit="return checkpass();" name="changepassword">
                                      <div class="form-group"> <label for="exampleInputEmail1">Mot de passe actuelle</label> <input type="password" class="form-control" name="currentpassword" id="currentpassword"required='true'> </div> 
                                      <div class="form-group"> <label for="exampleInputEmail1">Nouveau Mot de passe</label> <input type="password" class="form-control" name="newpassword"  class="form-control" required="true"> </div>
@@ -121,12 +129,14 @@ return true;
                         </div>
                        
                     </div>
-         
+                    <!-- Footer -->
                    <?php include_once('includes/footer.php');?>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- JavaScript imports -->
 
     <!-- jquery vendor -->
     <script src="../assets/js/lib/jquery.min.js"></script>
