@@ -1,25 +1,26 @@
-Guide d'exécution du Projet de Système de Devoirs en Ligne avec PHP et MySQL
-Instructions
+# Guide d'exécution du Projet de Système de Devoirs en Ligne avec PHP et MySQL
 
-    Téléchargement: Téléchargez le fichier zip.
-    Extraction: Extrayez le fichier et copiez le dossier ocas.
-    Placement: Collez le dossier ocas dans le répertoire racine (pour XAMPP : xampp/htdocs, pour WAMP : wamp/www, pour LAMP : var/www/html).
-    Configuration de la base de données:
-        Ouvrez PHPMyAdmin (http://localhost/phpmyadmin).
-        Créez une nouvelle base de données nommée ocasdb.
-        Importez le fichier ocasdb.sql (fourni dans le dossier SQL du package zip).
-    Exécution du script: Accédez au script via http://localhost/ocas.
+## Instructions
 
-Identifiants
+1. **Téléchargement**: Téléchargez le fichier zip.
+2. **Extraction**: Extrayez le fichier et copiez le dossier `ocas`.
+3. **Placement**: Collez le dossier `ocas` dans le répertoire racine (pour XAMPP : `xampp/htdocs`, pour WAMP : `wamp/www`, pour LAMP : `var/www/html`).
+4. **Configuration de la base de données**:
+    - Ouvrez PHPMyAdmin (http://localhost/phpmyadmin).
+    - Créez une nouvelle base de données nommée `ocasdb`.
+    - Importez le fichier `ocasdb.sql` (fourni dans le dossier SQL du package zip).
+5. **Exécution du script**: Accédez au script via http://localhost/ocas.
 
-    Administrateur:
-        Nom d'utilisateur : admin
-        Mot de passe : Test@123
-    Enseignant:
-        Nom d'utilisateur : EMP12345
-        Mot de passe : Test@123
-        Ou inscrivez un nouvel enseignant via le panneau d'administration.
-    Utilisateur:
-        Nom d'utilisateur : test@gmail.com
-        Mot de passe : Test@123
-        Ou inscrivez un nouvel utilisateur.
+## Identifiants
+
+- **Administrateur**:
+    - Nom d'utilisateur : `admin`
+    - Mot de passe : `Test@123`
+- **Enseignant**:
+    - Nom d'utilisateur : `EMP12345`
+    - Mot de passe : `Test@123`
+    - *Ou* inscrivez un nouvel enseignant via le panneau d'administration.
+- **Utilisateur**:
+    - Nom d'utilisateur : `test@gmail.com`
+    - Mot de passe : `Test@123`
+    - *Ou* inscrivez un nouvel utilisateur.
