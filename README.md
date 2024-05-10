@@ -1,30 +1,25 @@
-How to run the Online College Assignment System Project Using PHP and MySQL
+Guide d'exécution du Projet de Système de Devoirs en Ligne avec PHP et MySQL
+Instructions
 
-1.Download the zip file
+    Téléchargement: Téléchargez le fichier zip.
+    Extraction: Extrayez le fichier et copiez le dossier ocas.
+    Placement: Collez le dossier ocas dans le répertoire racine (pour XAMPP : xampp/htdocs, pour WAMP : wamp/www, pour LAMP : var/www/html).
+    Configuration de la base de données:
+        Ouvrez PHPMyAdmin (http://localhost/phpmyadmin).
+        Créez une nouvelle base de données nommée ocasdb.
+        Importez le fichier ocasdb.sql (fourni dans le dossier SQL du package zip).
+    Exécution du script: Accédez au script via http://localhost/ocas.
 
-2.Extract the file and copy ocas folder
+Identifiants
 
-3.Paste inside root directory(for xampp xampp/htdocs, for wamp wamp/www, for lamp var/www/html)
-
-4.Open PHPMyAdmin (http://localhost/phpmyadmin)
-
-5.Create a database with name ocasdb
-
-6.Import ocasdb.sql file(given inside the zip package in SQL file folder)
-
-7.Run the script http://localhost/ocas
-
-Admin Credential
-Username: admin
-Password: Test@123
-
-Teacher Credential
-Username: EMP12345
-Password: Test@123
-or Register a new  Teacher through admin panel
-
-
-User Credential
-Username: test@gmail.com
-Password: Test@123
-or Register a new user
+    Administrateur:
+        Nom d'utilisateur : admin
+        Mot de passe : Test@123
+    Enseignant:
+        Nom d'utilisateur : EMP12345
+        Mot de passe : Test@123
+        Ou inscrivez un nouvel enseignant via le panneau d'administration.
+    Utilisateur:
+        Nom d'utilisateur : test@gmail.com
+        Mot de passe : Test@123
+        Ou inscrivez un nouvel utilisateur.
